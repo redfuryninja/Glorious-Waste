@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c2kde2myuntvg"]
+
+[ext_resource type="Texture2D" uid="uid://p75w3u6vdeow" path="res://assets/inventory/inventory sprites no lines.png" id="1_3xixx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xixx"]
+atlas = ExtResource("1_3xixx")
+region = Rect2(138, 46, 46, 46)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nfn05"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xixx")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="AnimatedSprite2D" unique_id=1701240889]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_nfn05")
+autoplay = "default"
