@@ -1,232 +1,444 @@
 [gd_scene format=3 uid="uid://b4q2xpf83ksr5"]
 
-[ext_resource type="Texture2D" uid="uid://p75w3u6vdeow" path="res://assets/inventory/inventory sprites no lines.png" id="2_ty45s"]
-
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qw0r6"]
 load_path = "res://.godot/imported/inventory colour.png-c5e17229bef8341c85e8f00d84315f12.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hj2ta"]
-atlas = ExtResource("2_ty45s")
-region = Rect2(0, 0, 46, 46)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gg8by"]
+load_path = "res://.godot/imported/inventory sprites no lines.png-3b899c2450d92336ad3a730e46ae54f5.ctex"
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ty45s"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hj2ta")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_53g1v"]
-atlas = ExtResource("2_ty45s")
-region = Rect2(46, 0, 46, 46)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_yyk2a"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_53g1v")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uae8j"]
-atlas = ExtResource("2_ty45s")
-region = Rect2(92, 0, 46, 46)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_s887n"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uae8j")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g71ie"]
-atlas = ExtResource("2_ty45s")
-region = Rect2(138, 0, 46, 46)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_sr8g6"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g71ie")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p7iul"]
-atlas = ExtResource("2_ty45s")
-region = Rect2(184, 0, 46, 46)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_td2ew"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p7iul")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ylenm"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0df5h"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_fiysm"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_brsb2"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_nq6oc"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_k86sa"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_40feg"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_tla8l"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_w24ly"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ohgsq"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_j8d85"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_5mlvw"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_jc13p"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_iqxo6"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_y2qpb"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_5kq8a"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_1bg26"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_it0hx"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_l0dva"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6mhoj"]
-
-[node name="Node2D" type="Node2D" unique_id=725879363]
+[node name="Inventory" type="CanvasLayer" unique_id=186907731]
 
 [node name="InventoryColour" type="Sprite2D" parent="." unique_id=205119756]
 position = Vector2(1, 0)
 texture = SubResource("CompressedTexture2D_qw0r6")
 
-[node name="HP" type="AnimatedSprite2D" parent="InventoryColour" unique_id=747813586]
+[node name="HP" type="TextureRect" parent="InventoryColour" unique_id=1940656832]
 texture_filter = 1
-position = Vector2(-93, -92)
-sprite_frames = SubResource("SpriteFrames_ty45s")
+offset_left = -93.0
+offset_top = -92.0
+offset_right = 138.0
+offset_bottom = 139.0
+texture = SubResource("CompressedTexture2D_gg8by")
 
-[node name="Weight" type="AnimatedSprite2D" parent="InventoryColour" unique_id=1892105470]
-texture_filter = 1
-position = Vector2(-47, -92)
-sprite_frames = SubResource("SpriteFrames_yyk2a")
+[node name="Label" type="Label" parent="InventoryColour/HP" unique_id=1588157260]
+layout_mode = 0
+offset_left = -13.0
+offset_top = -4.0
+offset_right = 32.0
+offset_bottom = 19.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "100"
+horizontal_alignment = 1
 
-[node name="Gloves" type="AnimatedSprite2D" parent="InventoryColour" unique_id=2106497939]
+[node name="Weight" type="TextureRect" parent="InventoryColour" unique_id=1094363935]
 texture_filter = 1
-position = Vector2(-1, -93)
-sprite_frames = SubResource("SpriteFrames_s887n")
+offset_left = -47.0
+offset_top = -92.0
+offset_right = -47.0
+offset_bottom = -92.0
 
-[node name="GasMask" type="AnimatedSprite2D" parent="InventoryColour" unique_id=1900767895]
-texture_filter = 1
-position = Vector2(44, -91)
-sprite_frames = SubResource("SpriteFrames_sr8g6")
+[node name="Label" type="Label" parent="InventoryColour/Weight" unique_id=399332884]
+layout_mode = 0
+offset_left = -22.0
+offset_top = -24.0
+offset_right = 23.0
+offset_bottom = -1.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "0/100"
+horizontal_alignment = 1
 
-[node name="Hazmat" type="AnimatedSprite2D" parent="InventoryColour" unique_id=611308714]
+[node name="Gloves" type="TextureRect" parent="InventoryColour" unique_id=1144519810]
 texture_filter = 1
-position = Vector2(90, -92)
-sprite_frames = SubResource("SpriteFrames_td2ew")
+offset_left = -1.0
+offset_top = -93.0
+offset_right = -1.0
+offset_bottom = -93.0
 
-[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="InventoryColour" unique_id=773244946]
+[node name="GasMask" type="TextureRect" parent="InventoryColour" unique_id=1353854915]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_ylenm")
+offset_left = 44.0
+offset_top = -91.0
+offset_right = 44.0
+offset_bottom = -91.0
 
-[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="InventoryColour" unique_id=2103289895]
+[node name="Hazmat" type="TextureRect" parent="InventoryColour" unique_id=374169495]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_0df5h")
+offset_left = 90.0
+offset_top = -92.0
+offset_right = 90.0
+offset_bottom = -92.0
 
-[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="InventoryColour" unique_id=814323702]
+[node name="Furniture" type="TextureRect" parent="InventoryColour" unique_id=557894320]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_fiysm")
+offset_left = -92.0
+offset_top = -39.0
+offset_right = -92.0
+offset_bottom = -39.0
 
-[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="InventoryColour" unique_id=683792122]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_brsb2")
+[node name="Label" type="Label" parent="InventoryColour/Furniture" unique_id=1693627065]
+layout_mode = 0
+offset_left = -23.0
+offset_top = -28.0
+offset_right = 22.0
+offset_bottom = -5.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "x0"
+horizontal_alignment = 1
 
-[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="InventoryColour" unique_id=1253801168]
+[node name="Medical" type="TextureRect" parent="InventoryColour" unique_id=1138607999]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_nq6oc")
+offset_left = -49.0
+offset_top = -46.0
+offset_right = -49.0
+offset_bottom = -46.0
 
-[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="InventoryColour" unique_id=1817615785]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_k86sa")
+[node name="Label" type="Label" parent="InventoryColour/Medical" unique_id=1291043538]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -23.0
+offset_right = 24.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "x0"
+horizontal_alignment = 1
 
-[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="InventoryColour" unique_id=1569959235]
+[node name="Scrap Metal" type="TextureRect" parent="InventoryColour" unique_id=580446597]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_40feg")
+offset_left = -5.0
+offset_top = -40.0
+offset_right = -5.0
+offset_bottom = -40.0
 
-[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="InventoryColour" unique_id=894522406]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_tla8l")
+[node name="Label" type="Label" parent="InventoryColour/Scrap Metal" unique_id=1396556050]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -30.0
+offset_right = 24.0
+offset_bottom = -7.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "x0"
+horizontal_alignment = 1
 
-[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="InventoryColour" unique_id=414387904]
+[node name="General Waste" type="TextureRect" parent="InventoryColour" unique_id=152269547]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_w24ly")
+offset_left = 47.0
+offset_top = -46.0
+offset_right = 47.0
+offset_bottom = -46.0
 
-[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="InventoryColour" unique_id=1548783021]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_ohgsq")
+[node name="Label" type="Label" parent="InventoryColour/General Waste" unique_id=809760069]
+layout_mode = 0
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 20.0
+offset_bottom = -2.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "x0"
+horizontal_alignment = 1
 
-[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="InventoryColour" unique_id=2132432898]
+[node name="Hazardous" type="TextureRect" parent="InventoryColour" unique_id=1919574787]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_j8d85")
+offset_left = 91.0
+offset_top = -43.0
+offset_right = 91.0
+offset_bottom = -43.0
 
-[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="InventoryColour" unique_id=615800097]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_5mlvw")
+[node name="Label" type="Label" parent="InventoryColour/Hazardous" unique_id=1774980422]
+layout_mode = 0
+offset_left = -24.0
+offset_top = -28.0
+offset_right = 21.0
+offset_bottom = -5.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "x0"
+horizontal_alignment = 1
 
-[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="InventoryColour" unique_id=641053776]
+[node name="Garden Waste" type="TextureRect" parent="InventoryColour" unique_id=707708407]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_jc13p")
+offset_left = -95.0
+offset_top = -1.0
+offset_right = -95.0
+offset_bottom = -1.0
 
-[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="InventoryColour" unique_id=640522779]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_iqxo6")
+[node name="Label" type="Label" parent="InventoryColour/Garden Waste" unique_id=827868354]
+layout_mode = 0
+offset_left = -22.0
+offset_top = -24.0
+offset_right = 23.0
+offset_bottom = -1.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "x0"
+horizontal_alignment = 1
 
-[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="InventoryColour" unique_id=1679558833]
+[node name="Food" type="TextureRect" parent="InventoryColour" unique_id=1015455884]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_y2qpb")
+offset_left = -47.0
+offset_top = -1.0
+offset_right = -47.0
+offset_bottom = -1.0
 
-[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="InventoryColour" unique_id=921114501]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_5kq8a")
+[node name="Label" type="Label" parent="InventoryColour/Food" unique_id=976378053]
+layout_mode = 0
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 21.0
+offset_bottom = -1.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "x0"
+horizontal_alignment = 1
 
-[node name="AnimatedSprite2D22" type="AnimatedSprite2D" parent="InventoryColour" unique_id=532136136]
+[node name="Textiles" type="TextureRect" parent="InventoryColour" unique_id=861109537]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_1bg26")
+offset_left = -1.0
+offset_top = -2.0
+offset_right = -1.0
+offset_bottom = -2.0
 
-[node name="AnimatedSprite2D23" type="AnimatedSprite2D" parent="InventoryColour" unique_id=1022971393]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_it0hx")
+[node name="Label" type="Label" parent="InventoryColour/Textiles" unique_id=1730233781]
+layout_mode = 0
+offset_left = -23.0
+offset_top = -23.0
+offset_right = 22.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "x0"
+horizontal_alignment = 1
 
-[node name="AnimatedSprite2D24" type="AnimatedSprite2D" parent="InventoryColour" unique_id=84988574]
+[node name="Food & Drink Cans" type="TextureRect" parent="InventoryColour" unique_id=139143406]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_l0dva")
+offset_left = 43.0
+offset_top = -1.0
+offset_right = 43.0
+offset_bottom = -1.0
 
-[node name="AnimatedSprite2D25" type="AnimatedSprite2D" parent="InventoryColour" unique_id=1993779423]
+[node name="Label" type="Label" parent="InventoryColour/Food & Drink Cans" unique_id=553323096]
+layout_mode = 0
+offset_left = -22.0
+offset_top = -25.0
+offset_right = 23.0
+offset_bottom = -2.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "x0"
+horizontal_alignment = 1
+
+[node name="Electrical" type="TextureRect" parent="InventoryColour" unique_id=3910210]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_6mhoj")
+offset_left = 92.0
+offset_right = 92.0
+
+[node name="Label" type="Label" parent="InventoryColour/Electrical" unique_id=279248138]
+layout_mode = 0
+offset_left = -23.0
+offset_top = -25.0
+offset_right = 22.0
+offset_bottom = -2.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "x0"
+horizontal_alignment = 1
+
+[node name="Wood & Timber" type="TextureRect" parent="InventoryColour" unique_id=1246546668]
+texture_filter = 1
+offset_left = -91.0
+offset_top = 46.0
+offset_right = -91.0
+offset_bottom = 46.0
+
+[node name="Label" type="Label" parent="InventoryColour/Wood & Timber" unique_id=1240246626]
+layout_mode = 0
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 20.0
+offset_bottom = -2.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "x0"
+horizontal_alignment = 1
+
+[node name="Cardboard & Paper" type="TextureRect" parent="InventoryColour" unique_id=2123241671]
+texture_filter = 1
+offset_left = -47.0
+offset_top = 47.0
+offset_right = -47.0
+offset_bottom = 47.0
+
+[node name="Label" type="Label" parent="InventoryColour/Cardboard & Paper" unique_id=188246359]
+layout_mode = 0
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 21.0
+offset_bottom = -1.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "x0"
+horizontal_alignment = 1
+
+[node name="Plastic Bottles" type="TextureRect" parent="InventoryColour" unique_id=868005070]
+texture_filter = 1
+offset_top = 47.0
+offset_bottom = 47.0
+
+[node name="Label" type="Label" parent="InventoryColour/Plastic Bottles" unique_id=1929540576]
+layout_mode = 0
+offset_left = -28.0
+offset_top = -25.0
+offset_right = 17.0
+offset_bottom = -2.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "x0"
+horizontal_alignment = 1
+
+[node name="Car Batteries" type="TextureRect" parent="InventoryColour" unique_id=320465057]
+texture_filter = 1
+offset_left = 44.0
+offset_top = 48.0
+offset_right = 44.0
+offset_bottom = 48.0
+
+[node name="Label" type="Label" parent="InventoryColour/Car Batteries" unique_id=1149082776]
+layout_mode = 0
+offset_left = -23.0
+offset_top = -26.0
+offset_right = 22.0
+offset_bottom = -3.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "x0"
+horizontal_alignment = 1
+
+[node name="Batteries" type="TextureRect" parent="InventoryColour" unique_id=878765490]
+texture_filter = 1
+offset_left = 93.0
+offset_top = 47.0
+offset_right = 93.0
+offset_bottom = 47.0
+
+[node name="Label" type="Label" parent="InventoryColour/Batteries" unique_id=914262]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -25.0
+offset_right = 18.0
+offset_bottom = -2.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "x0"
+horizontal_alignment = 1
+
+[node name="Rubble and Hardcore" type="TextureRect" parent="InventoryColour" unique_id=464951513]
+texture_filter = 1
+offset_left = -93.0
+offset_top = 92.0
+offset_right = -93.0
+offset_bottom = 92.0
+
+[node name="Label" type="Label" parent="InventoryColour/Rubble and Hardcore" unique_id=53316201]
+layout_mode = 0
+offset_left = -23.0
+offset_top = -24.0
+offset_right = 22.0
+offset_bottom = -1.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "x0"
+horizontal_alignment = 1
+
+[node name="Glass" type="TextureRect" parent="InventoryColour" unique_id=99532424]
+texture_filter = 1
+offset_left = -47.0
+offset_top = 91.0
+offset_right = -47.0
+offset_bottom = 91.0
+
+[node name="Label" type="Label" parent="InventoryColour/Glass" unique_id=1028369348]
+layout_mode = 0
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 21.0
+offset_bottom = -1.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "x0"
+horizontal_alignment = 1
+
+[node name="Mixed Recycling" type="TextureRect" parent="InventoryColour" unique_id=2116869313]
+texture_filter = 1
+offset_top = 95.0
+offset_bottom = 95.0
+
+[node name="Label" type="Label" parent="InventoryColour/Mixed Recycling" unique_id=1355987868]
+layout_mode = 0
+offset_left = -26.0
+offset_top = -28.0
+offset_right = 19.0
+offset_bottom = -5.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "x0"
+horizontal_alignment = 1
+
+[node name="Motor Oil" type="TextureRect" parent="InventoryColour" unique_id=1284885118]
+texture_filter = 1
+offset_left = 45.0
+offset_top = 92.0
+offset_right = 45.0
+offset_bottom = 92.0
+
+[node name="Label" type="Label" parent="InventoryColour/Motor Oil" unique_id=2067851135]
+layout_mode = 0
+offset_left = -19.0
+offset_top = -24.0
+offset_right = 26.0
+offset_bottom = -1.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "x0"
+horizontal_alignment = 1
+
+[node name="Appliances" type="TextureRect" parent="InventoryColour" unique_id=2066410709]
+texture_filter = 1
+offset_left = 90.0
+offset_top = 92.0
+offset_right = 90.0
+offset_bottom = 92.0
+
+[node name="Label" type="Label" parent="InventoryColour/Appliances" unique_id=1456246596]
+layout_mode = 0
+offset_left = -23.0
+offset_top = -23.0
+offset_right = 22.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "x0"
+horizontal_alignment = 1
