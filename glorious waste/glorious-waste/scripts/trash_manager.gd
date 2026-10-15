@@ -4,7 +4,7 @@ const TRASH = preload("uid://c2kde2myuntvg")
 var bin = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for i in range (100):
+	for i in range (5):
 		var newTrash = TRASH.instantiate()
 		bin.append(newTrash)
 		add_child(newTrash)
