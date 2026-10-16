@@ -7,8 +7,8 @@ extends Node
 "rubble","scrap_metal","textiles","wood") var trash_type
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print(trash_type)
 	sprite.animation = str(trash_type)
-	print
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

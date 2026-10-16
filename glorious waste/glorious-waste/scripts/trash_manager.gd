@@ -2,10 +2,11 @@ extends Node2D
 
 const TRASH = preload("uid://c2kde2myuntvg")
 var bin = []
+var tossed = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in range (5):
-		var newTrash = TRASH.instantiate()
+		var newTrash: waste = TRASH.instantiate()
 		bin.append(newTrash)
 		add_child(newTrash)
 	

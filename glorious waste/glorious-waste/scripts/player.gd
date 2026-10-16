@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $sprite
 const INVENTORY = preload("uid://b4q2xpf83ksr5")
@@ -6,6 +7,7 @@ signal weight()
 signal spawn(spawnCount, x, y)
 signal holding()
 signal inventory_update()
+signal interact()
 @export var speed = 300.0
 const JUMP_VELOCITY = -400.0
 var direction : Vector2
@@ -24,6 +26,7 @@ var stabbed = 0.0
 var electrified = 0.0
 var gassed = 0.0
 var radiated = 0.0
+var can_pickup : bool
 
 func update_stats():
 	globals.player_inventory["hp"] = hp
@@ -82,12 +85,27 @@ func _physics_process(delta: float) -> void:
 		globals.player_inventory["hp"] = hp
 		health.emit()
 		kg += 1
-		globals.player_inventory["kg"] = kg
+		globals.player_inventory["mass"] = kg
 		weight.emit()
 		spawn.emit(spawnCount, position.x, position.y)
 		spawnCount += 1
 		if spawnCount >= 5:
 			spawnCount = 0
-	if Input.is_action_just_pressed("interact"):
-		holding.emit()
+	if can_pickup == true and Input.is_action_just_pressed("interact"):
+		interact.emit()
 		inventory_update.emit()
+		print("hmwcawcciawcccw",globals.player_inventory["wood"])
+
+
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+		if body is waste:
+			can_pickup = true
+			
+			#if body.can_pickup:
+				#body._on_user_interact()
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	can_pickup = false

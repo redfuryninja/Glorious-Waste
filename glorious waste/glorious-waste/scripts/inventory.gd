@@ -74,8 +74,34 @@ var slot21 = false
 var slot22 = false
 var slot23 = false
 var slot24 = false
-
 func check_inventory():
+	if globals.player_inventory["hp"] >= 0.0: slot0 = true
+	if globals.player_inventory["mass"] >= 0.0: slot1 = true
+	if globals.player_inventory["gloves"]> 0: slot2 = true
+	if globals.player_inventory["gas_mask"]> 0: slot3 = true
+	if globals.player_inventory["hazmat"]> 0: slot4 = true
+	if globals.player_inventory["furniture"]> 0: slot5 = true
+	if globals.player_inventory["medical"]> 0: slot6 = true
+	if globals.player_inventory["scrap_metal"]> 0: slot7 = true
+	if globals.player_inventory["general"]> 0: slot8 = true
+	if globals.player_inventory["hazardous"]> 0: slot9 = true
+	if globals.player_inventory["garden"]> 0: slot10 = true
+	if globals.player_inventory["food"]> 0: slot11 = true
+	if globals.player_inventory["textiles"]> 0: slot12 = true
+	if globals.player_inventory["cans"]> 0: slot13 = true
+	if globals.player_inventory["electrical"]> 0: slot14 = true
+	if globals.player_inventory["wood"]> 0: slot15 = true
+	if globals.player_inventory["cardboard"]> 0: slot16 = true
+	if globals.player_inventory["plastic"]> 0: slot17 = true
+	if globals.player_inventory["car_batteries"]> 0: slot18 = true
+	if globals.player_inventory["batteries"]> 0: slot19 = true
+	if globals.player_inventory["rubble"]> 0: slot20 = true
+	if globals.player_inventory["glass"]> 0: slot21 = true
+	if globals.player_inventory["mixed_recycling"]> 0: slot22 = true
+	if globals.player_inventory["motor_oil"]> 0: slot23 = true
+	if globals.player_inventory["appliances"]> 0: slot24 = true
+
+func show_inventory():
 	if slot0 == true: hp.show()
 	else: hp.hide()
 	if slot1 == true: weight.show()
@@ -127,14 +153,14 @@ func check_inventory():
 	if slot24 == true: appliances.show()
 	else: appliances.hide()
 # Called when the node enters the scene tree for the first time.
-func stock_check():
+func label_update():
 	health.text =  str(globals.player_inventory["hp"])
-	carry.text = str(globals.player_inventory["weight"]) + "/" + globals.max_kg
+	carry.text = str(globals.player_inventory["mass"]) + "/" + str(globals.max_kg)
 	furnishing.text = "x" + str(globals.player_inventory["furniture"])
 	medicine.text = "x" + str(globals.player_inventory["medical"])
 	metal.text = "x" + str(globals.player_inventory["scrap_metal"])
 	general.text = "x" + str(globals.player_inventory["general"])
-	nuclear.text = "x" + str(globals.player_inventory["hazadous"])
+	nuclear.text = "x" + str(globals.player_inventory["hazardous"])
 	green.text = "x" + str(globals.player_inventory["garden"])
 	food_stuff.text = "x" + str(globals.player_inventory["food"])
 	fabric.text = "x" + str(globals.player_inventory["textiles"])
@@ -153,8 +179,8 @@ func stock_check():
 	
 
 func _ready() -> void:
-	check_inventory()
-	stock_check()
+	show_inventory()
+	label_update()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -162,5 +188,7 @@ func _process(delta: float) -> void:
 
 
 func _on_user_inventory_update() -> void:
+	print("testing")
 	check_inventory()
-	stock_check()
+	show_inventory()
+	label_update()

@@ -16,4 +16,5 @@ func _on_user_health() -> void:
 
 
 func _on_user_weight() -> void:
-	text = "Weight: " + str(globals.player_inventory["weight"]) + "/" + str(globals.max_kg)
+	
+	text = "Weight: " + str(globals.player_inventory["mass"]) + "/" + str(globals.max_kg)

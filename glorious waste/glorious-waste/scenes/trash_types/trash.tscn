@@ -255,9 +255,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67o6a"]
 size = Vector2(46, 46)
 
-[node name="Trash" type="StaticBody2D" unique_id=168331026]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfn05"]
+size = Vector2(46, 46)
+
+[node name="Trash" type="StaticBody2D" unique_id=168331026 node_paths=PackedStringArray("trash_type", "sharp", "noxious", "radioactive", "electric", "weight")]
 texture_filter = 1
 script = ExtResource("1_vyux7")
+trash_type = NodePath("type")
+sharp = NodePath("edge")
+noxious = NodePath("gas")
+radioactive = NodePath("hazard")
+electric = NodePath("zap")
+weight = NodePath("heavy")
 
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=830423187]
 sprite_frames = SubResource("SpriteFrames_67o6a")
@@ -272,7 +281,7 @@ script = ExtResource("3_3ipmh")
 
 [node name="type" type="Node" parent="." unique_id=761370653]
 script = ExtResource("3_6el02")
-trash_type = 9
+trash_type = 19
 
 [node name="gas" type="Node" parent="." unique_id=255553651]
 script = ExtResource("5_54pjl")
@@ -285,3 +294,14 @@ script = ExtResource("7_gwsbu")
 
 [node name="heavy" type="Node" parent="." unique_id=504542935]
 script = ExtResource("8_boix2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1257620162]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=144824544]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_nfn05")
+debug_color = Color(0.9982843, 0, 0.15714613, 0.41960785)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
