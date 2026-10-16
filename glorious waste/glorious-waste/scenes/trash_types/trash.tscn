@@ -255,41 +255,33 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67o6a"]
 size = Vector2(46, 46)
 
-[node name="Trash" type="Node2D" unique_id=2020068289]
+[node name="Trash" type="StaticBody2D" unique_id=168331026]
 texture_filter = 1
-
-[node name="garbage" type="StaticBody2D" parent="." unique_id=724333611 node_paths=PackedStringArray("trash_type", "sharp", "noxious", "radioactive", "electric", "weight")]
 script = ExtResource("1_vyux7")
-trash_type = NodePath("type")
-sharp = NodePath("edge")
-noxious = NodePath("gas")
-radioactive = NodePath("hazard")
-electric = NodePath("zap")
-weight = NodePath("heavy")
 
-[node name="sprite" type="AnimatedSprite2D" parent="garbage" unique_id=830423187]
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=830423187]
 sprite_frames = SubResource("SpriteFrames_67o6a")
 animation = &"19"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="garbage" unique_id=522386409]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=522386409]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_67o6a")
 
-[node name="edge" type="Node" parent="garbage" unique_id=1096750437]
+[node name="edge" type="Node" parent="." unique_id=1096750437]
 script = ExtResource("3_3ipmh")
 
-[node name="type" type="Node" parent="garbage" unique_id=761370653]
+[node name="type" type="Node" parent="." unique_id=761370653]
 script = ExtResource("3_6el02")
-trash_type = 19
+trash_type = 9
 
-[node name="gas" type="Node" parent="garbage" unique_id=255553651]
+[node name="gas" type="Node" parent="." unique_id=255553651]
 script = ExtResource("5_54pjl")
 
-[node name="hazard" type="Node" parent="garbage" unique_id=1726729540]
+[node name="hazard" type="Node" parent="." unique_id=1726729540]
 script = ExtResource("6_4884s")
 
-[node name="zap" type="Node" parent="garbage" unique_id=456172650]
+[node name="zap" type="Node" parent="." unique_id=456172650]
 script = ExtResource("7_gwsbu")
 
-[node name="heavy" type="Node" parent="garbage" unique_id=504542935]
+[node name="heavy" type="Node" parent="." unique_id=504542935]
 script = ExtResource("8_boix2")

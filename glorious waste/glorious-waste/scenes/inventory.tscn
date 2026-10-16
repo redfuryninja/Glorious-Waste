@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b4q2xpf83ksr5"]
 
+[ext_resource type="Script" uid="uid://lbe2404fw5j8" path="res://scenes/inventory.gd" id="1_hj2ta"]
 [ext_resource type="Texture2D" uid="uid://p75w3u6vdeow" path="res://assets/inventory/inventory sprites no lines.png" id="1_qw0r6"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qw0r6"]
@@ -381,6 +382,7 @@ animations = [{
 }]
 
 [node name="Inventory" type="Node2D" unique_id=726757050]
+script = ExtResource("1_hj2ta")
 
 [node name="InventoryColour" type="Sprite2D" parent="." unique_id=205119756]
 position = Vector2(1, 0)

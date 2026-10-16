@@ -4,6 +4,7 @@ const INVENTORY = preload("uid://b4q2xpf83ksr5")
 signal health(hp)
 signal weight(kg)
 signal spawn(spawnCount, x, y)
+signal holding()
 @export var speed = 300.0
 const JUMP_VELOCITY = -400.0
 var direction : Vector2
@@ -11,6 +12,24 @@ var hp = 100
 var kg = 0
 var spawnCount = 0
 var lockInput = 0
+var gloves = 0.0
+var e_gloves = 0.0
+var gas_mask = 0.0
+var hazmat = 0.0
+var stabbed = 0.0
+var electrified = 0.0
+var gassed = 0.0
+var radiated = 0.0
+
+func damage():
+	if gloves > 0: gloves -= stabbed
+	else: hp -= stabbed
+	if e_gloves > 0 : e_gloves -= electrified
+	else: hp -= electrified
+	if gas_mask > 0: gas_mask -= gassed
+	else: hp -= gassed
+	if hazmat > 0: hazmat -= radiated
+	else: hp -= radiated
 func move():
 	direction.x = Input.get_axis("left", "right")
 	direction.y = Input.get_axis("up", "down")
@@ -31,7 +50,6 @@ func move():
 
 var inventory = INVENTORY.instantiate()
 func _physics_process(delta: float) -> void:
-	
 	if lockInput == 0:
 		move()
 	if Input.is_action_just_pressed("inventory"):
@@ -52,4 +70,5 @@ func _physics_process(delta: float) -> void:
 		spawnCount += 1
 		if spawnCount >= 5:
 			spawnCount = 0
-		
+	if Input.is_action_just_pressed("interact"):
+		holding.emit()
