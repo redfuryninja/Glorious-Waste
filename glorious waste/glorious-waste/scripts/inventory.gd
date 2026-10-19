@@ -179,12 +179,18 @@ func label_update():
 	
 
 func _ready() -> void:
+	check_inventory()
 	show_inventory()
 	label_update()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func update():
+	check_inventory()
+	show_inventory()
+	label_update()
 
 
 func _on_user_inventory_update() -> void:

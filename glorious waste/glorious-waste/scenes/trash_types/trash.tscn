@@ -281,7 +281,7 @@ script = ExtResource("3_3ipmh")
 
 [node name="type" type="Node" parent="." unique_id=761370653]
 script = ExtResource("3_6el02")
-trash_type = 19
+trash_type = 9
 
 [node name="gas" type="Node" parent="." unique_id=255553651]
 script = ExtResource("5_54pjl")
@@ -294,6 +294,7 @@ script = ExtResource("7_gwsbu")
 
 [node name="heavy" type="Node" parent="." unique_id=504542935]
 script = ExtResource("8_boix2")
+weight = 10.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1257620162]
 collision_layer = 2

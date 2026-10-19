@@ -38,6 +38,8 @@ func update_stats():
 
 func _ready() -> void:
 	update_stats()
+	add_child(inventory)
+	inventory.hide()
 
 func damage():
 	if gloves > 0: gloves -= stabbed
@@ -73,39 +75,33 @@ func _physics_process(delta: float) -> void:
 		move()
 	if Input.is_action_just_pressed("inventory"):
 		lockInput = 1
-		add_child(inventory)
+		inventory.update()
+		inventory.show()
 		inventory.global_position.x = position.x + 150
 		inventory.global_position.y = position.y
 		
 	elif Input.is_action_just_pressed("escape"):
 		lockInput = 0
-		remove_child(inventory)
+		inventory.hide()
+		for key_value in globals.player_inventory:
+			if key_value != "hp" and  key_value != "mass" and key_value != "money" and key_value != "gloves" and key_value != "gas_mask" and key_value != "hazmat" and globals.player_inventory[key_value] > 0.0:
+				globals.damage["holding"] = true
+			else: globals.damage["holding"] = false
+			print(globals.damage["holding"])
+				
 	if Input.is_action_just_pressed("trigger"):
 		hp -= 1
 		globals.player_inventory["hp"] = hp
 		health.emit()
-		kg += 1
-		globals.player_inventory["mass"] = kg
-		weight.emit()
+		
 		spawn.emit(spawnCount, position.x, position.y)
 		spawnCount += 1
 		if spawnCount >= 5:
 			spawnCount = 0
-	if can_pickup == true and Input.is_action_just_pressed("interact"):
-		interact.emit()
+	if Input.is_action_just_pressed("interact"):
+		print("inventory")
 		inventory_update.emit()
-		print("hmwcawcciawcccw",globals.player_inventory["wood"])
-
-
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-		if body is waste:
-			can_pickup = true
-			
-			#if body.can_pickup:
-				#body._on_user_interact()
-
-
-func _on_area_2d_body_exited(body: Node2D) -> void:
-	can_pickup = false
+		weight.emit()
+		
+		
+	# if item in inventory does not equal 0 then holding = true

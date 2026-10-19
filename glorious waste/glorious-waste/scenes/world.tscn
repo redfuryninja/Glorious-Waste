@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://cub0ls74ibt38" path="res://assets/world/Tile Map.png" id="2_rwgxs"]
 [ext_resource type="Script" uid="uid://c22vhuyjjcx3b" path="res://scripts/stat_bar.gd" id="4_k0juu"]
 [ext_resource type="Script" uid="uid://c2hlpncjequry" path="res://scripts/trash_manager.gd" id="5_71j4m"]
-[ext_resource type="PackedScene" uid="uid://b4q2xpf83ksr5" path="res://scenes/inventory.tscn" id="7_i7141"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wyf3"]
 texture = ExtResource("2_rwgxs")
@@ -829,10 +828,6 @@ collision_animatable = true
 format = 2
 layer_0/tile_data = PackedInt32Array(327751, 0, 268435456, 327750, 65536, 268435456, 327749, 131072, 268435456, 327748, 196608, 268435456, 327747, 262144, 268435456, 393287, 0, 268435457, 393286, 65536, 268435457, 393285, 131072, 268435457, 393284, 196608, 268435457, 393283, 262144, 268435457, 458823, 0, 268435458, 458822, 65536, 268435458, 458821, 131072, 268435458, 458820, 196608, 268435458, 458819, 262144, 268435458, 524359, 0, 268435459, 524358, 65536, 268435459, 524357, 131072, 268435459, 524356, 196608, 268435459, 524355, 262144, 268435459, 786498, 393216, 3, 720962, 393216, 2, 655426, 393216, 1, 589890, 393216, 0, 786499, 458752, 3, 720963, 458752, 2, 655427, 458752, 1, 589891, 458752, 0, 786500, 524288, 3, 720964, 524288, 2, 655428, 524288, 1, 589892, 524288, 0, 786501, 589824, 3, 720965, 589824, 2, 655429, 589824, 1, 589893, 589824, 0, 786502, 655360, 3, 720966, 655360, 2, 655430, 655360, 1, 589894, 655360, 0, 786503, 720896, 3, 720967, 720896, 2, 655431, 720896, 1, 589895, 720896, 0)
 
-[node name="Inventory" parent="." unique_id=726757050 instance=ExtResource("7_i7141")]
-position = Vector2(-485, -554)
-
 [connection signal="health" from="User" to="User/Camera2D/CanvasLayer/HP" method="_on_user_health"]
-[connection signal="inventory_update" from="User" to="Inventory" method="_on_user_inventory_update"]
 [connection signal="spawn" from="User" to="Trash Manager" method="_on_user_spawn"]
 [connection signal="weight" from="User" to="User/Camera2D/CanvasLayer/Weight" method="_on_user_weight"]
