@@ -8,7 +8,7 @@ signal spawn(spawnCount, x, y)
 signal holding()
 signal inventory_update()
 signal interact()
-@export var speed = 300.0
+@export var speed = 400.0
 const JUMP_VELOCITY = -400.0
 var direction : Vector2
 var max_hp = 100
