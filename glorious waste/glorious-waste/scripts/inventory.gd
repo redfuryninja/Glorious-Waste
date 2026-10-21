@@ -74,6 +74,7 @@ var slot21 = false
 var slot22 = false
 var slot23 = false
 var slot24 = false
+
 func check_inventory():
 	if globals.player_inventory["hp"] >= 0.0: slot0 = true
 	if globals.player_inventory["mass"] >= 0.0: slot1 = true

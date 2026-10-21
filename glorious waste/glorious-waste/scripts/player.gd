@@ -30,10 +30,11 @@ var can_pickup : bool
 
 func update_stats():
 	globals.player_inventory["hp"] = hp
-	globals.player_inventory["weight"] = weight
+	globals.player_inventory["mass"] = kg
 	globals.player_inventory["money"] = money
 	globals.max_hp = max_hp
 	globals.max_kg = max_kg
+
 
 
 func _ready() -> void:
@@ -42,14 +43,19 @@ func _ready() -> void:
 	inventory.hide()
 
 func damage():
+	stabbed = globals.damage["edge"]
+	electrified = globals.damage["zap"]
+	gassed = globals.damage["gas"]
+	radiated = globals.damage["hazard"]
 	if gloves > 0: gloves -= stabbed
-	else: hp -= stabbed
+	else: globals.player_inventory["hp"] -= stabbed
 	if e_gloves > 0 : e_gloves -= electrified
-	else: hp -= electrified
+	else: globals.player_inventory["hp"] -= electrified
 	if gas_mask > 0: gas_mask -= gassed
-	else: hp -= gassed
+	else: globals.player_inventory["hp"] -= gassed
 	if hazmat > 0: hazmat -= radiated
-	else: hp -= radiated
+	else: globals.player_inventory["hp"] -= radiated
+	health.emit()
 func move():
 	direction.x = Input.get_axis("left", "right")
 	direction.y = Input.get_axis("up", "down")
@@ -73,6 +79,8 @@ func _physics_process(delta: float) -> void:
 	
 	if lockInput == 0:
 		move()
+		damage()
+		health.emit()
 	if Input.is_action_just_pressed("inventory"):
 		lockInput = 1
 		inventory.update()
@@ -90,10 +98,6 @@ func _physics_process(delta: float) -> void:
 			print(globals.damage["holding"])
 				
 	if Input.is_action_just_pressed("trigger"):
-		hp -= 1
-		globals.player_inventory["hp"] = hp
-		health.emit()
-		
 		spawn.emit(spawnCount, position.x, position.y)
 		spawnCount += 1
 		if spawnCount >= 5:
