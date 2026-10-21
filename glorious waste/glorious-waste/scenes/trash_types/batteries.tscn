@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b7p8nrv47a2hp"]
+
+[ext_resource type="PackedScene" uid="uid://c2kde2myuntvg" path="res://scenes/trash_types/trash.tscn" id="1_4mkne"]
+
+[node name="batteries" unique_id=168331026 instance=ExtResource("1_4mkne")]
+
+[node name="sprite" parent="." index="0" unique_id=830423187]
+animation = &"1"
+autoplay = "1"
+
+[node name="type" parent="." index="3" unique_id=761370653]
+trash_type = 1
+
+[node name="zap" parent="." index="6" unique_id=456172650]
+electrical = 0.01
+
+[node name="heavy" parent="." index="7" unique_id=504542935]
+weight = 1.0

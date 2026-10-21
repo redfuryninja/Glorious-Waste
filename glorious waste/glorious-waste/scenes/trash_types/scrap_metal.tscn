@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cutw7thrrc1fg"]
+
+[ext_resource type="PackedScene" uid="uid://c2kde2myuntvg" path="res://scenes/trash_types/trash.tscn" id="1_vml6j"]
+
+[node name="metal" unique_id=168331026 instance=ExtResource("1_vml6j")]
+position = Vector2(-1, 0)
+
+[node name="sprite" parent="." index="0" unique_id=830423187]
+animation = &"17"
+autoplay = "17"
+
+[node name="edge" parent="." index="2" unique_id=1096750437]
+sharp = 0.05
+
+[node name="type" parent="." index="3" unique_id=761370653]
+trash_type = 17

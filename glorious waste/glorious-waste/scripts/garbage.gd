@@ -1,10 +1,7 @@
 class_name waste
 extends StaticBody2D
 
-signal stab(sharp)
-signal fumes(noxious)
-signal shock(electric)
-signal radiation(radioactive)
+
 
 @export_category("properties")
 @export var trash_type: type
@@ -17,7 +14,7 @@ signal radiation(radioactive)
 var can_pickup : bool
 
 var garbage_type = ["appliances","batteries","cans","car_batteries","cardboard","electrical","food",
-"furniture","garden","general","glass","hazadous","medical","mixed_recycling","motor_oil","plastic",
+"furniture","garden","general","glass","hazardous","medical","mixed_recycling","motor_oil","plastic",
 "rubble","scrap_metal","textiles","wood"]
 
 

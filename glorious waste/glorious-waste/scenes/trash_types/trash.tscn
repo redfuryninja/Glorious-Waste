@@ -270,7 +270,7 @@ weight = NodePath("heavy")
 
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=830423187]
 sprite_frames = SubResource("SpriteFrames_67o6a")
-animation = &"19"
+animation = &"10"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=522386409]
 position = Vector2(-1, 0)
@@ -285,7 +285,6 @@ trash_type = 9
 
 [node name="gas" type="Node" parent="." unique_id=255553651]
 script = ExtResource("5_54pjl")
-noxious = 0.01
 
 [node name="hazard" type="Node" parent="." unique_id=1726729540]
 script = ExtResource("6_4884s")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cs6ptndhg2g5c"]
+
+[ext_resource type="PackedScene" uid="uid://c2kde2myuntvg" path="res://scenes/trash_types/trash.tscn" id="1_agsuu"]
+
+[node name="Hazard" unique_id=168331026 instance=ExtResource("1_agsuu")]
+
+[node name="sprite" parent="." index="0" unique_id=830423187]
+animation = &"11"
+autoplay = "11"
+
+[node name="type" parent="." index="3" unique_id=761370653]
+trash_type = 11
+
+[node name="hazard" parent="." index="5" unique_id=1726729540]
+radioavtive = 1.0
+
+[node name="heavy" parent="." index="7" unique_id=504542935]
+weight = 33.0

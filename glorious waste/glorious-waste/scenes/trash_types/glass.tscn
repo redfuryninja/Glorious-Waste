@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dx8v0n8w2fgiy"]
+
+[ext_resource type="PackedScene" uid="uid://c2kde2myuntvg" path="res://scenes/trash_types/trash.tscn" id="1_n483i"]
+
+[node name="glass" unique_id=168331026 instance=ExtResource("1_n483i")]
+
+[node name="sprite" parent="." index="0" unique_id=830423187]
+autoplay = "10"
+
+[node name="edge" parent="." index="2" unique_id=1096750437]
+sharp = 0.025
+
+[node name="type" parent="." index="3" unique_id=761370653]
+trash_type = 10
+
+[node name="heavy" parent="." index="7" unique_id=504542935]
+weight = 7.0

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b1ylunlix1hlu"]
+
+[ext_resource type="PackedScene" uid="uid://c2kde2myuntvg" path="res://scenes/trash_types/trash.tscn" id="1_64y2w"]
+
+[node name="Oil" unique_id=168331026 instance=ExtResource("1_64y2w")]
+
+[node name="sprite" parent="." index="0" unique_id=830423187]
+animation = &"14"
+autoplay = "14"
+
+[node name="type" parent="." index="3" unique_id=761370653]
+trash_type = 14
+
+[node name="heavy" parent="." index="7" unique_id=504542935]
+weight = 20.0

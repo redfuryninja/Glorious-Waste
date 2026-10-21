@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://boisx3rlfixgl"]
+
+[ext_resource type="PackedScene" uid="uid://c2kde2myuntvg" path="res://scenes/trash_types/trash.tscn" id="1_gbern"]
+
+[node name="garden" unique_id=168331026 instance=ExtResource("1_gbern")]
+
+[node name="sprite" parent="." index="0" unique_id=830423187]
+animation = &"8"
+autoplay = "8"
+
+[node name="type" parent="." index="3" unique_id=761370653]
+trash_type = 8
+
+[node name="gas" parent="." index="4" unique_id=255553651]
+noxious = 0.02
+
+[node name="heavy" parent="." index="7" unique_id=504542935]
+weight = 15.0

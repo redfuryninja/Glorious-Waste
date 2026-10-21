@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cec5pol5xnmbk"]
+
+[ext_resource type="PackedScene" uid="uid://c2kde2myuntvg" path="res://scenes/trash_types/trash.tscn" id="1_u4nnu"]
+
+[node name="textiles" unique_id=168331026 instance=ExtResource("1_u4nnu")]
+
+[node name="sprite" parent="." index="0" unique_id=830423187]
+animation = &"18"
+autoplay = "18"
+
+[node name="type" parent="." index="3" unique_id=761370653]
+trash_type = 18
+
+[node name="heavy" parent="." index="7" unique_id=504542935]
+weight = 5.0
