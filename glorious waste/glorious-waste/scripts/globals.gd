@@ -1,8 +1,8 @@
 extends Node
 
 
-var max_hp = 100.0
-var max_kg = 100.0
+var max_hp = 100
+var max_kg = 100
 
 
 var damage = {"holding": false, "edge": 0,"gas": 0,"hazard": 0,"zap": 0}

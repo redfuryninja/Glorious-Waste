@@ -12,9 +12,9 @@ func _process(delta: float) -> void:
 
 
 func _on_user_health() -> void:
-	text = "HP: " + str(globals.player_inventory["hp"]) + "/" + str(globals.max_hp)
+	text = "HP: " + str(int(globals.player_inventory["hp"])) + "/" + str(globals.max_hp)
 
 
 func _on_user_weight() -> void:
 	
-	text = "Weight: " + str(globals.damage["edge"]) + "/" + str(globals.max_kg)
+	text = "Weight: " + str(globals.player_inventory["mass"]) + "/" + str(globals.max_kg)

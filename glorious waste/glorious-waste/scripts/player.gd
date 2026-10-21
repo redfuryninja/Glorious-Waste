@@ -11,8 +11,8 @@ signal interact()
 @export var speed = 300.0
 const JUMP_VELOCITY = -400.0
 var direction : Vector2
-var max_hp = 100.0
-var max_kg = 100.0
+var max_hp = 100
+var max_kg = 100
 var hp = 100.0
 var kg = 0.0
 var money = 0.0
@@ -45,8 +45,8 @@ func _ready() -> void:
 func damage():
 	stabbed = globals.damage["edge"]
 	electrified = globals.damage["zap"]
-	gassed = globals.damage["gas"]
 	radiated = globals.damage["hazard"]
+	gassed = globals.damage["gas"]
 	if gloves > 0: gloves -= stabbed
 	else: globals.player_inventory["hp"] -= stabbed
 	if e_gloves > 0 : e_gloves -= electrified

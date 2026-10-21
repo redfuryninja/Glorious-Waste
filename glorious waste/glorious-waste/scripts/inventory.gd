@@ -155,7 +155,7 @@ func show_inventory():
 	else: appliances.hide()
 # Called when the node enters the scene tree for the first time.
 func label_update():
-	health.text =  str(globals.player_inventory["hp"])
+	health.text =  str(int(globals.player_inventory["hp"]))
 	carry.text = str(globals.player_inventory["mass"]) + "/" + str(globals.max_kg)
 	furnishing.text = "x" + str(globals.player_inventory["furniture"])
 	medicine.text = "x" + str(globals.player_inventory["medical"])

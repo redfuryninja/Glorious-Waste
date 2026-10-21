@@ -278,7 +278,6 @@ shape = SubResource("RectangleShape2D_67o6a")
 
 [node name="edge" type="Node" parent="." unique_id=1096750437]
 script = ExtResource("3_3ipmh")
-sharp = 0.01
 
 [node name="type" type="Node" parent="." unique_id=761370653]
 script = ExtResource("3_6el02")
@@ -286,6 +285,7 @@ trash_type = 9
 
 [node name="gas" type="Node" parent="." unique_id=255553651]
 script = ExtResource("5_54pjl")
+noxious = 0.01
 
 [node name="hazard" type="Node" parent="." unique_id=1726729540]
 script = ExtResource("6_4884s")
