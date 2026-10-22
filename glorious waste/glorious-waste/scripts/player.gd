@@ -79,7 +79,6 @@ func check_holding():
 			if key_value != "hp" and  key_value != "mass" and key_value != "money" and key_value != "gloves" and key_value != "gas_mask" and key_value != "hazmat" and globals.player_inventory[key_value] > 0.0:
 				globals.damage["holding"] = true
 			else: globals.damage["holding"] = false
-			print(globals.damage["holding"])
 				
 
 var inventory = INVENTORY.instantiate()
@@ -102,18 +101,13 @@ func _physics_process(delta: float) -> void:
 		lockInput = 0
 		inventory.hide()
 		check_holding()
-	if Input.is_action_just_pressed("trigger"):
-		spawn.emit(spawnCount, position.x, position.y)
-		spawnCount += 1
-		if spawnCount >= 5:
-			spawnCount = 0
+	#if Input.is_action_just_pressed("trigger"):
+		#spawn.emit(spawnCount, position.x, position.y)
+		#spawnCount += 1
+		#if spawnCount >= 100:
+			#spawnCount = 0
 	if Input.is_action_just_pressed("interact"):
-		print("inventory")
 		check_holding()
-		#weight.emit()
-		
-		
-	# if item in inventory does not equal 0 then holding = true
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:

@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cfpycxcjujt7b"]
+
+[ext_resource type="Script" uid="uid://bs3l13bmvca3h" path="res://scripts/menu.gd" id="1_yqeox"]
+
+[node name="Menu" type="Node2D" unique_id=1505174528]
+script = ExtResource("1_yqeox")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=430258706]
+
+[node name="bg" type="ColorRect" parent="CanvasLayer" unique_id=167604975]
+offset_left = -84.0
+offset_top = -67.0
+offset_right = 1609.0
+offset_bottom = 916.0
+color = Color(0, 0.56078434, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=581270713]
+offset_left = 9.0
+offset_top = -21.0
+offset_right = 1141.0
+offset_bottom = 191.0
+theme_override_constants/outline_size = 13
+theme_override_font_sizes/font_size = 155
+text = "Glorious Waste"
+
+[node name="play" type="Button" parent="CanvasLayer" unique_id=1086600888]
+texture_filter = 1
+offset_left = 410.0
+offset_top = 206.0
+offset_right = 902.0
+offset_bottom = 379.0
+theme_override_font_sizes/font_size = 120
+text = "play"
+
+[node name="quit" type="Button" parent="CanvasLayer" unique_id=571071969]
+offset_left = 412.0
+offset_top = 398.0
+offset_right = 902.0
+offset_bottom = 575.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 120
+text = "quit"
+
+[connection signal="button_up" from="CanvasLayer/play" to="." method="_on_play_button_up"]
+[connection signal="button_up" from="CanvasLayer/quit" to="." method="_on_quit_button_up"]

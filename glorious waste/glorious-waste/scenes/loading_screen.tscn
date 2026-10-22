@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bc3rxlskon2qs"]
+
+[ext_resource type="Script" uid="uid://clm3j7som26vo" path="res://scripts/loading_screen.gd" id="1_ep5rh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hprjd"]
+bg_color = Color(0, 0, 1, 1)
+
+[node name="LoadingScreen" type="CanvasLayer" unique_id=762883682]
+script = ExtResource("1_ep5rh")
+
+[node name="fade" type="Node2D" parent="." unique_id=2025533813]
+
+[node name="bg" type="ColorRect" parent="fade" unique_id=1242119532]
+offset_left = -277.0
+offset_top = -208.0
+offset_right = 1152.0
+offset_bottom = 642.0
+color = Color(0, 0.56078434, 0, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="fade" unique_id=2107566952]
+offset_left = 95.0
+offset_top = 336.0
+offset_right = 1060.0
+offset_bottom = 414.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_hprjd")
+step = 0.0
+
+[node name="Label" type="Label" parent="fade" unique_id=848359669]
+offset_right = 1132.0
+offset_bottom = 212.0
+theme_override_constants/outline_size = 13
+theme_override_font_sizes/font_size = 155
+text = "Glorious Waste"

@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="glorious waste"
-run/main_scene="uid://bgpr1yk1pvwn2"
+run/main_scene="uid://cfpycxcjujt7b"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 globals="*uid://crfn63cfmruck"
-TrashManager="*uid://c2hlpncjequry"
+LoadingSystem="*uid://bgayo8wkre40e"
 
 [display]
 

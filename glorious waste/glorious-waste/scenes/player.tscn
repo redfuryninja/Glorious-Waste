@@ -58,7 +58,7 @@ animations = [{
 size = Vector2(27, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfn05"]
-size = Vector2(30, 51)
+size = Vector2(30, 12)
 
 [node name="User" type="CharacterBody2D" unique_id=1610816074]
 script = ExtResource("1_g2els")
@@ -75,7 +75,7 @@ shape = SubResource("RectangleShape2D_67o6a")
 [node name="Area2D" type="Area2D" parent="." unique_id=409464778]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=398255088]
-position = Vector2(0, 0.5)
+position = Vector2(0, 20)
 shape = SubResource("RectangleShape2D_nfn05")
 debug_color = Color(0.96662074, 0, 0.4823736, 0.41960785)
 

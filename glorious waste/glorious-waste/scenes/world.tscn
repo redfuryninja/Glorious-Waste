@@ -6,26 +6,8 @@
 [ext_resource type="Script" uid="uid://c22vhuyjjcx3b" path="res://scripts/stat_bar.gd" id="4_k0juu"]
 [ext_resource type="Script" uid="uid://c2hlpncjequry" path="res://scripts/trash_manager.gd" id="5_71j4m"]
 [ext_resource type="Texture2D" uid="uid://cjjclakvippy8" path="res://assets/inventory/gold.png" id="6_qfnet"]
-[ext_resource type="PackedScene" uid="uid://bb4bqqh1jr6fd" path="res://scenes/trash_types/appliances.tscn" id="7_xgqkh"]
-[ext_resource type="PackedScene" uid="uid://b7p8nrv47a2hp" path="res://scenes/trash_types/batteries.tscn" id="8_munwf"]
-[ext_resource type="PackedScene" uid="uid://cx2xy18s5scg8" path="res://scenes/trash_types/cans.tscn" id="9_ts3gi"]
-[ext_resource type="PackedScene" uid="uid://dlesak0xocq1c" path="res://scenes/trash_types/cardboard.tscn" id="10_0nbtd"]
-[ext_resource type="PackedScene" uid="uid://dmp7go37dr76a" path="res://scenes/trash_types/car_batteries.tscn" id="11_37qwj"]
-[ext_resource type="PackedScene" uid="uid://c1vknnlenfjvo" path="res://scenes/trash_types/electrical.tscn" id="12_navra"]
-[ext_resource type="PackedScene" uid="uid://x0xsopo1gx4e" path="res://scenes/trash_types/food.tscn" id="13_luhhm"]
-[ext_resource type="PackedScene" uid="uid://btjv6ahaw1yv" path="res://scenes/trash_types/furniture.tscn" id="14_fh13f"]
-[ext_resource type="PackedScene" uid="uid://boisx3rlfixgl" path="res://scenes/trash_types/garden.tscn" id="15_rup4s"]
-[ext_resource type="PackedScene" uid="uid://dcvh187j4str0" path="res://scenes/trash_types/general.tscn" id="16_4kbfs"]
-[ext_resource type="PackedScene" uid="uid://dx8v0n8w2fgiy" path="res://scenes/trash_types/glass.tscn" id="17_f17e3"]
-[ext_resource type="PackedScene" uid="uid://cs6ptndhg2g5c" path="res://scenes/trash_types/hazard.tscn" id="18_x2olw"]
-[ext_resource type="PackedScene" uid="uid://cn5w3yiati0de" path="res://scenes/trash_types/medical.tscn" id="19_817gm"]
-[ext_resource type="PackedScene" uid="uid://dt7corijhj1ub" path="res://scenes/trash_types/mixed.tscn" id="20_ggc52"]
-[ext_resource type="PackedScene" uid="uid://b1ylunlix1hlu" path="res://scenes/trash_types/oil.tscn" id="21_l8ah6"]
-[ext_resource type="PackedScene" uid="uid://bboe45ujeej8a" path="res://scenes/trash_types/plastic.tscn" id="22_e75v4"]
-[ext_resource type="PackedScene" uid="uid://cutw7thrrc1fg" path="res://scenes/trash_types/scrap_metal.tscn" id="23_8u370"]
-[ext_resource type="PackedScene" uid="uid://cec5pol5xnmbk" path="res://scenes/trash_types/textiles.tscn" id="24_rga7q"]
-[ext_resource type="PackedScene" uid="uid://dax1ghbfyg4ro" path="res://scenes/trash_types/wood.tscn" id="25_6oujy"]
-[ext_resource type="PackedScene" uid="uid://bss74yinousq" path="res://scenes/trash_types/rubble.tscn" id="26_munwf"]
+[ext_resource type="Script" uid="uid://d3123h0h4bc33" path="res://scripts/test.gd" id="7_4mrxx"]
+[ext_resource type="Texture2D" uid="uid://1kt2tca8gjp0" path="res://assets/player/bin man sprites.png" id="7_i7141"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wyf3"]
 texture = ExtResource("2_rwgxs")
@@ -704,6 +686,9 @@ vertices = PackedVector2Array(1712.0781, 998.8125, 1715.75, 1030.0313, 1399, 103
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(15, 11, 14, 16, 17), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(17, 22, 23, 15), PackedInt32Array(24, 25, 17, 16, 26), PackedInt32Array(27, 28, 29, 30), PackedInt32Array(24, 31, 32, 25), PackedInt32Array(33, 34, 35, 36), PackedInt32Array(37, 38, 39, 40, 41), PackedInt32Array(42, 43, 44, 45), PackedInt32Array(46, 47, 48, 49), PackedInt32Array(46, 49, 50, 51), PackedInt32Array(52, 53, 54, 55), PackedInt32Array(26, 55, 54, 42), PackedInt32Array(26, 42, 45, 24), PackedInt32Array(56, 26, 16, 57), PackedInt32Array(58, 59, 60, 61), PackedInt32Array(62, 63, 61, 60, 64, 65), PackedInt32Array(66, 67, 68, 69), PackedInt32Array(70, 71, 72, 6), PackedInt32Array(73, 74, 75, 76), PackedInt32Array(77, 73, 76, 30), PackedInt32Array(78, 79, 80, 81), PackedInt32Array(78, 81, 62, 65), PackedInt32Array(82, 83, 84, 85), PackedInt32Array(86, 82, 85, 87), PackedInt32Array(88, 89, 90, 4), PackedInt32Array(91, 92, 93, 94), PackedInt32Array(41, 94, 93, 69, 68), PackedInt32Array(41, 68, 37), PackedInt32Array(95, 96, 97, 98), PackedInt32Array(64, 87, 85, 65), PackedInt32Array(99, 63, 62, 56, 57), PackedInt32Array(100, 101, 51, 102), PackedInt32Array(40, 102, 51, 50, 41), PackedInt32Array(103, 41, 50, 99, 57), PackedInt32Array(104, 105, 106, 107), PackedInt32Array(5, 103, 57, 77), PackedInt32Array(98, 33, 36), PackedInt32Array(4, 90, 3), PackedInt32Array(21, 20, 6, 5), PackedInt32Array(6, 72, 4), PackedInt32Array(107, 21, 5, 104), PackedInt32Array(10, 104, 5, 77), PackedInt32Array(7, 10, 77, 36), PackedInt32Array(98, 36, 77), PackedInt32Array(30, 95, 98), PackedInt32Array(30, 98, 77), PackedInt32Array(30, 76, 27)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-226, -65, 329, -64, 327, 464, 926, 463, 926, 300, 640, 301, 634, -94, 713, -96, 710, 240, 787, 242, 778, -97, 861, -96, 857, 237, 930, 237, 922, -96, 1003, -94, 1003, 236, 1066, 240, 1064, -101, 1148, -97, 1150, 240, 1215, 240, 1206, -101, 1295, -98, 1292, 301, 993, 308, 992, 466, 1388, 461, 1388, -49, 1725, -50, 1724, -3, 1441, 0, 1438, 60, 1727, 63, 1724, 113, 1435, 111, 1434, 173, 1717, 172, 1717, 218, 1430, 227, 1437, 286, 1722, 286, 1720, 328, 1432, 334, 1437, 399, 1724, 398, 1721, 442, 1437, 446, 1436, 539, 1720, 541, 1720, 582, 1437, 590, 1437, 658, 1719, 657, 1722, 696, 1441, 702, 1435, 769, 1722, 770, 1723, 816, 1437, 815, 1436, 873, 1722, 879, 1723, 927, 1442, 928, 1434, 983, 1721, 989, 1727, 1040, 1389, 1041, 1389, 547, 991, 560, 986, 727, 1290, 724, 1289, 1035, 1209, 1036, 1210, 793, 1145, 799, 1146, 1034, 1067, 1036, 1067, 794, 1006, 795, 1002, 1038, 920, 1033, 921, 788, 862, 795, 857, 1038, 777, 1037, 780, 795, 714, 796, 714, 1035, 631, 1032, 633, 716, 915, 716, 916, 546, 335, 556, 334, 1010, -230, 1010, -232, 906, 252, 911, 246, 602, 139, 603, 139, 795, -230, 796, -231, 136, 140, 142, 137, 331, 249, 329, 247, 29, -228, 28)])
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67o6a"]
+size = Vector2(27, 48)
+
 [node name="World" type="Node2D" unique_id=1936430564]
 
 [node name="bg" type="TileMap" parent="." unique_id=1014092957]
@@ -720,68 +705,6 @@ script = ExtResource("5_71j4m")
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=611707912]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_vjyn1")
-
-[node name="test trash" type="Node2D" parent="." unique_id=706704410]
-
-[node name="general" parent="test trash" unique_id=546256667 instance=ExtResource("16_4kbfs")]
-position = Vector2(402, 701)
-
-[node name="rubble" parent="test trash" unique_id=948145453 instance=ExtResource("26_munwf")]
-position = Vector2(854, 964)
-
-[node name="Appliances" parent="test trash" unique_id=168331026 instance=ExtResource("7_xgqkh")]
-position = Vector2(382, 104)
-
-[node name="batteries" parent="test trash" unique_id=911413660 instance=ExtResource("8_munwf")]
-position = Vector2(378, 206)
-
-[node name="cans" parent="test trash" unique_id=1310755483 instance=ExtResource("9_ts3gi")]
-position = Vector2(376, 261)
-
-[node name="electrical" parent="test trash" unique_id=1084991660 instance=ExtResource("12_navra")]
-position = Vector2(377, 449)
-
-[node name="food" parent="test trash" unique_id=1218631035 instance=ExtResource("13_luhhm")]
-position = Vector2(379, 514)
-
-[node name="furniture" parent="test trash" unique_id=1448110555 instance=ExtResource("14_fh13f")]
-position = Vector2(382, 585)
-
-[node name="garden" parent="test trash" unique_id=549535754 instance=ExtResource("15_rup4s")]
-position = Vector2(388, 649)
-
-[node name="glass" parent="test trash" unique_id=867008956 instance=ExtResource("17_f17e3")]
-position = Vector2(400, 770)
-
-[node name="Hazard" parent="test trash" unique_id=362596051 instance=ExtResource("18_x2olw")]
-position = Vector2(396, 839)
-
-[node name="medical" parent="test trash" unique_id=2083777997 instance=ExtResource("19_817gm")]
-position = Vector2(401, 903)
-
-[node name="mixed" parent="test trash" unique_id=826190909 instance=ExtResource("20_ggc52")]
-position = Vector2(398, 967)
-
-[node name="Oil" parent="test trash" unique_id=52771176 instance=ExtResource("21_l8ah6")]
-position = Vector2(472, 966)
-
-[node name="plastic" parent="test trash" unique_id=1953337837 instance=ExtResource("22_e75v4")]
-position = Vector2(550, 971)
-
-[node name="metal" parent="test trash" unique_id=949752519 instance=ExtResource("23_8u370")]
-position = Vector2(634, 974)
-
-[node name="textiles" parent="test trash" unique_id=1455726344 instance=ExtResource("24_rga7q")]
-position = Vector2(715, 975)
-
-[node name="wood" parent="test trash" unique_id=689983048 instance=ExtResource("25_6oujy")]
-position = Vector2(786, 969)
-
-[node name="cardboard" parent="test trash" unique_id=716702450 instance=ExtResource("10_0nbtd")]
-position = Vector2(376, 325)
-
-[node name="car_batteries" parent="test trash" unique_id=1258483224 instance=ExtResource("11_37qwj")]
-position = Vector2(376, 390)
 
 [node name="User" parent="." unique_id=1700704059 instance=ExtResource("1_nnsk1")]
 position = Vector2(284, 203)
@@ -835,6 +758,26 @@ offset_right = 97.0
 offset_bottom = 29.0
 theme_override_constants/outline_size = 6
 text = ": 0"
+
+[node name="boss man" type="CharacterBody2D" parent="." unique_id=1100003481]
+script = ExtResource("7_4mrxx")
+
+[node name="Sprite2D" type="Sprite2D" parent="boss man" unique_id=894223237]
+texture_filter = 1
+position = Vector2(-218, -24)
+texture = ExtResource("7_i7141")
+vframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boss man" unique_id=519888156]
+position = Vector2(-215.5, -20)
+shape = SubResource("RectangleShape2D_67o6a")
+
+[node name="Area2D" type="Area2D" parent="boss man" unique_id=1279328556]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boss man/Area2D" unique_id=1524461014]
+position = Vector2(-215.5, -20)
+shape = SubResource("RectangleShape2D_67o6a")
 
 [connection signal="health" from="User" to="User/Camera2D/CanvasLayer/HP" method="_on_user_health"]
 [connection signal="spawn" from="User" to="Trash Manager" method="_on_user_spawn"]

@@ -12,7 +12,7 @@ autoplay = "11"
 trash_type = 11
 
 [node name="hazard" parent="." index="5" unique_id=1726729540]
-radioavtive = 1.0
+radioavtive = 0.25
 
 [node name="heavy" parent="." index="7" unique_id=504542935]
 weight = 33.0

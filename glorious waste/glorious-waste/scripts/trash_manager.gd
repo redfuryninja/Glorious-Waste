@@ -27,9 +27,7 @@ var bin = []
 var tossed = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for i in range (5):
-		var newTrash: waste = TRASH.instantiate()
-		
+	for i in range (500):
 		var appliance: waste = APPLIANCES.instantiate()
 		var battery: waste = BATTERIES.instantiate()
 		var cans: waste = CANS.instantiate()
@@ -53,14 +51,27 @@ func _ready() -> void:
 		var waste_list = {0:appliance, 1:battery, 2: cans,3: cardboard,4: car_battery,5: electric,6: food,7: furniture,8: garden,9: general,10: glass,11: hazardous,12: medical,13: mixed
 		,14: oil,15: plastic,16: rubble,17: scrap_metal,18: textiles,19: wood}
 		var random = randi() % 20
-		if random == 0: 
-			bin.append(waste_list[i])
-			add_child(waste_list[i])
+		var x = randi() % 300
+		var y = randi() % 600
+		for n in range (20):
+			if random == n: 
+				bin.append(waste_list[n])
+				add_child(waste_list[n])
+				bin[i].global_position.x += x
+				bin[i].global_position.y += y
+		
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("interact"):
+		var count = 0
+		for i in range(bin.size()):
+			if is_instance_valid(bin[i]) == true: count +=1
+		if count == 0: 
+			globals.clear = true
+		else:
+			globals.clear = false
 
 
 
