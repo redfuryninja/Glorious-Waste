@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 		globals.damage["gas"] += noxious.noxious
 		globals.damage["hazard"] += radioactive.radioavtive
 		globals.damage["zap"] += electric.electrical
-		globals.damage["holding"] == true
+		globals.damage["holding"] = true
 		queue_free()
 
 

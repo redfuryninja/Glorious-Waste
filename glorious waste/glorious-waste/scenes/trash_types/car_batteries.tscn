@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dmp7go37dr76a"]
 
-[ext_resource type="PackedScene" uid="uid://c2kde2myuntvg" path="res://scenes/trash_types/trash.tscn" id="1_dtcld"]
+[ext_resource type="PackedScene" uid="uid://c2kde2myuntvg" path="res://scenes/trash.tscn" id="1_dtcld"]
 
-[node name="Trash" unique_id=168331026 instance=ExtResource("1_dtcld")]
+[node name="car_batteries" unique_id=168331026 instance=ExtResource("1_dtcld")]
 
 [node name="sprite" parent="." index="0" unique_id=830423187]
 animation = &"3"

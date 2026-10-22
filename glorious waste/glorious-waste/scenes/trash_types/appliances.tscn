@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bb4bqqh1jr6fd"]
 
-[ext_resource type="PackedScene" uid="uid://c2kde2myuntvg" path="res://scenes/trash_types/trash.tscn" id="1_ia1j8"]
+[ext_resource type="PackedScene" uid="uid://c2kde2myuntvg" path="res://scenes/trash.tscn" id="1_ia1j8"]
 
 [node name="Appliances" unique_id=168331026 instance=ExtResource("1_ia1j8")]
 

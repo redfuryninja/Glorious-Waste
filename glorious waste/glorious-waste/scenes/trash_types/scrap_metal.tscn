@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cutw7thrrc1fg"]
 
-[ext_resource type="PackedScene" uid="uid://c2kde2myuntvg" path="res://scenes/trash_types/trash.tscn" id="1_vml6j"]
+[ext_resource type="PackedScene" uid="uid://c2kde2myuntvg" path="res://scenes/trash.tscn" id="1_vml6j"]
 
 [node name="metal" unique_id=168331026 instance=ExtResource("1_vml6j")]
 position = Vector2(-1, 0)

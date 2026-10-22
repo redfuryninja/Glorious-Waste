@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://btjv6ahaw1yv"]
 
-[ext_resource type="PackedScene" uid="uid://c2kde2myuntvg" path="res://scenes/trash_types/trash.tscn" id="1_seb68"]
+[ext_resource type="PackedScene" uid="uid://c2kde2myuntvg" path="res://scenes/trash.tscn" id="1_seb68"]
 
 [node name="furniture" unique_id=168331026 instance=ExtResource("1_seb68")]
 

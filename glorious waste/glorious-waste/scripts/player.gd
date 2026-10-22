@@ -74,12 +74,22 @@ func move():
 		velocity = velocity.move_toward(Vector2.ZERO, speed)
 	move_and_slide()
 
+func check_holding():
+	for key_value in globals.player_inventory:
+			if key_value != "hp" and  key_value != "mass" and key_value != "money" and key_value != "gloves" and key_value != "gas_mask" and key_value != "hazmat" and globals.player_inventory[key_value] > 0.0:
+				globals.damage["holding"] = true
+			else: globals.damage["holding"] = false
+			print(globals.damage["holding"])
+				
+
 var inventory = INVENTORY.instantiate()
+
 func _physics_process(delta: float) -> void:
 	
 	if lockInput == 0:
 		move()
-		damage()
+		if globals.damage["holding"] == true:
+			damage()
 		health.emit()
 	if Input.is_action_just_pressed("inventory"):
 		lockInput = 1
@@ -91,12 +101,7 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_just_pressed("escape"):
 		lockInput = 0
 		inventory.hide()
-		for key_value in globals.player_inventory:
-			if key_value != "hp" and  key_value != "mass" and key_value != "money" and key_value != "gloves" and key_value != "gas_mask" and key_value != "hazmat" and globals.player_inventory[key_value] > 0.0:
-				globals.damage["holding"] = true
-			else: globals.damage["holding"] = false
-			print(globals.damage["holding"])
-				
+		check_holding()
 	if Input.is_action_just_pressed("trigger"):
 		spawn.emit(spawnCount, position.x, position.y)
 		spawnCount += 1
@@ -104,8 +109,12 @@ func _physics_process(delta: float) -> void:
 			spawnCount = 0
 	if Input.is_action_just_pressed("interact"):
 		print("inventory")
-		inventory_update.emit()
-		weight.emit()
+		check_holding()
+		#weight.emit()
 		
 		
 	# if item in inventory does not equal 0 then holding = true
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	weight.emit()
