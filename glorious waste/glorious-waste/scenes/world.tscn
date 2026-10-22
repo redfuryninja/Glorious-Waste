@@ -706,6 +706,26 @@ script = ExtResource("5_71j4m")
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_vjyn1")
 
+[node name="boss man" type="CharacterBody2D" parent="." unique_id=1100003481]
+script = ExtResource("7_4mrxx")
+
+[node name="Sprite2D" type="Sprite2D" parent="boss man" unique_id=894223237]
+texture_filter = 1
+position = Vector2(-218, -24)
+texture = ExtResource("7_i7141")
+vframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boss man" unique_id=519888156]
+position = Vector2(-215.5, -20)
+shape = SubResource("RectangleShape2D_67o6a")
+
+[node name="Area2D" type="Area2D" parent="boss man" unique_id=1279328556]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boss man/Area2D" unique_id=1524461014]
+position = Vector2(-215.5, -20)
+shape = SubResource("RectangleShape2D_67o6a")
+
 [node name="User" parent="." unique_id=1700704059 instance=ExtResource("1_nnsk1")]
 position = Vector2(284, 203)
 
@@ -758,26 +778,6 @@ offset_right = 97.0
 offset_bottom = 29.0
 theme_override_constants/outline_size = 6
 text = ": 0"
-
-[node name="boss man" type="CharacterBody2D" parent="." unique_id=1100003481]
-script = ExtResource("7_4mrxx")
-
-[node name="Sprite2D" type="Sprite2D" parent="boss man" unique_id=894223237]
-texture_filter = 1
-position = Vector2(-218, -24)
-texture = ExtResource("7_i7141")
-vframes = 4
-frame = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boss man" unique_id=519888156]
-position = Vector2(-215.5, -20)
-shape = SubResource("RectangleShape2D_67o6a")
-
-[node name="Area2D" type="Area2D" parent="boss man" unique_id=1279328556]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boss man/Area2D" unique_id=1524461014]
-position = Vector2(-215.5, -20)
-shape = SubResource("RectangleShape2D_67o6a")
 
 [connection signal="health" from="User" to="User/Camera2D/CanvasLayer/HP" method="_on_user_health"]
 [connection signal="spawn" from="User" to="Trash Manager" method="_on_user_spawn"]
