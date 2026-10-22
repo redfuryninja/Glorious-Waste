@@ -28,6 +28,12 @@ var gassed = 0.0
 var radiated = 0.0
 var can_pickup : bool
 
+var g = "g_"
+var eg = "eg_"
+var ng = "ng_"
+var gm = "gm_"
+var hm = "hm_"
+
 func update_stats():
 	globals.player_inventory["hp"] = hp
 	globals.player_inventory["mass"] = kg
@@ -47,13 +53,13 @@ func damage():
 	electrified = globals.damage["zap"]
 	radiated = globals.damage["hazard"]
 	gassed = globals.damage["gas"]
-	if gloves > 0: gloves -= stabbed
+	if gloves > 0: globals.player_inventory["gloves"]  -= stabbed
 	else: globals.player_inventory["hp"] -= stabbed
-	if e_gloves > 0 : e_gloves -= electrified
+	if e_gloves > 0 : globals.player_inventory["e_gloves"] -= electrified
 	else: globals.player_inventory["hp"] -= electrified
-	if gas_mask > 0: gas_mask -= gassed
+	if gas_mask > 0: globals.player_inventory["gas_mask"]  -= gassed
 	else: globals.player_inventory["hp"] -= gassed
-	if hazmat > 0: hazmat -= radiated
+	if hazmat > 0: globals.player_inventory["hazmat"]  -= radiated
 	else: globals.player_inventory["hp"] -= radiated
 	health.emit()
 func move():
@@ -62,13 +68,13 @@ func move():
 	direction = direction.normalized()
 	if direction:
 		if Input.is_action_pressed("up"):
-			if sprite.animation != "up" : sprite.animation = "up"
+			if sprite.animation != "ng_up" : sprite.animation = "ng_up"
 		elif Input.is_action_pressed("down"):
-			if sprite.animation != "down" : sprite.animation = "down"
+			if sprite.animation != "ng_down" : sprite.animation = "ng_down"
 		elif Input.is_action_pressed("left"):
-			if sprite.animation != "left" : sprite.animation = "left"
+			if sprite.animation != "ng_left" : sprite.animation = "ng_left"
 		elif Input.is_action_pressed("right"):
-			if sprite.animation != "right" : sprite.animation = "right"
+			if sprite.animation != "ng_right" : sprite.animation = "ng_right"
 		velocity = direction * speed
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, speed)

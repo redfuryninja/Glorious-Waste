@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://5n4gk8yfubpq"]
+
+[ext_resource type="Texture2D" uid="uid://t0n25vby5vyo" path="res://assets/inventory/shop inventory.png" id="1_uj65v"]
+
+[node name="Shop menu" type="Control" unique_id=1045919783]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=631770239]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_uj65v")
+
+[node name="gloves" type="Button" parent="TextureRect" unique_id=814813373]
+layout_mode = 0
+offset_right = 47.0
+offset_bottom = 47.0
+
+[node name="e_gloves" type="Button" parent="TextureRect" unique_id=202525902]
+layout_mode = 0
+offset_left = 46.0
+offset_right = 93.0
+offset_bottom = 47.0
+
+[node name="sell_gold" type="Button" parent="TextureRect" unique_id=102375107]
+layout_mode = 0
+offset_left = 92.0
+offset_right = 139.0
+offset_bottom = 47.0
+
+[node name="gas_mask" type="Button" parent="TextureRect" unique_id=1847292846]
+layout_mode = 0
+offset_top = 46.0
+offset_right = 47.0
+offset_bottom = 93.0
+
+[node name="hp_up" type="Button" parent="TextureRect" unique_id=1706029285]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 46.0
+offset_right = 93.0
+offset_bottom = 93.0
+
+[node name="bandages" type="Button" parent="TextureRect" unique_id=1815154721]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 46.0
+offset_right = 139.0
+offset_bottom = 93.0
+
+[node name="hazamat_suit" type="Button" parent="TextureRect" unique_id=1803698313]
+layout_mode = 0
+offset_top = 92.0
+offset_right = 47.0
+offset_bottom = 139.0
+
+[node name="weight_up" type="Button" parent="TextureRect" unique_id=712344175]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 92.0
+offset_right = 93.0
+offset_bottom = 139.0
+
+[node name="next_day" type="Button" parent="TextureRect" unique_id=1984013108]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 92.0
+offset_right = 139.0
+offset_bottom = 139.0

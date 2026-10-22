@@ -16,6 +16,5 @@ func _on_play_button_up() -> void:
 	globals.reset()
 	LoadingSystem.load_scene(level_to_load)
 
-
 func _on_quit_button_up() -> void:
 	get_tree().quit()
