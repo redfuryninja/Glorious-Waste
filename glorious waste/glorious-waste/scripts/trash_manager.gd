@@ -60,7 +60,7 @@ func _ready() -> void:
 				bin[i].global_position.x += x
 				bin[i].global_position.y += y
 		
-	
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://lbe2404fw5j8" path="res://scripts/inventory.gd" id="1_hj2ta"]
 [ext_resource type="Texture2D" uid="uid://p75w3u6vdeow" path="res://assets/inventory/inventory sprites no lines.png" id="1_qw0r6"]
+[ext_resource type="Texture2D" uid="uid://btwll2ne7wq51" path="res://assets/inventory/shop inventory sprites.png" id="3_ty45s"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qw0r6"]
 load_path = "res://.godot/imported/inventory colour.png-c5e17229bef8341c85e8f00d84315f12.ctex"
@@ -36,6 +37,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kq8a"]
+atlas = ExtResource("3_ty45s")
+region = Rect2(46, 0, 46, 46)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_53g1v"]
 atlas = ExtResource("1_qw0r6")
 region = Rect2(92, 0, 46, 46)
@@ -44,10 +49,18 @@ region = Rect2(92, 0, 46, 46)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_5kq8a")
+}],
+"loop": 1,
+"name": &"e_gloves",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_53g1v")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"gloves",
 "speed": 5.0
 }]
 
@@ -422,18 +435,63 @@ horizontal_alignment = 1
 
 [node name="Gloves" type="AnimatedSprite2D" parent="InventoryColour" unique_id=301101325]
 texture_filter = 1
-position = Vector2(-1, -89)
+position = Vector2(-1, -92)
 sprite_frames = SubResource("SpriteFrames_qcgcn")
+animation = &"gloves"
+
+[node name="glove" type="Label" parent="InventoryColour/Gloves" unique_id=443312353]
+offset_left = -22.0
+offset_top = -25.0
+offset_right = 23.0
+offset_bottom = -2.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "100"
+horizontal_alignment = 1
+
+[node name="e_glove" type="Label" parent="InventoryColour/Gloves" unique_id=625796469]
+offset_left = -22.0
+offset_top = 8.0
+offset_right = 23.0
+offset_bottom = 31.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "100"
+horizontal_alignment = 1
 
 [node name="GasMask" type="AnimatedSprite2D" parent="InventoryColour" unique_id=119987831]
 texture_filter = 1
 position = Vector2(47, -93)
 sprite_frames = SubResource("SpriteFrames_6mhoj")
 
+[node name="mask" type="Label" parent="InventoryColour/GasMask" unique_id=1025309204]
+offset_left = -23.0
+offset_top = -4.0
+offset_right = 22.0
+offset_bottom = 19.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "100"
+horizontal_alignment = 1
+
 [node name="Hazmat" type="AnimatedSprite2D" parent="InventoryColour" unique_id=2015307061]
 texture_filter = 1
 position = Vector2(92, -91)
 sprite_frames = SubResource("SpriteFrames_dckcs")
+
+[node name="suit" type="Label" parent="InventoryColour/Hazmat" unique_id=1546621561]
+offset_left = -21.0
+offset_top = -11.0
+offset_right = 24.0
+offset_bottom = 12.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 11
+text = "100"
+horizontal_alignment = 1
 
 [node name="Furniture" type="AnimatedSprite2D" parent="InventoryColour" unique_id=1981634411]
 texture_filter = 1

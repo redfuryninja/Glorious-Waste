@@ -6,7 +6,7 @@ extends StaticBody2D
 @export_category("properties")
 @export var trash_type: type
 @export var sharp: edge
-@export var noxious: gas
+@export var gasses: gas
 @export var radioactive: hazard
 @export var electric: zap
 @export var weight: heavy
@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 		globals.player_inventory[garbage_type[trash_type.trash_type]] += 1
 		globals.player_inventory["mass"] += weight.weight
 		globals.damage["edge"] += sharp.sharp
-		globals.damage["gas"] += noxious.noxious
+		globals.damage["gas"] += gasses.noxious
 		globals.damage["hazard"] += radioactive.radioavtive
 		globals.damage["zap"] += electric.electrical
 		globals.damage["holding"] = true

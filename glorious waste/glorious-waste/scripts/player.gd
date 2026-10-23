@@ -33,32 +33,46 @@ var eg = "eg_"
 var ng = "ng_"
 var gm = "gm_"
 var hm = "hm_"
-var sprite_used : String
+var sprite_used = "ng_"
+
+var inventory = INVENTORY.instantiate()
+
+
 func sprite_check():
 	if Input.is_action_just_pressed("gloves"):
 		if globals.player_inventory["gloves"] > 0:
-			gloves = true
-	elif Input.is_action_just_pressed("e_gloves"):
-		if globals.player_inventory["e_gloves"] > 0:
-			e_gloves = true
+			if gloves == true: gloves = false
+			else: gloves = true
+		if globals.player_inventory["e_gloves"] > 0.0:
+			if e_gloves == true: e_gloves = false
+			else: e_gloves = true
 	elif Input.is_action_just_pressed("gas_mask"):
 		if globals.player_inventory["gas_mask"] > 0:
-			gas_mask = true
+			if gas_mask == true: gas_mask = false
+			else: gas_mask = true
 	elif Input.is_action_just_pressed("hazmat_suit"):
 		if globals.player_inventory["hazmat"] > 0:
-			hazmat = true
-			
+			if hazmat == true: hazmat = false
+			else: hazmat = true
+
+	if globals.player_inventory["gloves"] <= 0: gloves = false
+	if globals.player_inventory["e_gloves"] <= 0: e_gloves = false
+	if globals.player_inventory["gas_mask"] <= 0: gas_mask = false
+	if globals.player_inventory["hazmat"] <= 0: hazmat = false
+	
 	
 	if hazmat == true:
 		sprite_used = hm
-	else:
-		if gas_mask == true:
+	elif gas_mask == true:
 			if e_gloves == true:sprite_used = gm+eg
-			elif gloves == true:sprite_used = gm + g
+			elif gloves == true:sprite_used = gm+g
 			else: sprite_used = gm
-		else:
-			if e_gloves == true: sprite_used = eg
-			elif gloves == true: sprite_used = g
+	elif e_gloves == true: 
+		sprite_used = eg 
+		print("check")
+	elif gloves == true: sprite_used = g
+	else: sprite_used = ng
+
 
 func update_stats():
 	globals.player_inventory["hp"] = hp
@@ -79,13 +93,13 @@ func damage():
 	electrified = globals.damage["zap"]
 	radiated = globals.damage["hazard"]
 	gassed = globals.damage["gas"]
-	if gloves > 0: globals.player_inventory["gloves"]  -= stabbed
+	if gloves == true and globals.player_inventory["gloves"] > 0: globals.player_inventory["gloves"]  -= stabbed
 	else: globals.player_inventory["hp"] -= stabbed
-	if e_gloves > 0 : globals.player_inventory["e_gloves"] -= electrified
+	if e_gloves == true and globals.player_inventory["e_gloves"] > 0 : globals.player_inventory["e_gloves"] -= electrified
 	else: globals.player_inventory["hp"] -= electrified
-	if gas_mask > 0: globals.player_inventory["gas_mask"]  -= gassed
+	if gas_mask == true and globals.player_inventory["gas_mask"] > 0: globals.player_inventory["gas_mask"]  -= gassed
 	else: globals.player_inventory["hp"] -= gassed
-	if hazmat > 0: globals.player_inventory["hazmat"]  -= radiated
+	if hazmat == true and globals.player_inventory["hazmat"] > 0: globals.player_inventory["hazmat"]  -= radiated
 	else: globals.player_inventory["hp"] -= radiated
 	health.emit()
 func move():
@@ -94,13 +108,13 @@ func move():
 	direction = direction.normalized()
 	if direction:
 		if Input.is_action_pressed("up"):
-			if sprite.animation != "ng_up" : sprite.animation = "ng_up"
+			if sprite.animation != sprite_used + "up" : sprite.animation = sprite_used +  "up"
 		elif Input.is_action_pressed("down"):
-			if sprite.animation != "ng_down" : sprite.animation = "ng_down"
+			if sprite.animation != sprite_used + "down" : sprite.animation = sprite_used + "down"
 		elif Input.is_action_pressed("left"):
-			if sprite.animation != "ng_left" : sprite.animation = "ng_left"
+			if sprite.animation != sprite_used + "left" : sprite.animation = sprite_used + "left"
 		elif Input.is_action_pressed("right"):
-			if sprite.animation != "ng_right" : sprite.animation = "ng_right"
+			if sprite.animation != sprite_used + "right" : sprite.animation = sprite_used + "right"
 		velocity = direction * speed
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, speed)
@@ -108,17 +122,20 @@ func move():
 
 func check_holding():
 	for key_value in globals.player_inventory:
-			if key_value != "hp" and  key_value != "mass" and key_value != "money" and key_value != "gloves" and key_value != "gas_mask" and key_value != "hazmat" and globals.player_inventory[key_value] > 0.0:
-				globals.damage["holding"] = true
+			if key_value != "hp" and  key_value != "mass" and key_value != "money" and key_value != "gloves" and key_value != "e_gloves" and key_value != "gas_mask" and key_value != "hazmat":
+				if globals.player_inventory[key_value] > 0.0:
+					globals.damage["holding"] = true
 			else: globals.damage["holding"] = false
 				
+			print(key_value, ": ", globals.damage["holding"])
 
-var inventory = INVENTORY.instantiate()
+
 
 func _physics_process(delta: float) -> void:
-	
+	sprite_check()
 	if lockInput == 0:
 		move()
+		check_holding()
 		if globals.damage["holding"] == true:
 			damage()
 		health.emit()
@@ -128,7 +145,6 @@ func _physics_process(delta: float) -> void:
 		inventory.show()
 		inventory.global_position.x = position.x + 150
 		inventory.global_position.y = position.y
-		
 	elif Input.is_action_just_pressed("escape"):
 		lockInput = 0
 		inventory.hide()

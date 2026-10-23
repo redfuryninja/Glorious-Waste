@@ -47,6 +47,10 @@ extends Node2D
 @onready var mixed: Label = $"InventoryColour/Mixed Recycling/mixed"
 @onready var oil: Label = $"InventoryColour/Motor Oil/oil"
 @onready var appliance: Label = $InventoryColour/Appliances/appliance
+@onready var glove: Label = $InventoryColour/Gloves/glove
+@onready var e_glove: Label = $InventoryColour/Gloves/e_glove
+@onready var mask: Label = $InventoryColour/GasMask/mask
+@onready var suit: Label = $InventoryColour/Hazmat/suit
 
 
 var slot0 = true
@@ -107,7 +111,11 @@ func show_inventory():
 	else: hp.hide()
 	if slot1 == true: weight.show()
 	else: weight.hide()
-	if slot2 == true: gloves.show()
+	if slot2 == true: 
+		if globals.e_gloves == true:
+			gloves.animation = "e_gloves"
+		else: gloves.animation = "gloves"
+		gloves.show()
 	else: gloves.hide()
 	if slot3 == true: gas_mask.show()
 	else: gas_mask.hide()
@@ -157,6 +165,10 @@ func show_inventory():
 func label_update():
 	health.text =  str(int(globals.player_inventory["hp"]))
 	carry.text = str(globals.player_inventory["mass"]) + "/" + str(globals.max_kg)
+	glove.text = str(int(globals.player_inventory["gloves"]))
+	e_glove.text = str(int(globals.player_inventory["e_gloves"]))
+	mask.text = str(int(globals.player_inventory["gas_mask"]))
+	suit.text = str(int(globals.player_inventory["hazmat"]))
 	furnishing.text = "x" + str(globals.player_inventory["furniture"])
 	medicine.text = "x" + str(globals.player_inventory["medical"])
 	metal.text = "x" + str(globals.player_inventory["scrap_metal"])

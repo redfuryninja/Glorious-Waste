@@ -258,12 +258,12 @@ size = Vector2(46, 46)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfn05"]
 size = Vector2(46, 46)
 
-[node name="Trash" type="StaticBody2D" unique_id=168331026 node_paths=PackedStringArray("trash_type", "sharp", "noxious", "radioactive", "electric", "weight")]
+[node name="Trash" type="StaticBody2D" unique_id=168331026 node_paths=PackedStringArray("trash_type", "sharp", "gasses", "radioactive", "electric", "weight")]
 texture_filter = 1
 script = ExtResource("1_vyux7")
 trash_type = NodePath("type")
 sharp = NodePath("edge")
-noxious = NodePath("gas")
+gasses = NodePath("gas")
 radioactive = NodePath("hazard")
 electric = NodePath("zap")
 weight = NodePath("heavy")
