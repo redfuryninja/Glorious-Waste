@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b21a6olucaqw6"]
+
+[ext_resource type="Script" uid="uid://gdmv18411q13" path="res://items/item.gd" id="2_cd4ji"]
+
+[node name="Item" type="Sprite2D" unique_id=712053383]
+position = Vector2(4, 2)
+script = ExtResource("2_cd4ji")
