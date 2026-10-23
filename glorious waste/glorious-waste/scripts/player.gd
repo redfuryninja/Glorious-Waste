@@ -18,10 +18,10 @@ var kg = 0.0
 var money = 0.0
 var spawnCount = 0
 var lockInput = 0
-var gloves = 0.0
-var e_gloves = 0.0
-var gas_mask = 0.0
-var hazmat = 0.0
+var gloves = false
+var e_gloves = false
+var gas_mask = false
+var hazmat = false
 var stabbed = 0.0
 var electrified = 0.0
 var gassed = 0.0
@@ -33,6 +33,32 @@ var eg = "eg_"
 var ng = "ng_"
 var gm = "gm_"
 var hm = "hm_"
+var sprite_used : String
+func sprite_check():
+	if Input.is_action_just_pressed("gloves"):
+		if globals.player_inventory["gloves"] > 0:
+			gloves = true
+	elif Input.is_action_just_pressed("e_gloves"):
+		if globals.player_inventory["e_gloves"] > 0:
+			e_gloves = true
+	elif Input.is_action_just_pressed("gas_mask"):
+		if globals.player_inventory["gas_mask"] > 0:
+			gas_mask = true
+	elif Input.is_action_just_pressed("hazmat_suit"):
+		if globals.player_inventory["hazmat"] > 0:
+			hazmat = true
+			
+	
+	if hazmat == true:
+		sprite_used = hm
+	else:
+		if gas_mask == true:
+			if e_gloves == true:sprite_used = gm+eg
+			elif gloves == true:sprite_used = gm + g
+			else: sprite_used = gm
+		else:
+			if e_gloves == true: sprite_used = eg
+			elif gloves == true: sprite_used = g
 
 func update_stats():
 	globals.player_inventory["hp"] = hp
