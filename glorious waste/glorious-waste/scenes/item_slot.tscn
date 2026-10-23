@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://i7eagvdvxsyh"]
+
+[ext_resource type="Texture2D" uid="uid://p75w3u6vdeow" path="res://assets/inventory/inventory sprites no lines.png" id="1_567tv"]
+
+[node name="ItemSlot" type="MarginContainer" unique_id=2047241377]
+
+[node name="Panel" type="Panel" parent="." unique_id=1553089713]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Panel" unique_id=836905730]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/Control" unique_id=574985707]
+position = Vector2(25, 21)
+texture = ExtResource("1_567tv")
+hframes = 5
+vframes = 5
+frame = 8
