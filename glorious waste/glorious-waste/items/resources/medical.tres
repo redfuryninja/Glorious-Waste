@@ -1,7 +1,10 @@
 [gd_resource type="Resource" script_class="item_resource" format=3 uid="uid://djq1rg84g22l7"]
 
 [ext_resource type="Script" uid="uid://bfi5tkirpnoa3" path="res://items/item_resource.gd" id="1_nwgx3"]
+[ext_resource type="Texture2D" uid="uid://3bj1xoemml0a" path="res://assets/individual_sprites/tile006.png" id="1_q8neb"]
 
 [resource]
 script = ExtResource("1_nwgx3")
+item_name = "medical"
+item_texture = ExtResource("1_q8neb")
 metadata/_custom_type_script = "uid://bfi5tkirpnoa3"

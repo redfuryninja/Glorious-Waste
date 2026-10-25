@@ -8,26 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cjjclakvippy8" path="res://assets/inventory/gold.png" id="6_qfnet"]
 [ext_resource type="Script" uid="uid://d3123h0h4bc33" path="res://scripts/test.gd" id="7_4mrxx"]
 [ext_resource type="Texture2D" uid="uid://1kt2tca8gjp0" path="res://assets/player/bin man sprites.png" id="7_i7141"]
-[ext_resource type="PackedScene" uid="uid://bb4bqqh1jr6fd" path="res://scenes/trash_types/appliances.tscn" id="9_0nbtd"]
-[ext_resource type="PackedScene" uid="uid://b7p8nrv47a2hp" path="res://scenes/trash_types/batteries.tscn" id="10_37qwj"]
-[ext_resource type="PackedScene" uid="uid://cx2xy18s5scg8" path="res://scenes/trash_types/cans.tscn" id="11_navra"]
-[ext_resource type="PackedScene" uid="uid://dlesak0xocq1c" path="res://scenes/trash_types/cardboard.tscn" id="12_luhhm"]
-[ext_resource type="PackedScene" uid="uid://dmp7go37dr76a" path="res://scenes/trash_types/car_batteries.tscn" id="13_fh13f"]
-[ext_resource type="PackedScene" uid="uid://c1vknnlenfjvo" path="res://scenes/trash_types/electrical.tscn" id="14_rup4s"]
-[ext_resource type="PackedScene" uid="uid://x0xsopo1gx4e" path="res://scenes/trash_types/food.tscn" id="15_4kbfs"]
-[ext_resource type="PackedScene" uid="uid://btjv6ahaw1yv" path="res://scenes/trash_types/furniture.tscn" id="16_f17e3"]
-[ext_resource type="PackedScene" uid="uid://boisx3rlfixgl" path="res://scenes/trash_types/garden.tscn" id="17_x2olw"]
-[ext_resource type="PackedScene" uid="uid://dcvh187j4str0" path="res://scenes/trash_types/general.tscn" id="18_817gm"]
-[ext_resource type="PackedScene" uid="uid://dx8v0n8w2fgiy" path="res://scenes/trash_types/glass.tscn" id="19_ggc52"]
-[ext_resource type="PackedScene" uid="uid://cs6ptndhg2g5c" path="res://scenes/trash_types/hazard.tscn" id="20_l8ah6"]
-[ext_resource type="PackedScene" uid="uid://cn5w3yiati0de" path="res://scenes/trash_types/medical.tscn" id="21_e75v4"]
-[ext_resource type="PackedScene" uid="uid://dt7corijhj1ub" path="res://scenes/trash_types/mixed.tscn" id="22_8u370"]
-[ext_resource type="PackedScene" uid="uid://b1ylunlix1hlu" path="res://scenes/trash_types/oil.tscn" id="23_rga7q"]
-[ext_resource type="PackedScene" uid="uid://bboe45ujeej8a" path="res://scenes/trash_types/plastic.tscn" id="24_6oujy"]
-[ext_resource type="PackedScene" uid="uid://bss74yinousq" path="res://scenes/trash_types/rubble.tscn" id="25_hi6a0"]
-[ext_resource type="PackedScene" uid="uid://cutw7thrrc1fg" path="res://scenes/trash_types/scrap_metal.tscn" id="26_eo1xk"]
-[ext_resource type="PackedScene" uid="uid://cec5pol5xnmbk" path="res://scenes/trash_types/textiles.tscn" id="27_18clu"]
-[ext_resource type="PackedScene" uid="uid://dax1ghbfyg4ro" path="res://scenes/trash_types/wood.tscn" id="28_4wdv8"]
+[ext_resource type="PackedScene" uid="uid://b7h8mhfgt487p" path="res://scenes/bin_types/bins.tscn" id="9_7r4gi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wyf3"]
 texture = ExtResource("2_rwgxs")
@@ -799,65 +780,65 @@ offset_bottom = 29.0
 theme_override_constants/outline_size = 6
 text = ": 0"
 
-[node name="Appliances" parent="." unique_id=168331026 instance=ExtResource("9_0nbtd")]
-position = Vector2(453, 185)
+[node name="bins" parent="." unique_id=523611760 instance=ExtResource("9_7r4gi")]
+position = Vector2(676, -69)
 
-[node name="batteries" parent="." unique_id=1538062795 instance=ExtResource("10_37qwj")]
-position = Vector2(457, 245)
+[node name="bins2" parent="." unique_id=1337256463 instance=ExtResource("9_7r4gi")]
+position = Vector2(819, -68)
 
-[node name="cans" parent="." unique_id=1780361963 instance=ExtResource("11_navra")]
-position = Vector2(463, 303)
+[node name="bins3" parent="." unique_id=373841242 instance=ExtResource("9_7r4gi")]
+position = Vector2(963, -66)
 
-[node name="cardboard" parent="." unique_id=1969087638 instance=ExtResource("12_luhhm")]
-position = Vector2(468, 363)
+[node name="bins4" parent="." unique_id=1962320049 instance=ExtResource("9_7r4gi")]
+position = Vector2(1105, -69)
 
-[node name="car_batteries" parent="." unique_id=724184672 instance=ExtResource("13_fh13f")]
-position = Vector2(468, 426)
+[node name="bins5" parent="." unique_id=1986848531 instance=ExtResource("9_7r4gi")]
+position = Vector2(1251, -70)
 
-[node name="electrical" parent="." unique_id=2106091355 instance=ExtResource("14_rup4s")]
-position = Vector2(469, 489)
+[node name="bins6" parent="." unique_id=234669824 instance=ExtResource("9_7r4gi")]
+position = Vector2(1692, -22)
 
-[node name="food" parent="." unique_id=5153318 instance=ExtResource("15_4kbfs")]
-position = Vector2(466, 553)
+[node name="bins7" parent="." unique_id=1435624041 instance=ExtResource("9_7r4gi")]
+position = Vector2(1683, 83)
 
-[node name="furniture" parent="." unique_id=600451037 instance=ExtResource("16_f17e3")]
-position = Vector2(466, 625)
+[node name="bins8" parent="." unique_id=71638016 instance=ExtResource("9_7r4gi")]
+position = Vector2(1682, 197)
 
-[node name="garden" parent="." unique_id=1850316484 instance=ExtResource("17_x2olw")]
-position = Vector2(469, 679)
+[node name="bins9" parent="." unique_id=1090374227 instance=ExtResource("9_7r4gi")]
+position = Vector2(1679, 310)
 
-[node name="general" parent="." unique_id=138354717 instance=ExtResource("18_817gm")]
-position = Vector2(469, 744)
+[node name="bins10" parent="." unique_id=546629540 instance=ExtResource("9_7r4gi")]
+position = Vector2(1686, 425)
 
-[node name="glass" parent="." unique_id=174160696 instance=ExtResource("19_ggc52")]
-position = Vector2(476, 809)
+[node name="bins11" parent="." unique_id=2010737094 instance=ExtResource("9_7r4gi")]
+position = Vector2(1681, 565)
 
-[node name="Hazard" parent="." unique_id=16439906 instance=ExtResource("20_l8ah6")]
-position = Vector2(477, 875)
+[node name="bins12" parent="." unique_id=338646533 instance=ExtResource("9_7r4gi")]
+position = Vector2(1676, 671)
 
-[node name="medical" parent="." unique_id=302452077 instance=ExtResource("21_e75v4")]
-position = Vector2(482, 939)
+[node name="bins13" parent="." unique_id=1598648949 instance=ExtResource("9_7r4gi")]
+position = Vector2(1683, 793)
 
-[node name="mixed" parent="." unique_id=645964121 instance=ExtResource("22_8u370")]
-position = Vector2(553, 945)
+[node name="bins14" parent="." unique_id=978971979 instance=ExtResource("9_7r4gi")]
+position = Vector2(1685, 892)
 
-[node name="Oil" parent="." unique_id=1909828067 instance=ExtResource("23_rga7q")]
-position = Vector2(624, 949)
+[node name="bins15" parent="." unique_id=270634051 instance=ExtResource("9_7r4gi")]
+position = Vector2(1685, 1019)
 
-[node name="plastic" parent="." unique_id=1214596518 instance=ExtResource("24_6oujy")]
-position = Vector2(697, 943)
+[node name="bins16" parent="." unique_id=120828101 instance=ExtResource("9_7r4gi")]
+position = Vector2(1253, 1017)
 
-[node name="rubble" parent="." unique_id=201163057 instance=ExtResource("25_hi6a0")]
-position = Vector2(765, 942)
+[node name="bins17" parent="." unique_id=762067820 instance=ExtResource("9_7r4gi")]
+position = Vector2(1109, 1023)
 
-[node name="metal" parent="." unique_id=1222051895 instance=ExtResource("26_eo1xk")]
-position = Vector2(825, 938)
+[node name="bins18" parent="." unique_id=123477226 instance=ExtResource("9_7r4gi")]
+position = Vector2(969, 1018)
 
-[node name="textiles" parent="." unique_id=1985747804 instance=ExtResource("27_18clu")]
-position = Vector2(894, 936)
+[node name="bins19" parent="." unique_id=1376647182 instance=ExtResource("9_7r4gi")]
+position = Vector2(823, 1014)
 
-[node name="wood" parent="." unique_id=12965548 instance=ExtResource("28_4wdv8")]
-position = Vector2(959, 943)
+[node name="bins20" parent="." unique_id=893875815 instance=ExtResource("9_7r4gi")]
+position = Vector2(679, 1015)
 
 [connection signal="health" from="User" to="User/Camera2D/CanvasLayer/HP" method="_on_user_health"]
 [connection signal="spawn" from="User" to="Trash Manager" method="_on_user_spawn"]

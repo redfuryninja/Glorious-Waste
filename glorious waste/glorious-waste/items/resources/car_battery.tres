@@ -1,7 +1,10 @@
 [gd_resource type="Resource" script_class="item_resource" format=3 uid="uid://pifyugt35cvp"]
 
 [ext_resource type="Script" uid="uid://bfi5tkirpnoa3" path="res://items/item_resource.gd" id="1_3w73u"]
+[ext_resource type="Texture2D" uid="uid://dr41ob03rsq5h" path="res://assets/individual_sprites/tile018.png" id="1_xrhxe"]
 
 [resource]
 script = ExtResource("1_3w73u")
+item_name = "car_batteries"
+item_texture = ExtResource("1_xrhxe")
 metadata/_custom_type_script = "uid://bfi5tkirpnoa3"

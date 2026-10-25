@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://i7eagvdvxsyh"]
 
 [ext_resource type="PackedScene" uid="uid://b21a6olucaqw6" path="res://items/item.tscn" id="1_567tv"]
-[ext_resource type="Script" uid="uid://qr0sc684773o" path="res://scenes/item_slot.gd" id="1_eqbkm"]
+[ext_resource type="Script" uid="uid://qr0sc684773o" path="res://items/item_slot.gd" id="1_eqbkm"]
 
 [node name="ItemSlot" type="MarginContainer" unique_id=2047241377]
 mouse_filter = 2

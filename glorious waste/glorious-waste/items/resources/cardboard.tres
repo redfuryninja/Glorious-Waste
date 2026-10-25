@@ -1,7 +1,10 @@
 [gd_resource type="Resource" script_class="item_resource" format=3 uid="uid://k4xidfp87yn0"]
 
+[ext_resource type="Texture2D" uid="uid://c3naxapm4ag31" path="res://assets/individual_sprites/tile016.png" id="1_chp2f"]
 [ext_resource type="Script" uid="uid://bfi5tkirpnoa3" path="res://items/item_resource.gd" id="1_u8gxj"]
 
 [resource]
 script = ExtResource("1_u8gxj")
+item_name = "cardboard"
+item_texture = ExtResource("1_chp2f")
 metadata/_custom_type_script = "uid://bfi5tkirpnoa3"

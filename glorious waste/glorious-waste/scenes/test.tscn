@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cvxmq04ur75re"]
+
+[ext_resource type="PackedScene" uid="uid://cpgk2eqdi50sl" path="res://scenes/menus/click_drag_inventory.tscn" id="1_errlg"]
+
+[node name="test" type="Node2D" unique_id=484258918]
+
+[node name="inventory_test" parent="." unique_id=389711684 instance=ExtResource("1_errlg")]
+offset_left = -2.0
+offset_top = 9.0
+offset_right = -2.0
+offset_bottom = 9.0
+
+[node name="inventory_test2" parent="." unique_id=599532137 instance=ExtResource("1_errlg")]
+offset_left = 307.0
+offset_top = 9.0
+offset_right = 307.0
+offset_bottom = 9.0

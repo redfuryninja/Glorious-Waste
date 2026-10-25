@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bss74yinousq"]
 
-[ext_resource type="PackedScene" uid="uid://c2kde2myuntvg" path="res://scenes/trash.tscn" id="1_rqpha"]
+[ext_resource type="PackedScene" uid="uid://c2kde2myuntvg" path="res://scenes/trash_types/trash.tscn" id="1_rqpha"]
 
 [node name="rubble" unique_id=168331026 instance=ExtResource("1_rqpha")]
 

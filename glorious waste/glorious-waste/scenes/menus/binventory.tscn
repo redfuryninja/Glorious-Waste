@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dmp1s4seniqg7"]
+
+[ext_resource type="PackedScene" uid="uid://cpgk2eqdi50sl" path="res://scenes/menus/click_drag_inventory.tscn" id="1_vexam"]
+[ext_resource type="Script" uid="uid://caexs5mv3cnht" path="res://binventory.gd" id="2_sm52k"]
+
+[node name="binventory" unique_id=389711684 instance=ExtResource("1_vexam")]
+script = ExtResource("2_sm52k")

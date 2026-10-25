@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cpgk2eqdi50sl"]
 
-[ext_resource type="Script" uid="uid://llauaw6tc1rq" path="res://scenes/inventory_test.gd" id="1_04cl0"]
-[ext_resource type="Script" uid="uid://bfi5tkirpnoa3" path="res://items/item_resource.gd" id="2_n8ppj"]
+[ext_resource type="Script" uid="uid://llauaw6tc1rq" path="res://items/inventory_test.gd" id="1_dwdky"]
+[ext_resource type="Script" uid="uid://bfi5tkirpnoa3" path="res://items/item_resource.gd" id="2_fjq65"]
 
 [node name="inventory_test" type="Control" unique_id=389711684 node_paths=PackedStringArray("item_container")]
 layout_mode = 3
@@ -15,8 +15,8 @@ offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_04cl0")
-items = Array[ExtResource("2_n8ppj")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+script = ExtResource("1_dwdky")
+items = Array[ExtResource("2_fjq65")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 max_inventory_size = 20
 item_container = NodePath("Panel/ScrollContainer/ItemContainer")
 

@@ -142,9 +142,10 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("inventory"):
 		lockInput = 1
 		inventory.update()
-		inventory.show()
 		inventory.global_position.x = position.x + 150
 		inventory.global_position.y = position.y
+		inventory.show()
+	
 	elif Input.is_action_just_pressed("escape"):
 		lockInput = 0
 		inventory.hide()

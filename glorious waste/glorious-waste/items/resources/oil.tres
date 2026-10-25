@@ -1,7 +1,10 @@
 [gd_resource type="Resource" script_class="item_resource" format=3 uid="uid://sudske35vt25"]
 
+[ext_resource type="Texture2D" uid="uid://c1pd3hnv1bwmi" path="res://assets/individual_sprites/tile023.png" id="1_7jjoa"]
 [ext_resource type="Script" uid="uid://bfi5tkirpnoa3" path="res://items/item_resource.gd" id="1_vktob"]
 
 [resource]
 script = ExtResource("1_vktob")
+item_name = "motor_oil"
+item_texture = ExtResource("1_7jjoa")
 metadata/_custom_type_script = "uid://bfi5tkirpnoa3"

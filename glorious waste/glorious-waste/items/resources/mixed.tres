@@ -1,7 +1,10 @@
 [gd_resource type="Resource" script_class="item_resource" format=3 uid="uid://bxc3usaxo368i"]
 
 [ext_resource type="Script" uid="uid://bfi5tkirpnoa3" path="res://items/item_resource.gd" id="1_6rmw3"]
+[ext_resource type="Texture2D" uid="uid://xxphsvkd7vwc" path="res://assets/individual_sprites/tile022.png" id="1_cr75n"]
 
 [resource]
 script = ExtResource("1_6rmw3")
+item_name = "mixed_recycling"
+item_texture = ExtResource("1_cr75n")
 metadata/_custom_type_script = "uid://bfi5tkirpnoa3"

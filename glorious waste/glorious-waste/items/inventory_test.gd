@@ -1,4 +1,5 @@
 extends Control
+class_name inventory
 
 @export var items:Array[item_resource]
 @export var max_inventory_size: int
@@ -49,24 +50,24 @@ func _init_items() -> void:
 		item_slots[i].item.itemResource = items[i]
 	
 func _check_Inventory():
-	if globals.player_inventory["appliaces"] >= 0.0: items[0] = APPLIANCES
-	if globals.player_inventory["batteries"] >= 0.0: items[1] = BATTERY
-	if globals.player_inventory["cans"] >= 0.0: items[2] = CANS
-	if globals.player_inventory["cardboard"] >= 0.0: items[3] = CARDBOARD
-	if globals.player_inventory["car_batteries"] >= 0.0: items[4] = CAR_BATTERY
-	if globals.player_inventory["electrical"] >= 0.0: items[5] = ELECTRICAL
-	if globals.player_inventory["food"] >= 0.0: items[6] = FOOD
-	if globals.player_inventory["furniture"] >= 0.0: items[7] = FURNITURE
-	if globals.player_inventory["garden"] >= 0.0: items[8] = GARDEN
-	if globals.player_inventory["general"] >= 0.0: items[9] = GENERAL
-	if globals.player_inventory["glass"] >= 0.0: items[10] = GLASS
-	if globals.player_inventory["hazardous"] >= 0.0: items[11] = HAZARD
-	if globals.player_inventory["medical"] >= 0.0: items[12] = MEDICAL
-	if globals.player_inventory["scrap_metal"] >= 0.0: items[13] = METAL
-	if globals.player_inventory["mixed_recycling"] >= 0.0: items[14] = MIXED
-	if globals.player_inventory["motor_oil"] >= 0.0: items[15] = OIL
-	if globals.player_inventory["plastic"] >= 0.0: items[16] = PLASTIC
-	if globals.player_inventory["rubble"] >= 0.0: items[17] = RUBBLE
-	if globals.player_inventory["textiles"] >= 0.0: items[18] = TEXTILES
-	if globals.player_inventory["wood"] >= 0.0: items[19] = WOOD
+	if globals.player_inventory["appliances"] > 0.0: items[0] = APPLIANCES
+	if globals.player_inventory["batteries"] > 0.0: items[1] = BATTERY
+	if globals.player_inventory["cans"] > 0.0: items[2] = CANS
+	if globals.player_inventory["cardboard"] > 0.0: items[3] = CARDBOARD
+	if globals.player_inventory["car_batteries"] > 0.0: items[4] = CAR_BATTERY
+	if globals.player_inventory["electrical"] > 0.0: items[5] = ELECTRICAL
+	if globals.player_inventory["food"] > 0.0: items[6] = FOOD
+	if globals.player_inventory["furniture"] > 0.0: items[7] = FURNITURE
+	if globals.player_inventory["garden"] > 0.0: items[8] = GARDEN
+	if globals.player_inventory["general"] > 0.0: items[9] = GENERAL
+	if globals.player_inventory["glass"] > 0.0: items[10] = GLASS
+	if globals.player_inventory["hazardous"] > 0.0: items[11] = HAZARD
+	if globals.player_inventory["medical"] > 0.0: items[12] = MEDICAL
+	if globals.player_inventory["scrap_metal"] > 0.0: items[13] = METAL
+	if globals.player_inventory["mixed_recycling"] > 0.0: items[14] = MIXED
+	if globals.player_inventory["motor_oil"] > 0.0: items[15] = OIL
+	if globals.player_inventory["plastic"] > 0.0: items[16] = PLASTIC
+	if globals.player_inventory["rubble"] > 0.0: items[17] = RUBBLE
+	if globals.player_inventory["textiles"] > 0.0: items[18] = TEXTILES
+	if globals.player_inventory["wood"] > 0.0: items[19] = WOOD
 	

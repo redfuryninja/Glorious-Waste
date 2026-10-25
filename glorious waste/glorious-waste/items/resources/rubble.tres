@@ -1,7 +1,10 @@
 [gd_resource type="Resource" script_class="item_resource" format=3 uid="uid://bgw3nhoal8gtw"]
 
 [ext_resource type="Script" uid="uid://bfi5tkirpnoa3" path="res://items/item_resource.gd" id="1_0hcni"]
+[ext_resource type="Texture2D" uid="uid://qrtgiyjtb7fr" path="res://assets/individual_sprites/tile020.png" id="1_jir3o"]
 
 [resource]
 script = ExtResource("1_0hcni")
+item_name = "rubble"
+item_texture = ExtResource("1_jir3o")
 metadata/_custom_type_script = "uid://bfi5tkirpnoa3"

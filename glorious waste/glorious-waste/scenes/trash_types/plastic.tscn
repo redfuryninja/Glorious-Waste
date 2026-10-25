@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bboe45ujeej8a"]
 
-[ext_resource type="PackedScene" uid="uid://c2kde2myuntvg" path="res://scenes/trash.tscn" id="1_t4o4a"]
+[ext_resource type="PackedScene" uid="uid://c2kde2myuntvg" path="res://scenes/trash_types/trash.tscn" id="1_t4o4a"]
 
 [node name="plastic" unique_id=168331026 instance=ExtResource("1_t4o4a")]
 
