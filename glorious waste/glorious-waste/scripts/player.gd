@@ -1,6 +1,7 @@
 class_name Player
 extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $sprite
+@onready var camera: Camera2D = $Camera2D
 const INVENTORY = preload("uid://b4q2xpf83ksr5")
 signal health()
 signal weight()
@@ -69,7 +70,6 @@ func sprite_check():
 			else: sprite_used = gm
 	elif e_gloves == true: 
 		sprite_used = eg 
-		print("check")
 	elif gloves == true: sprite_used = g
 	else: sprite_used = ng
 
@@ -127,7 +127,6 @@ func check_holding():
 					globals.damage["holding"] = true
 			else: globals.damage["holding"] = false
 				
-			print(key_value, ": ", globals.damage["holding"])
 
 
 
@@ -161,3 +160,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	weight.emit()
+	
+func cam_coords():
+	return camera.get_screen_center_position()

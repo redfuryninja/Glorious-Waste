@@ -207,7 +207,6 @@ func update():
 
 
 func _on_user_inventory_update() -> void:
-	print("testing")
 	check_inventory()
 	show_inventory()
 	label_update()

@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://cfk366v0nibmu"]
+
+[ext_resource type="Script" uid="uid://d3123h0h4bc33" path="res://scripts/test.gd" id="1_iyus2"]
+[ext_resource type="Texture2D" uid="uid://1kt2tca8gjp0" path="res://assets/player/bin man sprites.png" id="2_nvh4h"]
+[ext_resource type="Texture2D" uid="uid://t0n25vby5vyo" path="res://assets/inventory/shop inventory.png" id="3_nvh4h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nvh4h"]
+size = Vector2(27, 52.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67o6a"]
+size = Vector2(30, 54.5)
+
+[node name="boss man" type="CharacterBody2D" unique_id=526438983]
+script = ExtResource("1_iyus2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=921098629]
+texture_filter = 1
+position = Vector2(-1, -4)
+texture = ExtResource("2_nvh4h")
+vframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1052107144]
+position = Vector2(-2, 0.75)
+shape = SubResource("RectangleShape2D_nvh4h")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=812716707]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1749964057]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_67o6a")
+
+[node name="shop" type="Control" parent="." unique_id=1395350351]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -67.0
+offset_top = -80.0
+offset_right = 73.0
+offset_bottom = 60.0
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="shop" unique_id=1261203698]
+texture_filter = 1
+layout_mode = 0
+offset_right = 139.0
+offset_bottom = 139.0
+texture = ExtResource("3_nvh4h")
+metadata/_edit_use_anchors_ = true
+
+[node name="gloves" type="Button" parent="shop/TextureRect" unique_id=714897118]
+layout_mode = 0
+offset_right = 47.0
+offset_bottom = 47.0
+metadata/_edit_use_anchors_ = true
+
+[node name="e_gloves" type="Button" parent="shop/TextureRect" unique_id=335594013]
+layout_mode = 0
+offset_left = 46.0
+offset_right = 93.0
+offset_bottom = 47.0
+metadata/_edit_use_anchors_ = true
+
+[node name="sell_gold" type="Button" parent="shop/TextureRect" unique_id=1265587355]
+layout_mode = 0
+offset_left = 92.0
+offset_right = 139.0
+offset_bottom = 47.0
+metadata/_edit_use_anchors_ = true
+
+[node name="gas_mask" type="Button" parent="shop/TextureRect" unique_id=777170377]
+layout_mode = 0
+offset_top = 46.0
+offset_right = 47.0
+offset_bottom = 93.0
+metadata/_edit_use_anchors_ = true
+
+[node name="hp_up" type="Button" parent="shop/TextureRect" unique_id=453117078]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 46.0
+offset_right = 93.0
+offset_bottom = 93.0
+metadata/_edit_use_anchors_ = true
+
+[node name="bandages" type="Button" parent="shop/TextureRect" unique_id=469570970]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 46.0
+offset_right = 139.0
+offset_bottom = 93.0
+metadata/_edit_use_anchors_ = true
+
+[node name="hazamat_suit" type="Button" parent="shop/TextureRect" unique_id=430845133]
+layout_mode = 0
+offset_top = 92.0
+offset_right = 47.0
+offset_bottom = 139.0
+metadata/_edit_use_anchors_ = true
+
+[node name="weight_up" type="Button" parent="shop/TextureRect" unique_id=729774267]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 92.0
+offset_right = 93.0
+offset_bottom = 139.0
+metadata/_edit_use_anchors_ = true
+
+[node name="next_day" type="Button" parent="shop/TextureRect" unique_id=71868472]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 92.0
+offset_right = 139.0
+offset_bottom = 139.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="button_up" from="shop/TextureRect/gloves" to="." method="_on_gloves_button_up"]
+[connection signal="button_up" from="shop/TextureRect/e_gloves" to="." method="_on_e_gloves_button_up"]
+[connection signal="button_up" from="shop/TextureRect/sell_gold" to="." method="_on_sell_gold_button_up"]
+[connection signal="button_up" from="shop/TextureRect/gas_mask" to="." method="_on_gas_mask_button_up"]
+[connection signal="button_up" from="shop/TextureRect/hp_up" to="." method="_on_hp_up_button_up"]
+[connection signal="button_up" from="shop/TextureRect/bandages" to="." method="_on_bandages_button_up"]
+[connection signal="button_up" from="shop/TextureRect/hazamat_suit" to="." method="_on_hazamat_suit_button_up"]
+[connection signal="button_up" from="shop/TextureRect/weight_up" to="." method="_on_weight_up_button_up"]
+[connection signal="button_up" from="shop/TextureRect/next_day" to="." method="_on_next_day_button_up"]

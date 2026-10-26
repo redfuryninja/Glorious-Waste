@@ -349,6 +349,7 @@ size = Vector2(27, 7)
 size = Vector2(30, 12)
 
 [node name="User" type="CharacterBody2D" unique_id=1610816074]
+position = Vector2(106, 84)
 script = ExtResource("1_g2els")
 
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=57163324]
@@ -367,5 +368,12 @@ shape = SubResource("RectangleShape2D_67o6a")
 position = Vector2(0, 20)
 shape = SubResource("RectangleShape2D_nfn05")
 debug_color = Color(0.96662074, 0, 0.4823736, 0.41960785)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1508600730]
+zoom = Vector2(1.5, 1.5)
+limit_left = -254
+limit_top = -119
+limit_right = 1741
+limit_bottom = 1067
 
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

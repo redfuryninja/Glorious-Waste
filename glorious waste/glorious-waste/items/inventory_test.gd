@@ -27,6 +27,7 @@ const TEXTILES = preload("uid://1l5ltdjvahvj")
 const WOOD = preload("uid://bumporek6bivg")
 
 
+
 func _ready() -> void:
 	_init_slots()
 	_init_items()
@@ -44,12 +45,12 @@ func _remove_all_children(parent: Node) -> void:
 		child.free()
 		
 func _init_items() -> void:
-	var item_slots = item_container.get_children()
-	_check_Inventory()
-	for i in range(items.size()):
-		item_slots[i].item.itemResource = items[i]
+
+	check_Inventory()
+
 	
-func _check_Inventory():
+func check_Inventory():
+	var item_slots = item_container.get_children()
 	if globals.player_inventory["appliances"] > 0.0: items[0] = APPLIANCES
 	if globals.player_inventory["batteries"] > 0.0: items[1] = BATTERY
 	if globals.player_inventory["cans"] > 0.0: items[2] = CANS
@@ -70,4 +71,6 @@ func _check_Inventory():
 	if globals.player_inventory["rubble"] > 0.0: items[17] = RUBBLE
 	if globals.player_inventory["textiles"] > 0.0: items[18] = TEXTILES
 	if globals.player_inventory["wood"] > 0.0: items[19] = WOOD
+	for i in range(items.size()):
+		item_slots[i].item.itemResource = items[i]
 	

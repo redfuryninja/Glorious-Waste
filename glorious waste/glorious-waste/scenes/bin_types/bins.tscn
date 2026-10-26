@@ -22,7 +22,7 @@ texture = ExtResource("1_auwsn")
 shape = SubResource("RectangleShape2D_vjyn1")
 
 [node name="InventorySpritesNoLines" type="Sprite2D" parent="." unique_id=717341346]
-position = Vector2(-10, 2)
+position = Vector2(-8, 3)
 scale = Vector2(0.8043478, 0.8913044)
 texture = ExtResource("2_qjvl4")
 hframes = 5
@@ -42,3 +42,4 @@ script = ExtResource("4_qkl7v")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

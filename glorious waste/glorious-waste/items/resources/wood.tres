@@ -1,8 +1,10 @@
 [gd_resource type="Resource" script_class="item_resource" format=3 uid="uid://bumporek6bivg"]
 
 [ext_resource type="Script" uid="uid://bfi5tkirpnoa3" path="res://items/item_resource.gd" id="1_e1qo4"]
+[ext_resource type="Texture2D" uid="uid://co7iqfwuut4fb" path="res://assets/individual_sprites/tile015.png" id="1_tdb8x"]
 
 [resource]
 script = ExtResource("1_e1qo4")
 item_name = "wood"
+item_texture = ExtResource("1_tdb8x")
 metadata/_custom_type_script = "uid://bfi5tkirpnoa3"

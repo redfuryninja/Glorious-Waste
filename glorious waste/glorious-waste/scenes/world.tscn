@@ -3,11 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://k57temdhcq28" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://bojci230wkcn6" path="res://assets/world/side-front facing bins.png" id="2_4wyf3"]
 [ext_resource type="Texture2D" uid="uid://cub0ls74ibt38" path="res://assets/world/Tile Map.png" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://cfk366v0nibmu" path="res://assets/world/shopkeep.tscn" id="4_4mrxx"]
 [ext_resource type="Script" uid="uid://c22vhuyjjcx3b" path="res://scripts/stat_bar.gd" id="4_k0juu"]
 [ext_resource type="Script" uid="uid://c2hlpncjequry" path="res://scripts/trash_manager.gd" id="5_71j4m"]
 [ext_resource type="Texture2D" uid="uid://cjjclakvippy8" path="res://assets/inventory/gold.png" id="6_qfnet"]
-[ext_resource type="Script" uid="uid://d3123h0h4bc33" path="res://scripts/test.gd" id="7_4mrxx"]
-[ext_resource type="Texture2D" uid="uid://1kt2tca8gjp0" path="res://assets/player/bin man sprites.png" id="7_i7141"]
 [ext_resource type="PackedScene" uid="uid://b7h8mhfgt487p" path="res://scenes/bin_types/bins.tscn" id="9_7r4gi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wyf3"]
@@ -687,9 +686,6 @@ vertices = PackedVector2Array(1712.0781, 998.8125, 1715.75, 1030.0313, 1399, 103
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(15, 11, 14, 16, 17), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(17, 22, 23, 15), PackedInt32Array(24, 25, 17, 16, 26), PackedInt32Array(27, 28, 29, 30), PackedInt32Array(24, 31, 32, 25), PackedInt32Array(33, 34, 35, 36), PackedInt32Array(37, 38, 39, 40, 41), PackedInt32Array(42, 43, 44, 45), PackedInt32Array(46, 47, 48, 49), PackedInt32Array(46, 49, 50, 51), PackedInt32Array(52, 53, 54, 55), PackedInt32Array(26, 55, 54, 42), PackedInt32Array(26, 42, 45, 24), PackedInt32Array(56, 26, 16, 57), PackedInt32Array(58, 59, 60, 61), PackedInt32Array(62, 63, 61, 60, 64, 65), PackedInt32Array(66, 67, 68, 69), PackedInt32Array(70, 71, 72, 6), PackedInt32Array(73, 74, 75, 76), PackedInt32Array(77, 73, 76, 30), PackedInt32Array(78, 79, 80, 81), PackedInt32Array(78, 81, 62, 65), PackedInt32Array(82, 83, 84, 85), PackedInt32Array(86, 82, 85, 87), PackedInt32Array(88, 89, 90, 4), PackedInt32Array(91, 92, 93, 94), PackedInt32Array(41, 94, 93, 69, 68), PackedInt32Array(41, 68, 37), PackedInt32Array(95, 96, 97, 98), PackedInt32Array(64, 87, 85, 65), PackedInt32Array(99, 63, 62, 56, 57), PackedInt32Array(100, 101, 51, 102), PackedInt32Array(40, 102, 51, 50, 41), PackedInt32Array(103, 41, 50, 99, 57), PackedInt32Array(104, 105, 106, 107), PackedInt32Array(5, 103, 57, 77), PackedInt32Array(98, 33, 36), PackedInt32Array(4, 90, 3), PackedInt32Array(21, 20, 6, 5), PackedInt32Array(6, 72, 4), PackedInt32Array(107, 21, 5, 104), PackedInt32Array(10, 104, 5, 77), PackedInt32Array(7, 10, 77, 36), PackedInt32Array(98, 36, 77), PackedInt32Array(30, 95, 98), PackedInt32Array(30, 98, 77), PackedInt32Array(30, 76, 27)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-226, -65, 329, -64, 327, 464, 926, 463, 926, 300, 640, 301, 634, -94, 713, -96, 710, 240, 787, 242, 778, -97, 861, -96, 857, 237, 930, 237, 922, -96, 1003, -94, 1003, 236, 1066, 240, 1064, -101, 1148, -97, 1150, 240, 1215, 240, 1206, -101, 1295, -98, 1292, 301, 993, 308, 992, 466, 1388, 461, 1388, -49, 1725, -50, 1724, -3, 1441, 0, 1438, 60, 1727, 63, 1724, 113, 1435, 111, 1434, 173, 1717, 172, 1717, 218, 1430, 227, 1437, 286, 1722, 286, 1720, 328, 1432, 334, 1437, 399, 1724, 398, 1721, 442, 1437, 446, 1436, 539, 1720, 541, 1720, 582, 1437, 590, 1437, 658, 1719, 657, 1722, 696, 1441, 702, 1435, 769, 1722, 770, 1723, 816, 1437, 815, 1436, 873, 1722, 879, 1723, 927, 1442, 928, 1434, 983, 1721, 989, 1727, 1040, 1389, 1041, 1389, 547, 991, 560, 986, 727, 1290, 724, 1289, 1035, 1209, 1036, 1210, 793, 1145, 799, 1146, 1034, 1067, 1036, 1067, 794, 1006, 795, 1002, 1038, 920, 1033, 921, 788, 862, 795, 857, 1038, 777, 1037, 780, 795, 714, 796, 714, 1035, 631, 1032, 633, 716, 915, 716, 916, 546, 335, 556, 334, 1010, -230, 1010, -232, 906, 252, 911, 246, 602, 139, 603, 139, 795, -230, 796, -231, 136, 140, 142, 137, 331, 249, 329, 247, 29, -228, 28)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_67o6a"]
-size = Vector2(27, 48)
-
 [node name="World" type="Node2D" unique_id=1936430564]
 
 [node name="bg" type="TileMap" parent="." unique_id=1014092957]
@@ -707,46 +703,81 @@ script = ExtResource("5_71j4m")
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_vjyn1")
 
-[node name="boss man" type="CharacterBody2D" parent="." unique_id=1100003481]
-script = ExtResource("7_4mrxx")
+[node name="bin folder" type="Node2D" parent="." unique_id=1985152586]
 
-[node name="Sprite2D" type="Sprite2D" parent="boss man" unique_id=894223237]
-texture_filter = 1
-position = Vector2(-218, -24)
-texture = ExtResource("7_i7141")
-vframes = 4
-frame = 3
+[node name="bins" parent="bin folder" unique_id=523611760 instance=ExtResource("9_7r4gi")]
+position = Vector2(676, -69)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boss man" unique_id=519888156]
-position = Vector2(-215.5, -20)
-shape = SubResource("RectangleShape2D_67o6a")
+[node name="bins2" parent="bin folder" unique_id=1337256463 instance=ExtResource("9_7r4gi")]
+position = Vector2(819, -68)
 
-[node name="Area2D" type="Area2D" parent="boss man" unique_id=1279328556]
+[node name="bins3" parent="bin folder" unique_id=373841242 instance=ExtResource("9_7r4gi")]
+position = Vector2(963, -66)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boss man/Area2D" unique_id=1524461014]
-position = Vector2(-215.5, -20)
-shape = SubResource("RectangleShape2D_67o6a")
+[node name="bins4" parent="bin folder" unique_id=1962320049 instance=ExtResource("9_7r4gi")]
+position = Vector2(1105, -69)
+
+[node name="bins5" parent="bin folder" unique_id=1986848531 instance=ExtResource("9_7r4gi")]
+position = Vector2(1251, -70)
+
+[node name="bins6" parent="bin folder" unique_id=234669824 instance=ExtResource("9_7r4gi")]
+position = Vector2(1692, -22)
+
+[node name="bins7" parent="bin folder" unique_id=1435624041 instance=ExtResource("9_7r4gi")]
+position = Vector2(1683, 83)
+
+[node name="bins8" parent="bin folder" unique_id=71638016 instance=ExtResource("9_7r4gi")]
+position = Vector2(1682, 197)
+
+[node name="bins9" parent="bin folder" unique_id=1090374227 instance=ExtResource("9_7r4gi")]
+position = Vector2(1679, 310)
+
+[node name="bins10" parent="bin folder" unique_id=546629540 instance=ExtResource("9_7r4gi")]
+position = Vector2(1686, 425)
+
+[node name="bins11" parent="bin folder" unique_id=2010737094 instance=ExtResource("9_7r4gi")]
+position = Vector2(1681, 565)
+
+[node name="bins12" parent="bin folder" unique_id=338646533 instance=ExtResource("9_7r4gi")]
+position = Vector2(1676, 671)
+
+[node name="bins13" parent="bin folder" unique_id=1598648949 instance=ExtResource("9_7r4gi")]
+position = Vector2(1683, 793)
+
+[node name="bins14" parent="bin folder" unique_id=978971979 instance=ExtResource("9_7r4gi")]
+position = Vector2(1685, 892)
+
+[node name="bins15" parent="bin folder" unique_id=270634051 instance=ExtResource("9_7r4gi")]
+position = Vector2(1685, 1019)
+
+[node name="bins16" parent="bin folder" unique_id=120828101 instance=ExtResource("9_7r4gi")]
+position = Vector2(1253, 1017)
+
+[node name="bins17" parent="bin folder" unique_id=762067820 instance=ExtResource("9_7r4gi")]
+position = Vector2(1109, 1023)
+
+[node name="bins18" parent="bin folder" unique_id=123477226 instance=ExtResource("9_7r4gi")]
+position = Vector2(969, 1018)
+
+[node name="bins19" parent="bin folder" unique_id=1376647182 instance=ExtResource("9_7r4gi")]
+position = Vector2(823, 1014)
+
+[node name="bins20" parent="bin folder" unique_id=893875815 instance=ExtResource("9_7r4gi")]
+position = Vector2(679, 1015)
 
 [node name="User" parent="." unique_id=1700704059 instance=ExtResource("1_nnsk1")]
 position = Vector2(284, 203)
 
-[node name="Camera2D" type="Camera2D" parent="User" unique_id=593031787]
-zoom = Vector2(1.5, 1.5)
-limit_left = -254
-limit_top = -119
-limit_right = 1741
-limit_bottom = 1067
+[node name="CanvasLayer" type="CanvasLayer" parent="User" unique_id=74606029]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="User/Camera2D" unique_id=1587223396]
-
-[node name="HP" type="Label" parent="User/Camera2D/CanvasLayer" unique_id=1646805730]
+[node name="HP" type="Label" parent="User/CanvasLayer" unique_id=1029746496]
 offset_right = 106.0
 offset_bottom = 38.0
 theme_override_constants/outline_size = 6
 text = "HP:  100/100"
 script = ExtResource("4_k0juu")
 
-[node name="Weight" type="Label" parent="User/Camera2D/CanvasLayer" unique_id=1391010693]
+[node name="Weight" type="Label" parent="User/CanvasLayer" unique_id=1060490772]
 offset_left = 3.0
 offset_top = 32.0
 offset_right = 136.0
@@ -755,7 +786,7 @@ theme_override_constants/outline_size = 6
 text = "Weight: 0.0/100.0"
 script = ExtResource("4_k0juu")
 
-[node name="Label" type="Label" parent="User/Camera2D/CanvasLayer" unique_id=87084570]
+[node name="money" type="Label" parent="User/CanvasLayer" unique_id=561396829]
 offset_left = 4.0
 offset_top = 66.0
 offset_right = 97.0
@@ -764,14 +795,14 @@ theme_override_constants/outline_size = 6
 text = "Money: £0.0"
 script = ExtResource("4_k0juu")
 
-[node name="TextureRect" type="TextureRect" parent="User/Camera2D/CanvasLayer" unique_id=1990589875]
+[node name="TextureRect" type="TextureRect" parent="User/CanvasLayer" unique_id=940794541]
 texture_filter = 1
 offset_top = 87.0
 offset_right = 44.0
 offset_bottom = 127.0
 texture = ExtResource("6_qfnet")
 
-[node name="Label2" type="Label" parent="User/Camera2D/CanvasLayer/TextureRect" unique_id=2032827301]
+[node name="Label2" type="Label" parent="User/CanvasLayer/TextureRect" unique_id=920527895]
 layout_mode = 0
 offset_left = 57.0
 offset_top = 6.0
@@ -780,66 +811,9 @@ offset_bottom = 29.0
 theme_override_constants/outline_size = 6
 text = ": 0"
 
-[node name="bins" parent="." unique_id=523611760 instance=ExtResource("9_7r4gi")]
-position = Vector2(676, -69)
+[node name="boss man" parent="." unique_id=526438983 instance=ExtResource("4_4mrxx")]
+position = Vector2(-217, -18)
 
-[node name="bins2" parent="." unique_id=1337256463 instance=ExtResource("9_7r4gi")]
-position = Vector2(819, -68)
-
-[node name="bins3" parent="." unique_id=373841242 instance=ExtResource("9_7r4gi")]
-position = Vector2(963, -66)
-
-[node name="bins4" parent="." unique_id=1962320049 instance=ExtResource("9_7r4gi")]
-position = Vector2(1105, -69)
-
-[node name="bins5" parent="." unique_id=1986848531 instance=ExtResource("9_7r4gi")]
-position = Vector2(1251, -70)
-
-[node name="bins6" parent="." unique_id=234669824 instance=ExtResource("9_7r4gi")]
-position = Vector2(1692, -22)
-
-[node name="bins7" parent="." unique_id=1435624041 instance=ExtResource("9_7r4gi")]
-position = Vector2(1683, 83)
-
-[node name="bins8" parent="." unique_id=71638016 instance=ExtResource("9_7r4gi")]
-position = Vector2(1682, 197)
-
-[node name="bins9" parent="." unique_id=1090374227 instance=ExtResource("9_7r4gi")]
-position = Vector2(1679, 310)
-
-[node name="bins10" parent="." unique_id=546629540 instance=ExtResource("9_7r4gi")]
-position = Vector2(1686, 425)
-
-[node name="bins11" parent="." unique_id=2010737094 instance=ExtResource("9_7r4gi")]
-position = Vector2(1681, 565)
-
-[node name="bins12" parent="." unique_id=338646533 instance=ExtResource("9_7r4gi")]
-position = Vector2(1676, 671)
-
-[node name="bins13" parent="." unique_id=1598648949 instance=ExtResource("9_7r4gi")]
-position = Vector2(1683, 793)
-
-[node name="bins14" parent="." unique_id=978971979 instance=ExtResource("9_7r4gi")]
-position = Vector2(1685, 892)
-
-[node name="bins15" parent="." unique_id=270634051 instance=ExtResource("9_7r4gi")]
-position = Vector2(1685, 1019)
-
-[node name="bins16" parent="." unique_id=120828101 instance=ExtResource("9_7r4gi")]
-position = Vector2(1253, 1017)
-
-[node name="bins17" parent="." unique_id=762067820 instance=ExtResource("9_7r4gi")]
-position = Vector2(1109, 1023)
-
-[node name="bins18" parent="." unique_id=123477226 instance=ExtResource("9_7r4gi")]
-position = Vector2(969, 1018)
-
-[node name="bins19" parent="." unique_id=1376647182 instance=ExtResource("9_7r4gi")]
-position = Vector2(823, 1014)
-
-[node name="bins20" parent="." unique_id=893875815 instance=ExtResource("9_7r4gi")]
-position = Vector2(679, 1015)
-
-[connection signal="health" from="User" to="User/Camera2D/CanvasLayer/HP" method="_on_user_health"]
+[connection signal="health" from="User" to="User/CanvasLayer/HP" method="_on_user_health"]
 [connection signal="spawn" from="User" to="Trash Manager" method="_on_user_spawn"]
-[connection signal="weight" from="User" to="User/Camera2D/CanvasLayer/Weight" method="_on_user_weight"]
+[connection signal="weight" from="User" to="User/CanvasLayer/Weight" method="_on_user_weight"]
