@@ -765,6 +765,10 @@ position = Vector2(823, 1014)
 [node name="bins20" parent="bin folder" unique_id=893875815 instance=ExtResource("9_7r4gi")]
 position = Vector2(679, 1015)
 
+[node name="Timer" type="Timer" parent="bin folder" unique_id=762725595]
+wait_time = 5.0
+autostart = true
+
 [node name="User" parent="." unique_id=1700704059 instance=ExtResource("1_nnsk1")]
 position = Vector2(284, 203)
 
@@ -814,6 +818,7 @@ text = ": 0"
 [node name="boss man" parent="." unique_id=526438983 instance=ExtResource("4_4mrxx")]
 position = Vector2(-217, -18)
 
+[connection signal="timeout" from="bin folder/Timer" to="bin folder/bins" method="_on_timer_timeout"]
 [connection signal="health" from="User" to="User/CanvasLayer/HP" method="_on_user_health"]
 [connection signal="spawn" from="User" to="Trash Manager" method="_on_user_spawn"]
 [connection signal="weight" from="User" to="User/CanvasLayer/Weight" method="_on_user_weight"]

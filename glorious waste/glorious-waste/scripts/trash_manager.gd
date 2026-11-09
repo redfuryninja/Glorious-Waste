@@ -82,3 +82,7 @@ func _process(delta: float) -> void:
 func _on_user_spawn(spawnCount: Variant, x: Variant, y: Variant) -> void:
 	bin[spawnCount].global_position.x = x
 	bin[spawnCount].global_position.y = y
+
+
+func _on_timer_timeout() -> void:
+	pass # Replace with function body.

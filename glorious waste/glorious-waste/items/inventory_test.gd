@@ -37,7 +37,7 @@ func _init_slots() -> void:
 	
 	for i in range (max_inventory_size):
 		item_container.add_child(ITEM_SLOT_SCENE.instantiate())
-		
+		#signal on item slot, emit every time dragged and drop, and emit up to inventory, when insitantiated when
 		
 		
 func _remove_all_children(parent: Node) -> void:
@@ -45,8 +45,12 @@ func _remove_all_children(parent: Node) -> void:
 		child.free()
 		
 func _init_items() -> void:
-
 	check_Inventory()
+	
+func update():
+	var item_slots = item_container.get_children()
+	for i in range(items.size()):
+		item_slots[i].item.itemResource = items[i]
 
 	
 func check_Inventory():
