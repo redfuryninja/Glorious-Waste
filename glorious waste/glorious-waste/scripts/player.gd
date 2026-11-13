@@ -138,6 +138,7 @@ func _physics_process(delta: float) -> void:
 		if globals.damage["holding"] == true:
 			damage()
 		health.emit()
+	
 	if Input.is_action_just_pressed("inventory"):
 		lockInput = 1
 		inventory.update()

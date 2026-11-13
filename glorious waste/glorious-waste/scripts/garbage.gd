@@ -15,7 +15,7 @@ var can_pickup : bool
 
 var garbage_type = ["appliances","batteries","cans","car_batteries","cardboard","electrical","food",
 "furniture","garden","general","glass","hazardous","medical","mixed_recycling","motor_oil","plastic",
-"rubble","scrap_metal","textiles","wood"]
+"rubble","scrap_metal","textiles","wood", "gold"]
 
 
 # Called when the node enters the scene tree for the first time.

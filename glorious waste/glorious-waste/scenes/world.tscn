@@ -7,7 +7,9 @@
 [ext_resource type="Script" uid="uid://c22vhuyjjcx3b" path="res://scripts/stat_bar.gd" id="4_k0juu"]
 [ext_resource type="Script" uid="uid://c2hlpncjequry" path="res://scripts/trash_manager.gd" id="5_71j4m"]
 [ext_resource type="Texture2D" uid="uid://cjjclakvippy8" path="res://assets/inventory/gold.png" id="6_qfnet"]
+[ext_resource type="Script" uid="uid://daoo4jnn4rte8" path="res://scripts/money.gd" id="7_7r4gi"]
 [ext_resource type="PackedScene" uid="uid://b7h8mhfgt487p" path="res://scenes/bin_types/bins.tscn" id="9_7r4gi"]
+[ext_resource type="Script" uid="uid://d071kpapv3qry" path="res://scripts/gold_label.gd" id="9_w7kh3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wyf3"]
 texture = ExtResource("2_rwgxs")
@@ -797,16 +799,16 @@ offset_right = 97.0
 offset_bottom = 89.0
 theme_override_constants/outline_size = 6
 text = "Money: £0.0"
-script = ExtResource("4_k0juu")
+script = ExtResource("7_7r4gi")
 
-[node name="TextureRect" type="TextureRect" parent="User/CanvasLayer" unique_id=940794541]
+[node name="glorious waste" type="TextureRect" parent="User/CanvasLayer" unique_id=940794541]
 texture_filter = 1
 offset_top = 87.0
 offset_right = 44.0
 offset_bottom = 127.0
 texture = ExtResource("6_qfnet")
 
-[node name="Label2" type="Label" parent="User/CanvasLayer/TextureRect" unique_id=920527895]
+[node name="gold" type="Label" parent="User/CanvasLayer/glorious waste" unique_id=920527895]
 layout_mode = 0
 offset_left = 57.0
 offset_top = 6.0
@@ -814,6 +816,7 @@ offset_right = 97.0
 offset_bottom = 29.0
 theme_override_constants/outline_size = 6
 text = ": 0"
+script = ExtResource("9_w7kh3")
 
 [node name="boss man" parent="." unique_id=526438983 instance=ExtResource("4_4mrxx")]
 position = Vector2(-217, -18)

@@ -18,6 +18,7 @@ func _ready() -> void:
 	bin.hide()
 	add_child(pinventory)
 	pinventory.hide()
+	
 
 
 
@@ -35,33 +36,31 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("escape"):
 		bin.hide()
 		pinventory.hide()
-		
+
 
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	entered = true
-
+	
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	entered = false
 	bin.hide()
 	pinventory.hide()
+	print(globals.bin_inventory)
+	for key_value in globals.bin_inventory:
+		if garbage_type[collection.acceptable_trash] == key_value:
+			globals.player_inventory["money"] += globals.bin_inventory[garbage_type[collection.acceptable_trash]] * 0.1
+		elif key_value != garbage_type[collection.acceptable_trash] and globals.bin_inventory[key_value] > 0: 
+			print("lost key", key_value)
+			print("lost type", garbage_type[collection.acceptable_trash])
+			globals.player_inventory["money"] -= globals.bin_inventory[key_value] * 0.1
+		globals.bin_inventory[key_value] = 0
+	
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		bin.global_position = body.cam_coords() + Vector2(-100,-100)
 		pinventory.global_position = body.cam_coords() + Vector2(-400,-100)
-
-
-func _on_timer_timeout() -> void:
-	pass
-	#if entered == true:
-		#for item in bin.items:
-			#for key_value in globals.player_inventory:
-				#if item.item_name == key_value:
-					#globals.player_inventoryp["money"] = 0.1 + globals.player_inventory[key_value]
-				#else: pass
-					#print(bin.items)
-					#print(item.item_name, " not == ",key_value)

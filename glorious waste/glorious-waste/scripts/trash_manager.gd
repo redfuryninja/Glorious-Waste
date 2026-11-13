@@ -21,6 +21,7 @@ const RUBBLE = preload("uid://bss74yinousq")
 const SCRAP_METAL = preload("uid://cutw7thrrc1fg")
 const TEXTILES = preload("uid://cec5pol5xnmbk")
 const WOOD = preload("uid://dax1ghbfyg4ro")
+const GOLD = preload("uid://drvl8a5d7bg6u")
 
 
 var bin = []
@@ -48,12 +49,14 @@ func _ready() -> void:
 		var scrap_metal: waste = SCRAP_METAL.instantiate()
 		var textiles: waste = TEXTILES.instantiate()
 		var wood: waste = WOOD.instantiate()
+		var gold: waste = GOLD.instantiate()
+		
 		var waste_list = {0:appliance, 1:battery, 2: cans,3: cardboard,4: car_battery,5: electric,6: food,7: furniture,8: garden,9: general,10: glass,11: hazardous,12: medical,13: mixed
-		,14: oil,15: plastic,16: rubble,17: scrap_metal,18: textiles,19: wood}
-		var random = randi() % 20
+		,14: oil,15: plastic,16: rubble,17: scrap_metal,18: textiles,19: wood, 20:gold}
+		var random = randi() % 21
 		var x = randi() % 300
 		var y = randi() % 600
-		for n in range (20):
+		for n in range (21):
 			if random == n: 
 				bin.append(waste_list[n])
 				add_child(waste_list[n])

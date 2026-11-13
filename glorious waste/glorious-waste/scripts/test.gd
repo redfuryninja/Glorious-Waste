@@ -21,7 +21,8 @@ func _on_e_gloves_button_up() -> void:
 
 
 func _on_sell_gold_button_up() -> void:
-	pass # Replace with function body.
+	globals.player_inventory["money"] += globals.player_inventory["gold"] * 10
+	globals.player_inventory["gold"] = 0
 
 
 func _on_gas_mask_button_up() -> void:
