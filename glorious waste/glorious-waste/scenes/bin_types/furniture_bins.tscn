@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://ckktm41rpw5ng"]
+
+[ext_resource type="PackedScene" uid="uid://b7h8mhfgt487p" path="res://scenes/bin_types/bins.tscn" id="1_857we"]
+
+[node name="furniture_bins" unique_id=523611760 instance=ExtResource("1_857we")]

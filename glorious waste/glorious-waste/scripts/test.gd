@@ -13,11 +13,15 @@ func _physics_process(delta: float) -> void:
 		shop.hide()
 
 func _on_gloves_button_up() -> void:
-	globals.player_inventory["gloves"] = 100.0
+	if globals.player_inventory["money"] >= 5:
+		globals.player_inventory["gloves"] = 100.0
+		globals.player_inventory["money"] - 5
 
 
 func _on_e_gloves_button_up() -> void:
-	globals.player_inventory["e_gloves"] = 100.0
+	if globals.player_inventory["money"] >= 5:
+		globals.player_inventory["e_gloves"] = 100.0
+		globals.player_inventory["money"] - 5
 
 
 func _on_sell_gold_button_up() -> void:
@@ -26,24 +30,34 @@ func _on_sell_gold_button_up() -> void:
 
 
 func _on_gas_mask_button_up() -> void:
-	globals.player_inventory["gas_mask"] = 100.0
+	if globals.player_inventory["money"] >= 5:
+		globals.player_inventory["gas_mask"] = 100.0
+		globals.player_inventory["money"] - 5
 
 
 func _on_hp_up_button_up() -> void:
-	globals.max_hp += 50
-	globals.player_inventory["hp"] += 50
+	if globals.player_inventory["money"] >= 10:
+		globals.max_hp += 50
+		globals.player_inventory["hp"] += 50
+		globals.player_inventory["money"] - 10
 
 
 func _on_bandages_button_up() -> void:
-	globals.player_inventory["gloves"] = globals.max_hp
+	if globals.player_inventory["money"] >= 5:
+		globals.player_inventory["gloves"] = globals.max_hp
+		globals.player_inventory["money"] - 5
 
 
 func _on_hazamat_suit_button_up() -> void:
-	globals.player_inventory["hazmat"] = 100.0
+	if globals.player_inventory["money"] >= 5:
+		globals.player_inventory["hazmat"] = 100.0
+		globals.player_inventory["money"] - 5
 
 
 func _on_weight_up_button_up() -> void:
-	globals.max_kg += 50
+	if globals.player_inventory["money"] >= 10:
+		globals.max_kg += 50
+		globals.player_inventory["money"] - 10
 
 func _on_next_day_button_up() -> void:
 	var level_to_load: String = str("res://scenes/world.tscn")

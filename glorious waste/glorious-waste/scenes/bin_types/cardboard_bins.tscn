@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c307b4fdvis8y"]
+
+[ext_resource type="PackedScene" uid="uid://b7h8mhfgt487p" path="res://scenes/bin_types/bins.tscn" id="1_q0css"]
+
+[node name="cardboard_bins" unique_id=523611760 instance=ExtResource("1_q0css")]
+
+[node name="InventorySpritesNoLines" parent="." index="2" unique_id=717341346]
+frame = 16
+
+[node name="type" parent="." index="4" unique_id=1572690599]
+acceptable_trash = 4

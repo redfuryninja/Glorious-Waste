@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://jsrsyg1asyo1"]
+
+[ext_resource type="PackedScene" uid="uid://b7h8mhfgt487p" path="res://scenes/bin_types/bins.tscn" id="1_8p7gn"]
+
+[node name="glass_bins" unique_id=523611760 instance=ExtResource("1_8p7gn")]
+
+[node name="InventorySpritesNoLines" parent="." index="2" unique_id=717341346]
+frame = 21
+
+[node name="type" parent="." index="4" unique_id=1572690599]
+acceptable_trash = 10
