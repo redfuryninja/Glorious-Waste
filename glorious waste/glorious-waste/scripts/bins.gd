@@ -29,7 +29,9 @@ func _process(delta: float) -> void:
 		bin.check_Inventory()
 		bin.show()
 		pinventory.show()
-		
+	if entered == true:
+		pinventory.check_Inventory()
+		bin.check_Inventory()
 	if Input.is_action_just_pressed("escape"):
 		bin.hide()
 		pinventory.hide()
