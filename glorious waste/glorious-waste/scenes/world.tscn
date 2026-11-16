@@ -786,6 +786,9 @@ position = Vector2(1682, 900)
 [node name="wood_bins" parent="bin folder" unique_id=226243004 instance=ExtResource("23_d46x8")]
 position = Vector2(1682, 1013)
 
+[node name="boss man" parent="." unique_id=526438983 instance=ExtResource("4_4mrxx")]
+position = Vector2(-217, -18)
+
 [node name="User" parent="." unique_id=1700704059 instance=ExtResource("1_nnsk1")]
 position = Vector2(284, 203)
 
@@ -832,9 +835,6 @@ offset_bottom = 29.0
 theme_override_constants/outline_size = 6
 text = ": 0"
 script = ExtResource("9_w7kh3")
-
-[node name="boss man" parent="." unique_id=526438983 instance=ExtResource("4_4mrxx")]
-position = Vector2(-217, -18)
 
 [connection signal="health" from="User" to="User/CanvasLayer/HP" method="_on_user_health"]
 [connection signal="spawn" from="User" to="Trash Manager" method="_on_user_spawn"]

@@ -30,12 +30,10 @@ func _process(delta: float) -> void:
 		globals.player_inventory["mass"] += weight.weight
 		globals.damage["edge"] += sharp.sharp
 		globals.damage["gas"] += gasses.noxious
-		globals.damage["hazard"] += radioactive.radioavtive
+		globals.damage["hazard"] += radioactive.radioactive
 		globals.damage["zap"] += electric.electrical
 		globals.damage["holding"] = true
 		queue_free()
-
-
 
 
 

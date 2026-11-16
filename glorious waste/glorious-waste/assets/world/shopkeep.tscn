@@ -31,7 +31,7 @@ position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_67o6a")
 
 [node name="shop" type="Control" parent="." unique_id=1395350351]
-visible = false
+z_index = 5
 layout_mode = 3
 anchors_preset = 0
 offset_left = -67.0
@@ -113,6 +113,81 @@ offset_top = 92.0
 offset_right = 139.0
 offset_bottom = 139.0
 metadata/_edit_use_anchors_ = true
+
+[node name="gloves" type="Label" parent="shop" unique_id=1970007564]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 27.0
+offset_right = 52.0
+offset_bottom = 50.0
+text = "£5"
+
+[node name="egloves" type="Label" parent="shop" unique_id=425208645]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 25.0
+offset_right = 101.0
+offset_bottom = 48.0
+text = "£5"
+
+[node name="sell gold" type="Label" parent="shop" unique_id=1871904843]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 26.0
+offset_right = 144.0
+offset_bottom = 49.0
+text = "£5"
+
+[node name="gas_mask" type="Label" parent="shop" unique_id=226454397]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 72.0
+offset_right = 53.0
+offset_bottom = 95.0
+text = "£5"
+
+[node name="hp up" type="Label" parent="shop" unique_id=1225669689]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 71.0
+offset_right = 100.0
+offset_bottom = 94.0
+text = "£10"
+
+[node name="recover hp" type="Label" parent="shop" unique_id=239237487]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 72.0
+offset_right = 156.0
+offset_bottom = 95.0
+text = "£5"
+
+[node name="hazmat" type="Label" parent="shop" unique_id=1624139312]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 118.0
+offset_right = 52.0
+offset_bottom = 141.0
+text = "£5"
+
+[node name="weight up" type="Label" parent="shop" unique_id=1497089387]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 117.0
+offset_right = 94.0
+offset_bottom = 140.0
+text = "£10"
+
+[node name="new day" type="Label" parent="shop" unique_id=1734409271]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 125.0
+offset_right = 137.0
+offset_bottom = 148.0
+theme_override_font_sizes/font_size = 10
+text = "new day"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=927913790]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

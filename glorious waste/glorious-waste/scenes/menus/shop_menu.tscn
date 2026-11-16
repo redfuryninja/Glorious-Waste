@@ -73,3 +73,76 @@ offset_left = 92.0
 offset_top = 92.0
 offset_right = 139.0
 offset_bottom = 139.0
+
+[node name="gloves" type="Label" parent="." unique_id=359106543]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 27.0
+offset_right = 52.0
+offset_bottom = 50.0
+text = "£5"
+
+[node name="egloves" type="Label" parent="." unique_id=733187961]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 25.0
+offset_right = 101.0
+offset_bottom = 48.0
+text = "£5"
+
+[node name="sell gold" type="Label" parent="." unique_id=1872027563]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 26.0
+offset_right = 144.0
+offset_bottom = 49.0
+text = "£5"
+
+[node name="gas_mask" type="Label" parent="." unique_id=1524787040]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 72.0
+offset_right = 53.0
+offset_bottom = 95.0
+text = "£5"
+
+[node name="hp up" type="Label" parent="." unique_id=2144023179]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 71.0
+offset_right = 100.0
+offset_bottom = 94.0
+text = "£10"
+
+[node name="recover hp" type="Label" parent="." unique_id=1929178110]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 72.0
+offset_right = 156.0
+offset_bottom = 95.0
+text = "£5"
+
+[node name="hazmat" type="Label" parent="." unique_id=1848596035]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 118.0
+offset_right = 52.0
+offset_bottom = 141.0
+text = "£5"
+
+[node name="weight up" type="Label" parent="." unique_id=664965086]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 117.0
+offset_right = 94.0
+offset_bottom = 140.0
+text = "£10"
+
+[node name="new day" type="Label" parent="." unique_id=1112337877]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 125.0
+offset_right = 137.0
+offset_bottom = 148.0
+theme_override_font_sizes/font_size = 10
+text = "new day"

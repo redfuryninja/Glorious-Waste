@@ -22,8 +22,10 @@ const SCRAP_METAL = preload("uid://cutw7thrrc1fg")
 const TEXTILES = preload("uid://cec5pol5xnmbk")
 const WOOD = preload("uid://dax1ghbfyg4ro")
 const GOLD = preload("uid://drvl8a5d7bg6u")
-
-
+var garbage_type = ["appliances","batteries","cans","car_batteries","cardboard","electrical","food",
+"furniture","garden","general","glass","hazardous","medical","mixed_recycling","motor_oil","plastic",
+"rubble","scrap_metal","textiles","wood", "gold"]
+var waste_list: Array[waste]
 var bin = []
 var tossed = []
 # Called when the node enters the scene tree for the first time.
@@ -51,8 +53,7 @@ func _ready() -> void:
 		var wood: waste = WOOD.instantiate()
 		var gold: waste = GOLD.instantiate()
 		
-		var waste_list = {0:appliance, 1:battery, 2: cans,3: cardboard,4: car_battery,5: electric,6: food,7: furniture,8: garden,9: general,10: glass,11: hazardous,12: medical,13: mixed
-		,14: oil,15: plastic,16: rubble,17: scrap_metal,18: textiles,19: wood, 20:gold}
+		waste_list = [appliance,battery,cans,cardboard,car_battery,electric,food,furniture,garden,general,glass,hazardous,medical,mixed,oil,plastic,rubble,scrap_metal,textiles,wood,gold]
 		var random = randi() % 21
 		var x = randi() % 300
 		var y = randi() % 600
@@ -75,6 +76,24 @@ func _process(delta: float) -> void:
 			globals.clear = true
 		else:
 			globals.clear = false
+	if Input.is_action_just_pressed("escape"):
+		var count = 0
+		globals.damage["edge"] = 0
+		globals.damage["gas"] = 0
+		globals.damage["hazard"] = 0
+		globals.damage["zap"] = 0
+
+		for key_value in globals.player_inventory:
+			if key_value != "hp" and  key_value != "mass" and key_value != "money" and key_value != "gloves" and key_value != "e_gloves" and key_value != "gas_mask" and key_value != "hazmat":
+				if globals.player_inventory[key_value] > 0:
+					globals.damage["edge"] += globals.player_inventory[key_value] * waste_list[count].sharp.sharp
+					globals.damage["zap"] += globals.player_inventory[key_value] * waste_list[count].electric.electrical
+					globals.damage["gas"] += globals.player_inventory[key_value] * waste_list[count].gasses.noxious
+					globals.damage["hazard"] += globals.player_inventory[key_value] * waste_list[count].radioactive.radioactive
+					
+
+				count +=1
+		print(globals.damage)
 
 
 

@@ -14,7 +14,7 @@ sharp = 0.01
 trash_type = 12
 
 [node name="hazard" parent="." index="5" unique_id=1726729540]
-radioavtive = 0.025
+radioactive = 0.01
 
 [node name="heavy" parent="." index="7" unique_id=504542935]
 weight = 20.0

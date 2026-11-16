@@ -27,7 +27,6 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	var temp = item.itemResource
-	print(data.itemResource)
 	var parent = get_parent()
 	var grandparent = parent.get_parent()
 	var g_grandparent = grandparent.get_parent()
@@ -43,6 +42,7 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 		if item.itemResource.item_name == "empty":
 			globals.bin_inventory[data.itemResource.item_name] = globals.player_inventory[data.itemResource.item_name]
 			globals.player_inventory[data.itemResource.item_name] = 0
+			
 		else:
 			globals.bin_inventory[data.itemResource.item_name] = globals.player_inventory[data.itemResource.item_name]
 			globals.player_inventory[data.itemResource.item_name] = 0

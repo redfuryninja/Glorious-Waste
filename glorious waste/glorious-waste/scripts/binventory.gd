@@ -6,6 +6,7 @@ func _init_items() -> void:
 		items[i] = BLANK
 		item_slots[i].item.itemResource = items[i]
 	check_Inventory()
+	
 
 
 func check_Inventory():
