@@ -39,137 +39,137 @@ var inventory = INVENTORY.instantiate()
 
 
 func sprite_check():
-    if Input.is_action_just_pressed("gloves"):
-        if globals.player_inventory["gloves"] > 0:
-            if gloves == true: gloves = false
-            else: gloves = true
-    elif Input.is_action_just_pressed("egloves"):
-        if globals.player_inventory["e_gloves"] > 0.0:
-            if e_gloves == true: e_gloves = false
-            else: e_gloves = true
-    elif Input.is_action_just_pressed("gas_mask"):
-        if globals.player_inventory["gas_mask"] > 0:
-            if gas_mask == true: gas_mask = false
-            else: gas_mask = true
-    elif Input.is_action_just_pressed("hazmat_suit"):
-        if globals.player_inventory["hazmat"] > 0:
-            if hazmat == true: hazmat = false
-            else: hazmat = true
+	if Input.is_action_just_pressed("gloves"):
+		if globals.player_inventory["gloves"] > 0:
+			if gloves == true: gloves = false
+			else: gloves = true
+	elif Input.is_action_just_pressed("egloves"):
+		if globals.player_inventory["e_gloves"] > 0.0:
+			if e_gloves == true: e_gloves = false
+			else: e_gloves = true
+	elif Input.is_action_just_pressed("gas_mask"):
+		if globals.player_inventory["gas_mask"] > 0:
+			if gas_mask == true: gas_mask = false
+			else: gas_mask = true
+	elif Input.is_action_just_pressed("hazmat_suit"):
+		if globals.player_inventory["hazmat"] > 0:
+			if hazmat == true: hazmat = false
+			else: hazmat = true
 
-    if globals.player_inventory["gloves"] <= 0: gloves = false
-    if globals.player_inventory["e_gloves"] <= 0: e_gloves = false
-    if globals.player_inventory["gas_mask"] <= 0: gas_mask = false
-    if globals.player_inventory["hazmat"] <= 0: hazmat = false
+	if globals.player_inventory["gloves"] <= 0: gloves = false
+	if globals.player_inventory["e_gloves"] <= 0: e_gloves = false
+	if globals.player_inventory["gas_mask"] <= 0: gas_mask = false
+	if globals.player_inventory["hazmat"] <= 0: hazmat = false
 
-    
-    if hazmat == true:
-        sprite_used = hm
-    elif gas_mask == true:
-            if e_gloves == true:sprite_used = gm+eg
-            elif gloves == true:sprite_used = gm+g
-            else: sprite_used = gm
-    elif e_gloves == true: 
-        sprite_used = eg 
-    elif gloves == true: sprite_used = g
-    else: sprite_used = ng
+	
+	if hazmat == true:
+		sprite_used = hm
+	elif gas_mask == true:
+			if e_gloves == true:sprite_used = gm+eg
+			elif gloves == true:sprite_used = gm+g
+			else: sprite_used = gm
+	elif e_gloves == true: 
+		sprite_used = eg 
+	elif gloves == true: sprite_used = g
+	else: sprite_used = ng
 
 
 func update_stats():
-    globals.player_inventory["hp"] = hp
-    globals.player_inventory["mass"] = kg
-    globals.player_inventory["money"] = money
-    globals.max_hp = max_hp
-    globals.max_kg = max_kg
+	globals.player_inventory["hp"] = hp
+	globals.player_inventory["mass"] = kg
+	globals.player_inventory["money"] = money
+	globals.max_hp = max_hp
+	globals.max_kg = max_kg
 
 
 
 func _ready() -> void:
-    
-    update_stats()
-    add_child(inventory)
-    inventory.hide()
+	
+	update_stats()
+	add_child(inventory)
+	inventory.hide()
 
 func damage():
-    if gloves == true and globals.player_inventory["gloves"] > 0: globals.player_inventory["gloves"]  -= globals.damage["edge"]
-    else: globals.player_inventory["hp"] -= globals.damage["edge"]
-    if e_gloves == true and globals.player_inventory["e_gloves"] > 0 : globals.player_inventory["e_gloves"] -= globals.damage["zap"]
-    else: globals.player_inventory["hp"] -= globals.damage["zap"]
-    if gas_mask == true and globals.player_inventory["gas_mask"] > 0: globals.player_inventory["gas_mask"]  -= globals.damage["gas"]
-    else: globals.player_inventory["hp"] -= globals.damage["gas"]
-    if hazmat == true and globals.player_inventory["hazmat"] > 0: globals.player_inventory["hazmat"]  -= globals.damage["hazard"]
-    else: globals.player_inventory["hp"] -= globals.damage["hazard"]
-    health.emit()
-    
+	if gloves == true and globals.player_inventory["gloves"] > 0: globals.player_inventory["gloves"]  -= globals.damage["edge"]
+	else: globals.player_inventory["hp"] -= globals.damage["edge"]
+	if e_gloves == true and globals.player_inventory["e_gloves"] > 0 : globals.player_inventory["e_gloves"] -= globals.damage["zap"]
+	else: globals.player_inventory["hp"] -= globals.damage["zap"]
+	if gas_mask == true and globals.player_inventory["gas_mask"] > 0: globals.player_inventory["gas_mask"]  -= globals.damage["gas"]
+	else: globals.player_inventory["hp"] -= globals.damage["gas"]
+	if hazmat == true and globals.player_inventory["hazmat"] > 0: globals.player_inventory["hazmat"]  -= globals.damage["hazard"]
+	else: globals.player_inventory["hp"] -= globals.damage["hazard"]
+	health.emit()
+	
 func move():
-    direction.x = Input.get_axis("left", "right")
-    direction.y = Input.get_axis("up", "down")
-    direction = direction.normalized()
-    if direction:
-        if Input.is_action_pressed("up"):
-            if sprite.animation != sprite_used + "up" : sprite.animation = sprite_used +  "up"
-        elif Input.is_action_pressed("down"):
-            if sprite.animation != sprite_used + "down" : sprite.animation = sprite_used + "down"
-        elif Input.is_action_pressed("left"):
-            if sprite.animation != sprite_used + "left" : sprite.animation = sprite_used + "left"
-        elif Input.is_action_pressed("right"):
-            if sprite.animation != sprite_used + "right" : sprite.animation = sprite_used + "right"
-        velocity = direction * speed
-    else:
-        velocity = velocity.move_toward(Vector2.ZERO, speed)
-    move_and_slide()
+	direction.x = Input.get_axis("left", "right")
+	direction.y = Input.get_axis("up", "down")
+	direction = direction.normalized()
+	if direction:
+		if Input.is_action_pressed("up"):
+			if sprite.animation != sprite_used + "up" : sprite.animation = sprite_used +  "up"
+		elif Input.is_action_pressed("down"):
+			if sprite.animation != sprite_used + "down" : sprite.animation = sprite_used + "down"
+		elif Input.is_action_pressed("left"):
+			if sprite.animation != sprite_used + "left" : sprite.animation = sprite_used + "left"
+		elif Input.is_action_pressed("right"):
+			if sprite.animation != sprite_used + "right" : sprite.animation = sprite_used + "right"
+		velocity = direction * speed
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO, speed)
+	move_and_slide()
 
 func check_holding():
-    for key_value in globals.player_inventory:
-            if key_value != "hp" and  key_value != "mass" and key_value != "money" and key_value != "gloves" and key_value != "e_gloves" and key_value != "gas_mask" and key_value != "hazmat":
-                if key_value != "gold":
-                    if globals.player_inventory[key_value] > 0.0:
-                        globals.damage["holding"] = true
-            else: globals.damage["holding"] = false
-                
+	for key_value in globals.player_inventory:
+			if key_value != "hp" and  key_value != "mass" and key_value != "money" and key_value != "gloves" and key_value != "e_gloves" and key_value != "gas_mask" and key_value != "hazmat":
+				if key_value != "gold":
+					if globals.player_inventory[key_value] > 0.0:
+						globals.damage["holding"] = true
+			else: globals.damage["holding"] = false
+				
 
 
 
 func _physics_process(delta: float) -> void:
-    sprite_check()
-    if lockInput == 0:
-        move()
-        check_holding()
-        if globals.damage["holding"] == true:
-            damage()
-        health.emit()
-    
-    if Input.is_action_just_pressed("inventory"):
-        lockInput = 1
-        inventory.update()
-        inventory.global_position.x = position.x + 150
-        inventory.global_position.y = position.y
-        inventory.show()
-    
-    elif Input.is_action_just_pressed("escape"):
-        lockInput = 0
-        inventory.hide()
-        check_holding()
-    #if Input.is_action_just_pressed("trigger"):
-        #spawn.emit(spawnCount, position.x, position.y)
-        #spawnCount += 1
-        #if spawnCount >= 100:
-            #spawnCount = 0
-    if Input.is_action_just_pressed("interact"):
-        check_holding()
-        if entered == true:
-            lockInput = 1
+	sprite_check()
+	if lockInput == 0:
+		move()
+		check_holding()
+		if globals.damage["holding"] == true:
+			damage()
+		health.emit()
+	
+	if Input.is_action_just_pressed("inventory"):
+		lockInput = 1
+		inventory.update()
+		inventory.global_position.x = position.x + 150
+		inventory.global_position.y = position.y
+		inventory.show()
+	
+	elif Input.is_action_just_pressed("escape"):
+		lockInput = 0
+		inventory.hide()
+		check_holding()
+	#if Input.is_action_just_pressed("trigger"):
+		#spawn.emit(spawnCount, position.x, position.y)
+		#spawnCount += 1
+		#if spawnCount >= 100:
+			#spawnCount = 0
+	if Input.is_action_just_pressed("interact"):
+		check_holding()
+		if entered == true:
+			lockInput = 1
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-    weight.emit()
-    
+	weight.emit()
+	
 func cam_coords():
-    return camera.get_screen_center_position()
+	return camera.get_screen_center_position()
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-    entered = true
+	entered = true
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-    entered = false
+	entered = false
