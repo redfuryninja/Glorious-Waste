@@ -351,6 +351,7 @@ size = Vector2(30, 12)
 [node name="User" type="CharacterBody2D" unique_id=1610816074]
 position = Vector2(106, 84)
 script = ExtResource("1_g2els")
+speed = null
 
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=57163324]
 texture_filter = 1

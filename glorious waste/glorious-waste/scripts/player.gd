@@ -125,7 +125,7 @@ func check_holding():
 					if globals.player_inventory[key_value] > 0.0:
 						globals.damage["holding"] = true
 			else: globals.damage["holding"] = false
-				
+	if globals.forklift == true: globals.damage["holding"] = false
 
 
 
