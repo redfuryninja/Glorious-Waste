@@ -37,14 +37,12 @@ func _process(delta: float) -> void:
 		pinventory.check_Inventory()
 		bin.check_Inventory()
 	if Input.is_action_just_pressed("escape") and entered == true:
-		print("collection = ", collection.acceptable_trash)
 		bin.hide()
 		pinventory.hide()
 		for key_value in globals.bin_inventory:
 			if garbage_type[collection.acceptable_trash] == key_value:
 				globals.player_inventory["money"] += globals.bin_inventory[garbage_type[collection.acceptable_trash]] * 0.1
 			elif key_value != garbage_type[collection.acceptable_trash] and globals.bin_inventory[key_value] > 0: 
-				print(key_value, "! =", collection.acceptable_trash)
 				globals.player_inventory["money"] -= globals.bin_inventory[key_value] * 0.1
 			globals.bin_inventory[key_value] = 0
 	

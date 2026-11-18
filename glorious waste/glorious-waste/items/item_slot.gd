@@ -18,7 +18,6 @@ func _get_drag_data(_at_position: Vector2) -> Item:
 	var g_grandparent = grandparent.get_parent()
 	var g_g_grandparent = g_grandparent.get_parent()
 
-	print(g_g_grandparent.name)
 	globals.origin_inventory = g_g_grandparent.name
 	return item
 
@@ -32,12 +31,7 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	var g_grandparent = grandparent.get_parent()
 	var g_g_grandparent = g_grandparent.get_parent()
 
-	print(g_g_grandparent.name)
 	drop_inventory = g_g_grandparent.name
-	print("dropped on ", item.itemResource.item_name)
-	print("picked up = ", data.itemResource.item_name)
-	print("origin inventory ", globals.origin_inventory)
-	print("drop inventory ", drop_inventory)
 	if globals.origin_inventory == "inventory_test" and drop_inventory == "binventory":
 		if item.itemResource.item_name == "empty":
 			globals.bin_inventory[data.itemResource.item_name] = globals.player_inventory[data.itemResource.item_name]
