@@ -20,6 +20,9 @@ var bin_inventory = {"appliances" : 0,"batteries": 0,"cans": 0,"car_batteries": 
 "furniture": 0,"garden": 0,"general": 0,"glass": 0,"hazardous": 0,"medical": 0,"mixed_recycling": 0,"motor_oil": 0,"plastic": 0,
 "rubble": 0,"scrap_metal": 0,"textiles": 0,"wood": 0, "empty": 0}
 
+var fuel: float = 0.0
+var battery:float = 0.0
+
 func reset():
 	clear = false
 

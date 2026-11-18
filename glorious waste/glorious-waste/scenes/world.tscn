@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bgpr1yk1pvwn2"]
 
-[ext_resource type="PackedScene" uid="uid://k57temdhcq28" path="res://scenes/player.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://k57temdhcq28" path="res://scenes/player/player.tscn" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://bojci230wkcn6" path="res://assets/world/side-front facing bins.png" id="2_4wyf3"]
 [ext_resource type="Texture2D" uid="uid://cub0ls74ibt38" path="res://assets/world/Tile Map.png" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://cfk366v0nibmu" path="res://assets/world/shopkeep.tscn" id="4_4mrxx"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://do8v2kfrmkm7" path="res://scenes/bin_types/scrap_metal_bins.tscn" id="21_18clu"]
 [ext_resource type="PackedScene" uid="uid://bsg8xyou65fo" path="res://scenes/bin_types/textile_bins.tscn" id="22_4wdv8"]
 [ext_resource type="PackedScene" uid="uid://b8ywjah2oejlr" path="res://scenes/bin_types/wood_bins.tscn" id="23_d46x8"]
+[ext_resource type="PackedScene" uid="uid://cx46g7adjx4ee" path="res://scenes/player/forklift.tscn" id="30_navra"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wyf3"]
 texture = ExtResource("2_rwgxs")
@@ -788,6 +789,9 @@ position = Vector2(1682, 1013)
 
 [node name="boss man" parent="." unique_id=526438983 instance=ExtResource("4_4mrxx")]
 position = Vector2(-217, -18)
+
+[node name="Forklift" parent="." unique_id=662524078 instance=ExtResource("30_navra")]
+position = Vector2(950, 523)
 
 [node name="User" parent="." unique_id=1700704059 instance=ExtResource("1_nnsk1")]
 position = Vector2(284, 203)

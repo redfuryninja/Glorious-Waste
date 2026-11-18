@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cx46g7adjx4ee"]
+
+[ext_resource type="Texture2D" uid="uid://c0nmxk4tgt166" path="res://assets/player/forklift left.png" id="1_y22ue"]
+[ext_resource type="Texture2D" uid="uid://daxdjfxan8wag" path="res://assets/player/forklift right.png" id="2_p385l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nwdj6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y22ue")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_p385l")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcm8l"]
+size = Vector2(64, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbpkn"]
+size = Vector2(75, 71)
+
+[node name="Forklift" type="CharacterBody2D" unique_id=662524078]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=400577045]
+position = Vector2(4, -15)
+scale = Vector2(2.1129034, 2.1785715)
+sprite_frames = SubResource("SpriteFrames_nwdj6")
+animation = &"right"
+autoplay = "left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1057288414]
+position = Vector2(5, -14.5)
+shape = SubResource("RectangleShape2D_fcm8l")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=933163585]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=699469536]
+position = Vector2(5.5, -14.5)
+shape = SubResource("RectangleShape2D_kbpkn")
+debug_color = Color(0.96662074, 0, 0.4823736, 0.41960785)
