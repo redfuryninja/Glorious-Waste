@@ -18,7 +18,6 @@ var hp = 100.0
 var kg = 0.0
 var money = 0.0
 var spawnCount = 0
-var lockInput = 0
 var gloves = false
 var e_gloves = false
 var gas_mask = false
@@ -126,27 +125,35 @@ func check_holding():
 						globals.damage["holding"] = true
 			else: globals.damage["holding"] = false
 	if globals.forklift == true: globals.damage["holding"] = false
+	weight.emit()
 
 
 
 func _physics_process(delta: float) -> void:
 	sprite_check()
-	if lockInput == 0:
+	if globals.lockInput == 0 and globals.forklift == false:
+		get_node("CollisionShape2D").disabled = false   # enable
+		get_node("Area2D/CollisionShape2D").disabled = false
 		move()
 		check_holding()
 		if globals.damage["holding"] == true:
 			damage()
 		health.emit()
 	
+	if globals.forklift == true: 
+		get_node("CollisionShape2D").disabled = true    # disable
+		get_node("Area2D/CollisionShape2D").disabled = true
+		global_position = globals.forklift_pos
+	
 	if Input.is_action_just_pressed("inventory"):
-		lockInput = 1
+		globals.lockInput = 1
 		inventory.update()
 		inventory.global_position.x = position.x + 150
 		inventory.global_position.y = position.y
 		inventory.show()
 	
 	elif Input.is_action_just_pressed("escape"):
-		lockInput = 0
+		globals.lockInput = 0
 		inventory.hide()
 		check_holding()
 	#if Input.is_action_just_pressed("trigger"):
@@ -154,10 +161,18 @@ func _physics_process(delta: float) -> void:
 		#spawnCount += 1
 		#if spawnCount >= 100:
 			#spawnCount = 0
+			
+	if Input.is_action_just_pressed("enter_exit"):
+		if entered == true:
+			if visible == true and globals.player_inventory["motor_oil"] > 0 and globals.player_inventory["motor_oil"] > 0:
+				hide()
+			else:
+				show()
+		else: show()
+			
+			
 	if Input.is_action_just_pressed("interact"):
 		check_holding()
-		if entered == true:
-			lockInput = 1
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:

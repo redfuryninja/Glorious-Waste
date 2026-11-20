@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name manager
 const TRASH = preload("uid://c2kde2myuntvg")
 const APPLIANCES = preload("uid://bb4bqqh1jr6fd")
 const BATTERIES = preload("uid://b7p8nrv47a2hp")

@@ -33,19 +33,26 @@ size = Vector2(82, 76)
 script = ExtResource("1_p385l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=400577045]
-position = Vector2(4, -15)
 scale = Vector2(2.1129034, 2.1785715)
 sprite_frames = SubResource("SpriteFrames_nwdj6")
 animation = &"right"
 autoplay = "left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1057288414]
-position = Vector2(5, -14.5)
 shape = SubResource("RectangleShape2D_fcm8l")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=933163585]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=699469536]
-position = Vector2(5, -15)
 shape = SubResource("RectangleShape2D_kbpkn")
 debug_color = Color(0.96662074, 0, 0.4823736, 0.41960785)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=780798611]
+zoom = Vector2(1.5, 1.5)
+limit_left = -254
+limit_top = -119
+limit_right = 1741
+limit_bottom = 1067
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

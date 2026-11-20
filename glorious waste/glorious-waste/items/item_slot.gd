@@ -9,9 +9,11 @@ func _get_drag_data(_at_position: Vector2) -> Item:
 		return null
 	else:
 		var preview := TextureRect.new()
+		preview.z_index = 4
 		preview.texture = item.itemResource.item_texture
 		preview.custom_minimum_size = item.itemResource.item_texture.get_size()
 		set_drag_preview(preview)
+	
 	
 	var parent = get_parent()
 	var grandparent = parent.get_parent()

@@ -29,6 +29,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if entered == true and Input.is_action_just_pressed("interact"):
+		globals.lockInput = 1
 		pinventory.check_Inventory()
 		bin.check_Inventory()
 		bin.show()
@@ -52,6 +53,7 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	entered = true
+	print("entered")
 	
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
@@ -61,6 +63,11 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is Player:
+	bin.z_index = 3
+	pinventory.z_index = 3
+	if globals.forklift == true:
+		bin.global_position = globals.forklift_pos + Vector2(-100,-100)
+		pinventory.global_position = globals.forklift_pos + Vector2(-400,-100)
+	elif body is Player:
 		bin.global_position = body.cam_coords() + Vector2(-100,-100)
 		pinventory.global_position = body.cam_coords() + Vector2(-400,-100)
