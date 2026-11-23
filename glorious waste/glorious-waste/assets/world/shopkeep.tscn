@@ -31,6 +31,7 @@ position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_67o6a")
 
 [node name="shop" type="Control" parent="." unique_id=1395350351]
+visible = false
 z_index = 5
 layout_mode = 3
 anchors_preset = 0

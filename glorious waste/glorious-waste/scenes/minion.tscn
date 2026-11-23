@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cpkkylf7x3r4v"]
+
+[ext_resource type="Texture2D" uid="uid://duxcymqdj5n82" path="res://assets/player/helpers.png" id="1_7n1am"]
+[ext_resource type="Script" uid="uid://liipvjsrdxag" path="res://scenes/minion.gd" id="1_y8etf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67o6a"]
+size = Vector2(20, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8etf"]
+size = Vector2(30, 54.5)
+
+[node name="minion" type="CharacterBody2D" unique_id=527610328]
+script = ExtResource("1_y8etf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1496456679]
+position = Vector2(1, -1)
+texture = ExtResource("1_7n1am")
+offset = Vector2(0, -8)
+flip_h = true
+hframes = 7
+vframes = 4
+frame = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=244158705]
+position = Vector2(3, 11)
+shape = SubResource("RectangleShape2D_67o6a")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1361598103]
+position = Vector2(2, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=604546006]
+shape = SubResource("RectangleShape2D_y8etf")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1937067634]
+path_desired_distance = 3.0
+target_desired_distance = 60.0
+path_max_distance = 300.0
+path_postprocessing = 1
+avoidance_enabled = true
+radius = 25.93
+debug_enabled = true
+
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
