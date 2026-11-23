@@ -136,30 +136,26 @@ func drop_items(pos):
 	for key_value in globals.player_inventory:
 		if globals.player_inventory["mass"] >= globals.max_kg:
 			if key_value != "hp" and  key_value != "mass" and key_value != "money" and key_value != "gloves" and key_value != "e_gloves" and key_value != "gas_mask" and key_value != "hazmat":
-				for i in range(globals.player_inventory[key_value]):
+				for i in range(globals.player_inventory[key_value]+1):
+					print(key_value, "= ", globals.player_inventory[key_value])
 					var x = randi() % 100
 					var y = randi() % 100
 					var coord: Vector2
 					coord = Vector2(x,y)
-					if key_value != "gold":
+					if key_value != "gold" and globals.player_inventory["mass"] >= globals.max_kg:
+						print("check 1")
 						if globals.player_inventory[key_value] > 0:
+							waste_setup()
+							print("creating", i)
 							bin.append(waste_list[count])
 							add_child(waste_list[count])
-							if bin.back() != null:
-								bin.back().global_position = pos + coord
-								globals.player_inventory[key_value] -= 1
-					
-		
-					
-
+							bin.back().global_position = pos + coord
+							globals.player_inventory[key_value] -= 1
 				count +=1
 	track_details()
-func _on_timer_timeout() -> void:
-	pass # Replace with function body.
 
 
 func _on_user_inventory_update() -> void:
-	waste_setup()
 	track_details()
 
 
