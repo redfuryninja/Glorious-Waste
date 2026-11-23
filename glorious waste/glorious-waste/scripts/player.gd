@@ -161,7 +161,7 @@ func _physics_process(delta: float) -> void:
 			
 	if Input.is_action_just_pressed("enter_exit"):
 		if entered == true:
-			if visible == true and globals.player_inventory["motor_oil"] > 0 and globals.player_inventory["motor_oil"] > 0:
+			if visible == true and (globals.player_inventory["motor_oil"] > 0 and globals.player_inventory["motor_oil"] > 0) or (globals.battery > 0 and globals.fuel > 0):
 				hide()
 			else:
 				global_position.y -= 10
@@ -177,8 +177,6 @@ func _physics_process(delta: float) -> void:
 		drop.emit(global_position)
 		inventory_update.emit()
 		weight.emit()
-	if globals.player_inventory["mass"] == 220:
-		print("dafuq")
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:

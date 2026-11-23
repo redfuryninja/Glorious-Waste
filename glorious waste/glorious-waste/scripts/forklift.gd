@@ -20,28 +20,26 @@ func move():
 
 func _physics_process(delta: float) -> void:
 	if entered == true and Input.is_action_just_pressed("enter_exit"):
-		if globals.player_inventory["motor_oil"] > 0 and globals.player_inventory["car_batteries"] > 0:
+		if (globals.player_inventory["motor_oil"] > 0 and globals.player_inventory["car_batteries"] > 0) or (globals.battery > 0 and globals.fuel > 0):
 			if globals.forklift == false: 
 				globals.forklift = true
 				globals.max_kg += 1000
-				globals.fuel = globals.player_inventory["motor_oil"]
-				globals.battery = globals.player_inventory["car_batteries"]
+				globals.fuel += globals.player_inventory["motor_oil"]
+				globals.battery += globals.player_inventory["car_batteries"]
 				globals.player_inventory["motor_oil"] = 0
 				globals.player_inventory["car_batteries"] = 0
 			else: 
 				globals.forklift = false 
 				globals.max_kg -= 1000
-		elif globals.forklift == true and Input.is_action_just_pressed("enter_exit"): 
-			globals.forklift = false 
-			globals.max_kg -= 1000
+	elif globals.forklift == true and Input.is_action_just_pressed("enter_exit"): 
+		globals.forklift = false 
+		globals.max_kg -= 1000
 		
 		
 	if globals.forklift == true and globals.battery > 0 and globals.fuel > 0:
 		if globals.lockInput == 0:
 			move()
 			globals.forklift_pos = global_position
-			globals.battery -= 0.005
-			globals.fuel -= 0.01
 		if Input.is_action_just_pressed("inventory"):
 			globals.lockInput = 1
 			inventory.update()
@@ -67,3 +65,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	entered = false
+
+
+func _on_timer_timeout() -> void:
+	if globals.forklift == true and globals.battery > 0 and globals.fuel > 0:
+		globals.fuel -= 0.005
+		globals.battery -= 0.01

@@ -860,6 +860,8 @@ offset_top = -2.0
 offset_right = -25.0
 offset_bottom = 25.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_luhhm")
+max_value = 0.0
+step = 0.0
 script = ExtResource("30_fh13f")
 
 [node name="battery_level" type="Label" parent="User/CanvasLayer" unique_id=958515774]
@@ -878,6 +880,8 @@ offset_top = 1.0
 offset_right = 454.0
 offset_bottom = 28.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_luhhm")
+max_value = 0.0
+step = 0.0
 script = ExtResource("31_rup4s")
 
 [node name="Forklift" parent="." unique_id=662524078 instance=ExtResource("30_navra")]

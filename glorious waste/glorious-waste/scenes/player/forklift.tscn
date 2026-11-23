@@ -54,5 +54,10 @@ limit_top = -119
 limit_right = 1741
 limit_bottom = 1067
 
+[node name="Timer" type="Timer" parent="." unique_id=15397798]
+wait_time = 0.1
+autostart = true
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

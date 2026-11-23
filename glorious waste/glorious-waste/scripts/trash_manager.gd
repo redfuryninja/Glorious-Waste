@@ -127,7 +127,6 @@ func track_weight():
 		if key_value != "hp" and  key_value != "mass" and key_value != "money" and key_value != "gloves" and key_value != "e_gloves" and key_value != "gas_mask" and key_value != "hazmat" and key_value != "gold":
 			if globals.player_inventory[key_value] > 0:
 				globals.player_inventory["mass"] += globals.player_inventory[key_value] * waste_list[count].weight.weight
-				print(globals.player_inventory["mass"])
 			count +=1
 
 
