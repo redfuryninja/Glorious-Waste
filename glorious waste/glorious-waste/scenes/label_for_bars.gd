@@ -9,5 +9,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("enter_exit"):
-		if visible == false: visible = true
+		if globals.forklift == true:
+			if visible == false: visible = true
+			else: visible = false
 		else: visible = false

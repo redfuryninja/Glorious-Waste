@@ -799,7 +799,6 @@ position = Vector2(-217, -18)
 [node name="User" parent="." unique_id=1700704059 instance=ExtResource("1_nnsk1")]
 z_index = 2
 position = Vector2(954, 393)
-speed = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="User" unique_id=74606029]
 
@@ -883,9 +882,11 @@ script = ExtResource("31_rup4s")
 
 [node name="Forklift" parent="." unique_id=662524078 instance=ExtResource("30_navra")]
 z_index = 1
-position = Vector2(950, 523)
+position = Vector2(955, 514)
 
+[connection signal="drop" from="User" to="Trash Manager" method="_on_user_drop"]
 [connection signal="health" from="User" to="User/CanvasLayer/HP" method="_on_user_health"]
+[connection signal="inventory_update" from="User" to="Trash Manager" method="_on_user_inventory_update"]
 [connection signal="spawn" from="User" to="Trash Manager" method="_on_user_spawn"]
 [connection signal="weight" from="User" to="User/CanvasLayer/Weight" method="_on_user_weight"]
 [connection signal="weight" from="Forklift" to="User/CanvasLayer/Weight" method="_on_forklift_weight"]

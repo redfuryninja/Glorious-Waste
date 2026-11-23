@@ -9,6 +9,7 @@ signal spawn(spawnCount, x, y)
 signal holding()
 signal inventory_update()
 signal interact()
+signal drop(global_position)
 @export var speed: float = 400.0
 const JUMP_VELOCITY = -400.0
 var direction : Vector2
@@ -156,23 +157,28 @@ func _physics_process(delta: float) -> void:
 		globals.lockInput = 0
 		inventory.hide()
 		check_holding()
-	#if Input.is_action_just_pressed("trigger"):
-		#spawn.emit(spawnCount, position.x, position.y)
-		#spawnCount += 1
-		#if spawnCount >= 100:
-			#spawnCount = 0
+		inventory_update.emit()
 			
 	if Input.is_action_just_pressed("enter_exit"):
 		if entered == true:
 			if visible == true and globals.player_inventory["motor_oil"] > 0 and globals.player_inventory["motor_oil"] > 0:
 				hide()
 			else:
+				global_position.y -= 10
 				show()
 		else: show()
 			
 			
+			
 	if Input.is_action_just_pressed("interact"):
 		check_holding()
+		
+	if globals.player_inventory["mass"] > globals.max_kg: 
+		drop.emit(global_position)
+		inventory_update.emit()
+		weight.emit()
+	if globals.player_inventory["mass"] == 220:
+		print("dafuq")
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:

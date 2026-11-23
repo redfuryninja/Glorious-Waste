@@ -20,19 +20,20 @@ func move():
 
 func _physics_process(delta: float) -> void:
 	if entered == true and Input.is_action_just_pressed("enter_exit"):
-		if globals.forklift == false: 
-			globals.forklift = true
-			globals.max_kg += 1000
-			globals.fuel = globals.player_inventory["motor_oil"]
-			globals.battery = globals.player_inventory["car_batteries"]
-			globals.player_inventory["motor_oil"] = 0
-			globals.player_inventory["car_batteries"] = 0
-		else: 
+		if globals.player_inventory["motor_oil"] > 0 and globals.player_inventory["car_batteries"] > 0:
+			if globals.forklift == false: 
+				globals.forklift = true
+				globals.max_kg += 1000
+				globals.fuel = globals.player_inventory["motor_oil"]
+				globals.battery = globals.player_inventory["car_batteries"]
+				globals.player_inventory["motor_oil"] = 0
+				globals.player_inventory["car_batteries"] = 0
+			else: 
+				globals.forklift = false 
+				globals.max_kg -= 1000
+		elif globals.forklift == true and Input.is_action_just_pressed("enter_exit"): 
 			globals.forklift = false 
 			globals.max_kg -= 1000
-	elif globals.forklift == true and Input.is_action_just_pressed("enter_exit"): 
-		globals.forklift = false 
-		globals.max_kg -= 1000
 		
 		
 	if globals.forklift == true and globals.battery > 0 and globals.fuel > 0:

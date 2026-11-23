@@ -76,35 +76,92 @@ func _process(delta: float) -> void:
 			globals.clear = true
 		else:
 			globals.clear = false
-	if Input.is_action_just_pressed("escape"):
-		var count = 0
-		globals.damage["edge"] = 0
-		globals.damage["gas"] = 0
-		globals.damage["hazard"] = 0
-		globals.damage["zap"] = 0
 
-		for key_value in globals.player_inventory:
+
+func waste_setup():
+	var appliance = APPLIANCES.instantiate()
+	var battery = BATTERIES.instantiate()
+	var cans = CANS.instantiate()
+	var cardboard = CARDBOARD.instantiate()
+	var car_battery = CAR_BATTERIES.instantiate()
+	var electric = ELECTRICAL.instantiate()
+	var food = FOOD.instantiate()
+	var furniture = FURNITURE.instantiate()
+	var garden = GARDEN.instantiate()
+	var general = GENERAL.instantiate()
+	var glass = GLASS.instantiate()
+	var hazardous = HAZARD.instantiate()
+	var medical = MEDICAL.instantiate()
+	var mixed = MIXED.instantiate()
+	var oil = OIL.instantiate()
+	var plastic = PLASTIC.instantiate()
+	var rubble = RUBBLE.instantiate()
+	var scrap_metal = SCRAP_METAL.instantiate()
+	var textiles = TEXTILES.instantiate()
+	var wood = WOOD.instantiate()
+	var gold = GOLD.instantiate()
+	
+	waste_list = [appliance,battery,cans,cardboard,car_battery,electric,food,furniture,garden,general,glass,hazardous,medical,mixed,oil,plastic,rubble,scrap_metal,textiles,wood,gold]
+
+
+
+func track_details():
+	var count = 0
+	globals.damage["edge"] = 0
+	globals.damage["gas"] = 0
+	globals.damage["hazard"] = 0
+	globals.damage["zap"] = 0
+	for key_value in globals.player_inventory:
+		if key_value != "hp" and  key_value != "mass" and key_value != "money" and key_value != "gloves" and key_value != "e_gloves" and key_value != "gas_mask" and key_value != "hazmat" and key_value != "gold":
+			if globals.player_inventory[key_value] > 0:
+				globals.damage["edge"] += globals.player_inventory[key_value] * waste_list[count].sharp.sharp
+				globals.damage["zap"] += globals.player_inventory[key_value] * waste_list[count].electric.electrical
+				globals.damage["gas"] += globals.player_inventory[key_value] * waste_list[count].gasses.noxious
+				globals.damage["hazard"] += globals.player_inventory[key_value] * waste_list[count].radioactive.radioactive
+	track_weight()
+
+func track_weight():
+	var count = 0
+	globals.player_inventory["mass"] = 0
+	for key_value in globals.player_inventory:
+		if key_value != "hp" and  key_value != "mass" and key_value != "money" and key_value != "gloves" and key_value != "e_gloves" and key_value != "gas_mask" and key_value != "hazmat" and key_value != "gold":
+			if globals.player_inventory[key_value] > 0:
+				globals.player_inventory["mass"] += globals.player_inventory[key_value] * waste_list[count].weight.weight
+				print(globals.player_inventory["mass"])
+			count +=1
+
+
+func drop_items(pos):
+	var count = 0
+	for key_value in globals.player_inventory:
+		if globals.player_inventory["mass"] >= globals.max_kg:
 			if key_value != "hp" and  key_value != "mass" and key_value != "money" and key_value != "gloves" and key_value != "e_gloves" and key_value != "gas_mask" and key_value != "hazmat":
-				if globals.player_inventory[key_value] > 0:
-					globals.damage["edge"] += globals.player_inventory[key_value] * waste_list[count].sharp.sharp
-					globals.damage["zap"] += globals.player_inventory[key_value] * waste_list[count].electric.electrical
-					globals.damage["gas"] += globals.player_inventory[key_value] * waste_list[count].gasses.noxious
-					globals.damage["hazard"] += globals.player_inventory[key_value] * waste_list[count].radioactive.radioactive
+				for i in range(globals.player_inventory[key_value]):
+					var x = randi() % 100
+					var y = randi() % 100
+					var coord: Vector2
+					coord = Vector2(x,y)
+					if key_value != "gold":
+						if globals.player_inventory[key_value] > 0:
+							bin.append(waste_list[count])
+							add_child(waste_list[count])
+							if bin.back() != null:
+								bin.back().global_position = pos + coord
+								globals.player_inventory[key_value] -= 1
+					
+		
 					
 
 				count +=1
-		print(globals.damage)
-
-
-
-
-
-
-
-func _on_user_spawn(spawnCount: Variant, x: Variant, y: Variant) -> void:
-	bin[spawnCount].global_position.x = x
-	bin[spawnCount].global_position.y = y
-
-
+	track_details()
 func _on_timer_timeout() -> void:
 	pass # Replace with function body.
+
+
+func _on_user_inventory_update() -> void:
+	waste_setup()
+	track_details()
+
+
+func _on_user_drop(pos) -> void:
+	drop_items(pos)
