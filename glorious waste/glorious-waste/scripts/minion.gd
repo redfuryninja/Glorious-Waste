@@ -1,6 +1,16 @@
 extends CharacterBody2D
 @onready var nav2d: NavigationAgent2D = $NavigationAgent2D
+@export var goal_type : minion_type
+var garbage_type = ["appliances","batteries","cans","car_batteries","cardboard","electrical","food",
+"furniture","garden","general","glass","hazardous","medical","mixed_recycling","motor_oil","plastic",
+"rubble","scrap_metal","textiles","wood", "gold"]
 
+var normal_items = ["cardboard", "general", "mixed_recycling", "motor_oil", "plastic",  "textiles"]
+var sharp_items = ["cans", "glass", "scrap_metal"]
+var electric_items = ["batteries", "car_batteries", "electrical"]
+var noxious_items = ["food", "garden"]
+var hazardous_items = ["hazardous", "medical"]
+var heavy_items = ["appliances", "furniture", "rubble","wood"]
 
 const SPEED = 700.0
 
@@ -11,6 +21,7 @@ var aim: Node2D = null
 func _ready() -> void:
 	aim = goal1
 	nav2d.target_desired_distance = 60
+	
 
 func switch_goal():
 	if aim == goal1:
@@ -25,6 +36,7 @@ func _physics_process(delta: float) -> void:
 		manual_navigation()
 		#navigate(delta)
 		navigate_safe()
+	else: get_goals()
 	
 	
 	
@@ -33,8 +45,20 @@ func _physics_process(delta: float) -> void:
 # will need to switch point, will need to get new point if player picks up trash before them
 #instead of having one for each trash type, have one for each type of equipment used and have them go after the trash that applies to that
 
-
-
+func get_goals():
+	var list = get_parent()
+	list.acquire_list()
+	
+	if goal_type.aim_type == 0:
+		for trash in list.waste_list:
+			if is_instance_valid(trash):
+				print("sup")
+				if normal_items.has(garbage_type[trash.trash_type.trash_type]):
+					goal2 = trash
+					print(goal2)
+					aim = goal2
+					
+				
 func manual_navigation():
 	nav2d.target_position = aim.global_position
 

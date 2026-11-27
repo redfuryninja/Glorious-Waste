@@ -14,7 +14,7 @@ var inventory_type: String
 
 var lockInput: int
 var player_inventory = {"hp":100.0, "mass":0.0, "money":0.0, "gloves": 10.0, "e_gloves": 10.0, "gas_mask": 10.0, "hazmat":10.0, 
-"appliances" : 0,"batteries": 0,"cans": 0,"car_batteries": 0,"cardboard": 100,"electrical": 0,"food": 0,
+"appliances" : 0,"batteries": 0,"cans": 0,"car_batteries": 0,"cardboard": 0,"electrical": 0,"food": 0,
 "furniture": 0,"garden": 0,"general": 0,"glass": 0,"hazardous": 0,"medical": 0,"mixed_recycling": 0,"motor_oil": 0,"plastic": 0,
 "rubble": 0,"scrap_metal": 0,"textiles": 0,"wood": 0,"gold": 0, "empty": 0}
 
@@ -25,6 +25,8 @@ var forklift: bool
 var fuel: float = 0.0
 var battery:float = 0.0
 var forklift_pos: Vector2
+
+var all_waste: Array[waste]
 
 func reset():
 	clear = false

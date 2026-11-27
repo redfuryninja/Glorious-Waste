@@ -26,8 +26,9 @@ var garbage_type = ["appliances","batteries","cans","car_batteries","cardboard",
 "furniture","garden","general","glass","hazardous","medical","mixed_recycling","motor_oil","plastic",
 "rubble","scrap_metal","textiles","wood", "gold"]
 var waste_list: Array[waste]
-var bin = []
+var bin: Array[waste]
 var tossed = []
+signal give_list(bin)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in range (5):
@@ -59,10 +60,11 @@ func _ready() -> void:
 		var y = randi() % 600
 		for n in range (21):
 			if random == n: 
-				bin.append(waste_list[n])
-				add_child(waste_list[n])
+				bin.append(waste_list[9])
+				add_child(waste_list[9])
 				bin[i].global_position.x += x
 				bin[i].global_position.y += y
+	
 		
 
 
@@ -158,3 +160,7 @@ func _on_user_inventory_update() -> void:
 
 func _on_user_drop(pos) -> void:
 	drop_items(pos)
+
+
+func _on_minion_manager_get_list() -> void:
+	give_list.emit(bin)
