@@ -8,28 +8,29 @@ var garbage_type = ["appliances","batteries","cans","car_batteries","cardboard",
 var normal_items = ["cardboard", "general", "mixed_recycling", "motor_oil", "plastic",  "textiles"]
 var sharp_items = ["cans", "glass", "scrap_metal"]
 var electric_items = ["batteries", "car_batteries", "electrical"]
-var noxious_items = ["food", "garden"]
+var gas_items = ["food", "garden"]
 var hazardous_items = ["hazardous", "medical"]
 var heavy_items = ["appliances", "furniture", "rubble","wood"]
 
 const SPEED = 700.0
-
+var remove:int
 @export var goal1 : Node2D = null
 @export var goal2 : Node2D = null
 var aim: Node2D = null
+var list: Node2D
 
 func _ready() -> void:
-	aim = goal1
+	aim = goal2
 	nav2d.target_desired_distance = 60
 	
 
 func switch_goal():
 	if aim == goal1:
+		globals.player_inventory["money"] += 0.05
 		aim = goal2
-		nav2d.target_desired_distance = 30
 	elif aim == goal2:
+		remove_items()
 		aim = goal1
-		nav2d.target_desired_distance = 60
 
 func _physics_process(delta: float) -> void:
 	if is_instance_valid(aim):
@@ -46,18 +47,54 @@ func _physics_process(delta: float) -> void:
 #instead of having one for each trash type, have one for each type of equipment used and have them go after the trash that applies to that
 
 func get_goals():
-	var list = get_parent()
+	list = get_parent()
 	list.acquire_list()
 	
-	if goal_type.aim_type == 0:
-		for trash in list.waste_list:
+	for trash in list.waste_list:
+		if goal_type.aim_type == 0:
 			if is_instance_valid(trash):
-				print("sup")
 				if normal_items.has(garbage_type[trash.trash_type.trash_type]):
 					goal2 = trash
-					print(goal2)
+					goal1 = list.bin_list[trash.trash_type.trash_type]
 					aim = goal2
+					remove = list.waste_list.find(trash)
+		if goal_type.aim_type == 1:
+			if is_instance_valid(trash):
+				if sharp_items.has(garbage_type[trash.trash_type.trash_type]):
+					goal2 = trash
+					goal1 = list.bin_list[trash.trash_type.trash_type]
+					aim = goal2
+					remove = list.waste_list.find(trash)
+		if goal_type.aim_type == 2:
+			if is_instance_valid(trash):
+				if electric_items.has(garbage_type[trash.trash_type.trash_type]):
+					goal2 = trash
+					goal1 = list.bin_list[trash.trash_type.trash_type]
+					aim = goal2
+					remove = list.waste_list.find(trash)
+		if goal_type.aim_type == 3:
+			if is_instance_valid(trash):
+				if gas_items.has(garbage_type[trash.trash_type.trash_type]):
+					goal2 = trash
+					goal1 = list.bin_list[trash.trash_type.trash_type]
+					aim = goal2
+					remove = list.waste_list.find(trash)
 					
+		if goal_type.aim_type == 4:
+			if is_instance_valid(trash):
+				if hazardous_items.has(garbage_type[trash.trash_type.trash_type]):
+					goal2 = trash
+					goal1 = list.bin_list[trash.trash_type.trash_type]
+					aim = goal2
+					remove = list.waste_list.find(trash)
+		if goal_type.aim_type == 5:
+			if is_instance_valid(trash):
+				if heavy_items.has(garbage_type[trash.trash_type.trash_type]):
+					goal2 = trash
+					goal1 = list.bin_list[trash.trash_type.trash_type]
+					aim = goal2
+					remove = list.waste_list.find(trash)
+				
 				
 func manual_navigation():
 	nav2d.target_position = aim.global_position
@@ -79,4 +116,7 @@ func navigate_safe() -> void:
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity
 	move_and_slide()
+	
+func remove_items():
+	list.clear_item(remove)
 	

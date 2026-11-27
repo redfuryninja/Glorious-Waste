@@ -19,7 +19,7 @@ frame = 7
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1937067634]
 path_desired_distance = 3.0
-target_desired_distance = 60.0
+target_desired_distance = 5.0
 path_max_distance = 300.0
 path_postprocessing = 1
 avoidance_enabled = true

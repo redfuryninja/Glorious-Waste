@@ -31,7 +31,7 @@ var tossed = []
 signal give_list(bin)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for i in range (5):
+	for i in range (500):
 		var appliance: waste = APPLIANCES.instantiate()
 		var battery: waste = BATTERIES.instantiate()
 		var cans: waste = CANS.instantiate()
@@ -60,8 +60,8 @@ func _ready() -> void:
 		var y = randi() % 600
 		for n in range (21):
 			if random == n: 
-				bin.append(waste_list[9])
-				add_child(waste_list[9])
+				bin.append(waste_list[n])
+				add_child(waste_list[n])
 				bin[i].global_position.x += x
 				bin[i].global_position.y += y
 	
@@ -164,3 +164,7 @@ func _on_user_drop(pos) -> void:
 
 func _on_minion_manager_get_list() -> void:
 	give_list.emit(bin)
+
+
+func _on_minion_manager_remove_item(remove: Variant) -> void:
+	bin[remove].queue_free()

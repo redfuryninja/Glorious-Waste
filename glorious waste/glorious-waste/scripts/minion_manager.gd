@@ -2,6 +2,7 @@ extends Node2D
 
 const MINION = preload("uid://cpkkylf7x3r4v")
 signal get_list
+signal remove_item(remove)
 var waste_list: Array[waste]
 var employees: Array[CharacterBody2D]
 @onready var appliance_bins: StaticBody2D = $"../bin folder/appliance_bins"
@@ -25,15 +26,23 @@ var employees: Array[CharacterBody2D]
 @onready var textile_bins: StaticBody2D = $"../bin folder/textile_bins"
 @onready var wood_bins: StaticBody2D = $"../bin folder/wood_bins"
 
+
+var bin_list: Array[StaticBody2D]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	bin_list = [appliance_bins, battery_bins, can_bins, car_battery_bins, cardboard_bins, electrical_bins, food_bins, furniture_bins, garden_bins,general_bins,glass_bins,hazardous_bins,medical_bins,mixed_bins,motor_oil_bins,
+	plastic_bins,rubble_bins,scrap_metal_bins,textile_bins,wood_bins]
 	acquire_list()
-	for i in range (5):
+	var count = 0
+	for i in range (50):
 		var minion = MINION.instantiate()
 		minion.goal1 = appliance_bins
-		minion.goal_type.aim_type = 0
+		minion.goal_type.aim_type = count
 		employees.append(minion)
 		add_child(minion)
+		count+=1
+		if count >= 6: count = 0
 		
 
 
@@ -53,3 +62,6 @@ func acquire_list():
 
 func _on_trash_manager_give_list(bin: Variant) -> void:
 	waste_list = bin
+
+func clear_item(remove):
+	remove_item.emit(remove)
