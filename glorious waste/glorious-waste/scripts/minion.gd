@@ -2,7 +2,7 @@ extends CharacterBody2D
 @onready var nav2d: NavigationAgent2D = $NavigationAgent2D
 
 
-const SPEED = 400.0
+const SPEED = 700.0
 
 @export var goal1 : Node2D = null
 @export var goal2 : Node2D = null
@@ -21,17 +21,19 @@ func switch_goal():
 		nav2d.target_desired_distance = 60
 
 func _physics_process(delta: float) -> void:
-	manual_navigation()
-	#navigate(delta)
-	navigate_safe()
+	if is_instance_valid(aim):
+		manual_navigation()
+		#navigate(delta)
+		navigate_safe()
 	
 	
 	
-	if nav2d.is_navigation_finished(): switch_goal()
 	
 	move_and_slide()
 # will need to switch point, will need to get new point if player picks up trash before them
 #instead of having one for each trash type, have one for each type of equipment used and have them go after the trash that applies to that
+
+
 
 func manual_navigation():
 	nav2d.target_position = aim.global_position

@@ -30,7 +30,7 @@ var bin = []
 var tossed = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for i in range (500):
+	for i in range (5):
 		var appliance: waste = APPLIANCES.instantiate()
 		var battery: waste = BATTERIES.instantiate()
 		var cans: waste = CANS.instantiate()
@@ -53,7 +53,7 @@ func _ready() -> void:
 		var wood: waste = WOOD.instantiate()
 		var gold: waste = GOLD.instantiate()
 		
-		waste_list = [appliance,battery,cans,cardboard,car_battery,electric,food,furniture,garden,general,glass,hazardous,medical,mixed,oil,plastic,rubble,scrap_metal,textiles,wood,gold]
+		waste_list = [appliance,battery,cans,car_battery,cardboard,electric,food,furniture,garden,general,glass,hazardous,medical,mixed,oil,plastic,rubble,scrap_metal,textiles,wood,gold]
 		var random = randi() % 21
 		var x = randi() % 300
 		var y = randi() % 600
@@ -101,7 +101,7 @@ func waste_setup():
 	var wood = WOOD.instantiate()
 	var gold = GOLD.instantiate()
 	
-	waste_list = [appliance,battery,cans,cardboard,car_battery,electric,food,furniture,garden,general,glass,hazardous,medical,mixed,oil,plastic,rubble,scrap_metal,textiles,wood,gold]
+	waste_list = [appliance,battery,cans,car_battery,cardboard,electric,food,furniture,garden,general,glass,hazardous,medical,mixed,oil,plastic,rubble,scrap_metal,textiles,wood,gold]
 
 
 

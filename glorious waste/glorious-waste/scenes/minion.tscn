@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cpkkylf7x3r4v"]
 
 [ext_resource type="Texture2D" uid="uid://duxcymqdj5n82" path="res://assets/player/helpers.png" id="1_7n1am"]
-[ext_resource type="Script" uid="uid://liipvjsrdxag" path="res://scenes/minion.gd" id="1_y8etf"]
+[ext_resource type="Script" uid="uid://liipvjsrdxag" path="res://scripts/minion.gd" id="1_y8etf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67o6a"]
 size = Vector2(20, 8)

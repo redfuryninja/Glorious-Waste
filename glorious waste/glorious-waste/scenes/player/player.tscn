@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://ddxoddiy501gy" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://bjc8hokfikxux" path="res://assets/player/character sprites.png" id="2_g2els"]
-[ext_resource type="Script" uid="uid://dtf02m0pq0wj0" path="res://scenes/player/drop_item.gd" id="3_gmlin"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
 atlas = ExtResource("2_g2els")
@@ -376,9 +375,6 @@ limit_left = -254
 limit_top = -119
 limit_right = 1741
 limit_bottom = 1067
-
-[node name="drop" type="Node2D" parent="." unique_id=1282348809]
-script = ExtResource("3_gmlin")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

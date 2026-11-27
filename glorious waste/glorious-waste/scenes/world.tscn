@@ -29,11 +29,13 @@
 [ext_resource type="PackedScene" uid="uid://do8v2kfrmkm7" path="res://scenes/bin_types/scrap_metal_bins.tscn" id="21_18clu"]
 [ext_resource type="PackedScene" uid="uid://bsg8xyou65fo" path="res://scenes/bin_types/textile_bins.tscn" id="22_4wdv8"]
 [ext_resource type="PackedScene" uid="uid://b8ywjah2oejlr" path="res://scenes/bin_types/wood_bins.tscn" id="23_d46x8"]
-[ext_resource type="Script" uid="uid://cvc7ix8nemkvb" path="res://scenes/fuel_bar.gd" id="30_fh13f"]
+[ext_resource type="Script" uid="uid://cvc7ix8nemkvb" path="res://scripts/fuel_bar.gd" id="30_fh13f"]
 [ext_resource type="PackedScene" uid="uid://cx46g7adjx4ee" path="res://scenes/player/forklift.tscn" id="30_navra"]
-[ext_resource type="Script" uid="uid://btmahjeyfwyg1" path="res://scenes/label_for_bars.gd" id="30_rup4s"]
-[ext_resource type="Script" uid="uid://bcfao6t3k1qvu" path="res://scenes/battery_bar.gd" id="31_rup4s"]
+[ext_resource type="Script" uid="uid://btmahjeyfwyg1" path="res://scripts/label_for_bars.gd" id="30_rup4s"]
+[ext_resource type="Script" uid="uid://bcfao6t3k1qvu" path="res://scripts/battery_bar.gd" id="31_rup4s"]
 [ext_resource type="PackedScene" uid="uid://cpkkylf7x3r4v" path="res://scenes/minion.tscn" id="34_4kbfs"]
+[ext_resource type="PackedScene" uid="uid://b7p8nrv47a2hp" path="res://scenes/trash_types/batteries.tscn" id="35_x2olw"]
+[ext_resource type="PackedScene" uid="uid://btjv6ahaw1yv" path="res://scenes/trash_types/furniture.tscn" id="36_x2olw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wyf3"]
 texture = ExtResource("2_rwgxs")
@@ -891,8 +893,14 @@ position = Vector2(955, 514)
 
 [node name="minion" parent="." unique_id=527610328 node_paths=PackedStringArray("goal1", "goal2") instance=ExtResource("34_4kbfs")]
 position = Vector2(-202, 980)
-goal1 = NodePath("../bin folder/appliance_bins")
-goal2 = NodePath("../boss man")
+goal1 = NodePath("../batteries")
+goal2 = NodePath("../furniture")
+
+[node name="batteries" parent="." unique_id=168331026 instance=ExtResource("35_x2olw")]
+position = Vector2(457, 406)
+
+[node name="furniture" parent="." unique_id=61764001 instance=ExtResource("36_x2olw")]
+position = Vector2(447, 567)
 
 [connection signal="drop" from="User" to="Trash Manager" method="_on_user_drop"]
 [connection signal="health" from="User" to="User/CanvasLayer/HP" method="_on_user_health"]
